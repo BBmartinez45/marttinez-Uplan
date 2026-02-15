@@ -12,40 +12,58 @@
     <!-- Font Awesome -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
     <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    
+    <!-- Google Fonts - Premium Typography -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Poppins:wght@600;700;800&display=swap" rel="stylesheet">
+    
     <!-- Tailwind config -->
     <script>
         tailwind.config = {
             theme: {
+                fontFamily: {
+                    'sans': ['Inter', 'system-ui', 'sans-serif'],
+                    'heading': ['Poppins', 'sans-serif'],
+                },
                 extend: {
                     colors: {
                         primary: {
-                            '50': '#e6f8f9',
-                            '100': '#b8eff1',
-                            '200': '#7fe1e5',
-                            '300': '#4dd1d5',
-                            '400': '#24bcc5',
-                            '500': '#1f9a9f',
-                            '600': '#1a7a7e',
-                            '700': '#145a5f',
-                            '800': '#0d3d41',
+                            '50': '#f0f4ff',
+                            '100': '#e0e9ff',
+                            '200': '#c7d2fe',
+                            '300': '#a5b4fc',
+                            '400': '#818cf8',
+                            '500': '#6366f1',
+                            '600': '#4f46e5',
+                            '700': '#4338ca',
+                            '800': '#3730a3',
+                            '900': '#312e81',
                         },
                         accent: {
-                            '400': '#ff8c6b',
-                            '500': '#ff6b4a',
-                            '600': '#e8522a',
+                            '400': '#fbbf24',
+                            '500': '#f59e0b',
+                            '600': '#d97706',
                         },
-                        dark: '#0a0e14',
-                        white: '#fff',
+                        success: {
+                            '400': '#4ade80',
+                            '500': '#22c55e',
+                            '600': '#16a34a',
+                        },
+                        dark: '#0f172a',
+                        light: '#f8fafc',
                     },
                     boxShadow: {
-                        'soft-sm': '0 2px 4px rgba(10, 14, 20, 0.08)',
-                        'soft-md': '0 4px 8px rgba(10, 14, 20, 0.1)',
-                        'soft-lg': '0 8px 16px rgba(10, 14, 20, 0.12)',
-                        'soft-xl': '0 16px 32px rgba(10, 14, 20, 0.16)',
-                        'soft-2xl': '0 24px 48px rgba(10, 14, 20, 0.2)',
+                        'soft-sm': '0 2px 4px rgba(15, 23, 42, 0.08)',
+                        'soft-md': '0 4px 12px rgba(15, 23, 42, 0.1)',
+                        'soft-lg': '0 8px 24px rgba(15, 23, 42, 0.12)',
+                        'soft-xl': '0 16px 40px rgba(15, 23, 42, 0.16)',
+                        'soft-2xl': '0 24px 48px rgba(15, 23, 42, 0.2)',
+                        'glow': '0 0 30px rgba(79, 70, 229, 0.3)',
+                        'glow-sm': '0 0 15px rgba(79, 70, 229, 0.2)',
                     },
                     borderRadius: {
-                        'sm': '6px',
+                        'sm': '8px',
                         'md': '12px',
                         'lg': '16px',
                         'xl': '20px',
@@ -54,27 +72,97 @@
                     },
                     animation: {
                         marquee: 'marquee 50s linear infinite',
+                        'fade-in': 'fadeIn 0.8s ease-in-out',
+                        'slide-up': 'slideUp 0.8s ease-out',
+                        'pulse-glow': 'pulseGlow 2s ease-in-out infinite',
                     },
                     keyframes: {
                         marquee: {
                             '0%': { transform: 'translateX(0)' },
                             '100%': { transform: 'translateX(-50%)' },
                         },
+                        fadeIn: {
+                            '0%': { opacity: '0' },
+                            '100%': { opacity: '1' },
+                        },
+                        slideUp: {
+                            '0%': { opacity: '0', transform: 'translateY(20px)' },
+                            '100%': { opacity: '1', transform: 'translateY(0)' },
+                        },
+                        pulseGlow: {
+                            '0%, 100%': { boxShadow: '0 0 15px rgba(79, 70, 229, 0.2)' },
+                            '50%': { boxShadow: '0 0 30px rgba(79, 70, 229, 0.4)' },
+                        },
                     },
                     transitionTimingFunction: {
                         'smooth': 'cubic-bezier(0.4, 0, 0.2, 1)',
+                        'elastic': 'cubic-bezier(0.34, 1.56, 0.64, 1)',
+                    },
+                    backdropBlur: {
+                        'xs': '2px',
+                        'sm': '4px',
+                        'md': '8px',
+                        'lg': '16px',
+                    },
+                    backgroundImage: {
+                        'gradient-radial': 'radial-gradient(var(--tw-gradient-stops))',
+                        'gradient-conic': 'conic-gradient(from 180deg at 50% 50%, var(--tw-gradient-stops))',
                     },
                 },
             },
         }
     </script>
 
-
-
     <style>
         :root {
-            --primary-600: #1f9a9f;
-            --primary-500: #24bcc5;
+            /* Premium Color Palette */
+            --primary-600: #4f46e5;
+            --primary-500: #6366f1;
+            --accent-500: #f59e0b;
+            --success-500: #22c55e;
+        }
+
+        /* Global Typography */
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            background: linear-gradient(135deg, #f8fafc 0%, #f1f5f9 100%);
+            color: #475569;
+            overflow-x: hidden;
+        }
+
+        /* Modern Heading Styles */
+        h1, h2, h3, h4, h5, h6 {
+            font-family: 'Poppins', sans-serif;
+            font-weight: 700;
+            letter-spacing: -0.01em;
+            color: #0f172a;
+        }
+
+        h1 { font-size: clamp(2rem, 5vw, 4rem); line-height: 1.2; }
+        h2 { font-size: clamp(1.5rem, 4vw, 3rem); line-height: 1.3; }
+        h3 { font-size: clamp(1.25rem, 3vw, 2rem); line-height: 1.4; }
+
+        /* ============================================================
+           MODERN ANIMATION SYSTEM
+           ============================================================ */
+
+        /* Text Reveal Animation */
+        @keyframes textReveal {
+            0% {
+                opacity: 0;
+                clip-path: inset(0 100% 0 0);
+            }
+            100% {
+                opacity: 1;
+                clip-path: inset(0 0 0 0);
+            }
+        }
+
+        .text-reveal {
+            animation: textReveal 0.8s cubic-bezier(0.77, 0, 0.175, 1) forwards;
         }
 
         /* Smooth fade-out for animations */
@@ -83,15 +171,1280 @@
             visibility: hidden;
             transition: opacity 0.6s ease, visibility 0.6s ease;
         }
+
+        /* Premium Glass-morphism Effect */
+        .glass-effect {
+            background: rgba(255, 255, 255, 0.7);
+            backdrop-filter: blur(10px);
+            -webkit-backdrop-filter: blur(10px);
+            border: 1px solid rgba(255, 255, 255, 0.18);
+            transition: all 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+
+        .glass-effect:hover {
+            background: rgba(255, 255, 255, 0.85);
+            border-color: rgba(79, 70, 229, 0.3);
+        }
+
+        .glass-dark {
+            background: rgba(15, 23, 42, 0.4);
+            backdrop-filter: blur(10px);
+            -webkit-backdrop-filter: blur(10px);
+            border: 1px solid rgba(255, 255, 255, 0.05);
+        }
+
+        /* Gradient Overlay */
+        .gradient-overlay {
+            background: linear-gradient(135deg, rgba(79, 70, 229, 0.1) 0%, rgba(245, 158, 11, 0.05) 100%);
+        }
+
+        /* ENHANCED BUTTON WITH MODERN EFFECTS */
+        .btn-primary {
+            background: linear-gradient(135deg, #4f46e5 0%, #4338ca 100%);
+            color: white;
+            padding: 12px 28px;
+            border-radius: 12px;
+            font-weight: 600;
+            font-size: 0.95rem;
+            border: none;
+            cursor: pointer;
+            transition: all 0.4s cubic-bezier(0.34, 1.56, 0.64, 1);
+            box-shadow: 0 4px 15px rgba(79, 70, 229, 0.3);
+            position: relative;
+            overflow: hidden;
+            will-change: transform, box-shadow;
+            letter-spacing: 0.3px;
+        }
+
+        .btn-primary::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(90deg, transparent, rgba(255,255,255,0.3), transparent);
+            transition: left 0.6s cubic-bezier(0.4, 0, 0.2, 1);
+            z-index: 1;
+        }
+
+        .btn-primary::after {
+            content: '';
+            position: absolute;
+            inset: 0;
+            border-radius: 12px;
+            opacity: 0;
+            background: radial-gradient(circle at center, rgba(255,255,255,0.3) 0%, transparent 70%);
+            transition: opacity 0.4s ease;
+        }
+
+        .btn-primary:hover::before {
+            left: 100%;
+        }
+
+        .btn-primary:hover::after {
+            opacity: 1;
+        }
+
+        .btn-primary:hover {
+            transform: translateY(-4px) scale(1.02);
+            box-shadow: 0 16px 40px rgba(79, 70, 229, 0.5), 0 0 30px rgba(79, 70, 229, 0.3);
+        }
+
+        .btn-primary:active {
+            transform: translateY(-1px) scale(0.98);
+        }
+
+        /* Stagger Animation for Cards */
+        @keyframes staggerFade {
+            0% {
+                opacity: 0;
+                transform: translateY(30px) scale(0.95);
+            }
+            100% {
+                opacity: 1;
+                transform: translateY(0) scale(1);
+            }
+        }
+
+        .card-stagger {
+            animation: staggerFade 0.6s cubic-bezier(0.34, 1.56, 0.64, 1) both;
+        }
+
+        .card-stagger:nth-child(1) { animation-delay: 0.1s; }
+        .card-stagger:nth-child(2) { animation-delay: 0.2s; }
+        .card-stagger:nth-child(3) { animation-delay: 0.3s; }
+        .card-stagger:nth-child(4) { animation-delay: 0.4s; }
+        .card-stagger:nth-child(5) { animation-delay: 0.5s; }
+        .card-stagger:nth-child(6) { animation-delay: 0.6s; }
+
+        /* Card Enhancement with Modern Interactions */
+        .card-modern {
+            background: white;
+            border-radius: 16px;
+            padding: 24px;
+            border: 1px solid #e2e8f0;
+            transition: all 0.5s cubic-bezier(0.34, 1.56, 0.64, 1);
+            box-shadow: 0 4px 12px rgba(15, 23, 42, 0.08);
+            position: relative;
+            will-change: transform, box-shadow, border-color;
+            overflow: hidden;
+        }
+
+        .card-modern::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 3px;
+            background: linear-gradient(90deg, #4f46e5, #f59e0b);
+            border-radius: 16px 16px 0 0;
+            opacity: 0;
+            transform: scaleX(0);
+            transform-origin: left;
+            transition: all 0.5s cubic-bezier(0.34, 1.56, 0.64, 1);
+        }
+
+        .card-modern::after {
+            content: '';
+            position: absolute;
+            inset: 0;
+            background: radial-gradient(600px at var(--mouse-x, 50%) var(--mouse-y, 50%), rgba(79, 70, 229, 0.1), transparent 80%);
+            opacity: 0;
+            transition: opacity 0.3s ease;
+            pointer-events: none;
+        }
+
+        .card-modern:hover {
+            transform: translateY(-12px) scale(1.02);
+            box-shadow: 0 20px 50px rgba(15, 23, 42, 0.15);
+            border-color: #c7d2fe;
+        }
+
+        .card-modern:hover::before {
+            opacity: 1;
+            transform: scaleX(1);
+        }
+
+        .card-modern:hover::after {
+            opacity: 1;
+        }
+
+        /* Feature Badge with Pulse */
+        @keyframes badgePulse {
+            0%, 100% {
+                box-shadow: 0 2px 8px rgba(79, 70, 229, 0.3);
+            }
+            50% {
+                box-shadow: 0 2px 16px rgba(79, 70, 229, 0.6);
+            }
+        }
+
+        .badge-premium {
+            display: inline-block;
+            padding: 6px 12px;
+            background: linear-gradient(135deg, #4f46e5, #6366f1);
+            color: white;
+            border-radius: 8px;
+            font-size: 0.75rem;
+            font-weight: 700;
+            letter-spacing: 0.05em;
+            text-transform: uppercase;
+            box-shadow: 0 2px 8px rgba(79, 70, 229, 0.3);
+            animation: badgePulse 2s ease-in-out infinite;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .badge-premium::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(90deg, transparent, rgba(255,255,255,0.3), transparent);
+            animation: shimmer 3s infinite;
+        }
+
+        @keyframes shimmer {
+            0% { left: -100%; }
+            100% { left: 100%; }
+        }
+
+        /* Accent Highlight */
+        .accent-highlight {
+            background: linear-gradient(135deg, #f59e0b, #fbbf24);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            font-weight: 700;
+        }
+
+        /* Smooth Underline Effect with Modern Easing */
+        .nav-link {
+            position: relative;
+            color: #475569;
+            text-decoration: none;
+            font-weight: 500;
+            transition: color 0.4s cubic-bezier(0.34, 1.56, 0.64, 1);
+        }
+
+        .nav-link::after {
+            content: '';
+            position: absolute;
+            bottom: -2px;
+            left: 0;
+            width: 0;
+            height: 2px;
+            background: linear-gradient(90deg, #4f46e5, #f59e0b);
+            transition: width 0.5s cubic-bezier(0.34, 1.56, 0.64, 1);
+        }
+
+        .nav-link:hover {
+            color: #4f46e5;
+        }
+
+        .nav-link:hover::after {
+            width: 100%;
+        }
+
+        /* Floating Animation - Enhanced */
+        @keyframes float {
+            0%, 100% { 
+                transform: translateY(0px);
+            }
+            25% { 
+                transform: translateY(-15px);
+            }
+            50% { 
+                transform: translateY(-8px);
+            }
+            75% { 
+                transform: translateY(-12px);
+            }
+        }
+
+        .float-animation {
+            animation: float 4s ease-in-out infinite;
+        }
+
+        /* Gradient Animated Text */
+        @keyframes gradientShift {
+            0% {
+                background-position: 0% 50%;
+            }
+            50% {
+                background-position: 100% 50%;
+            }
+            100% {
+                background-position: 0% 50%;
+            }
+        }
+
+        .gradient-text {
+            background: linear-gradient(90deg, #4f46e5, #f59e0b, #4f46e5);
+            background-size: 200% auto;
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            animation: gradientShift 6s ease infinite;
+        }
+
+        /* Section Divider */
+        .section-divider {
+            height: 1px;
+            background: linear-gradient(90deg, transparent, #e2e8f0, transparent);
+        }
+
+        /* Loading Pulse - Enhanced */
+        @keyframes loadingPulse {
+            0%, 100% { 
+                opacity: 1;
+                transform: scale(1);
+            }
+            50% { 
+                opacity: 0.5;
+                transform: scale(0.98);
+            }
+        }
+
+        .loading-pulse {
+            animation: loadingPulse 2s cubic-bezier(0.4, 0, 0.6, 1) infinite;
+        }
+
+        /* Blob Animation - Enhanced Fluid Motion */
+        @keyframes blob {
+            0%, 100% { 
+                transform: translate(0, 0) scale(1) rotate(0deg);
+            }
+            33% { 
+                transform: translate(30px, -50px) scale(1.15) rotate(120deg);
+            }
+            66% { 
+                transform: translate(-20px, 20px) scale(0.85) rotate(240deg);
+            }
+        }
+
+        .animate-blob {
+            animation: blob 8s ease-in-out infinite;
+            will-change: transform;
+        }
+
+        .animation-delay-2000 {
+            animation-delay: 2s;
+        }
+
+        .animation-delay-4000 {
+            animation-delay: 4s;
+        }
+
+        /* Slide Up Animation */
+        @keyframes slideUp {
+            0% {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+            100% {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .animate-slide-up {
+            animation: slideUp 0.8s cubic-bezier(0.34, 1.56, 0.64, 1);
+        }
+
+        /* Counter Animation for Numbers */
+        @keyframes countUp {
+            from {
+                opacity: 0;
+                transform: translateY(15px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .counter-animate {
+            animation: countUp 0.6s cubic-bezier(0.34, 1.56, 0.64, 1) forwards;
+        }
+
+        .counter-animate:nth-child(1) { animation-delay: 0.2s; }
+        .counter-animate:nth-child(2) { animation-delay: 0.4s; }
+        .counter-animate:nth-child(3) { animation-delay: 0.6s; }
+
+        /* Feature Icon Animation */
+        @keyframes iconBounce {
+            0%, 100% {
+                transform: translateY(0) scale(1);
+            }
+            50% {
+                transform: translateY(-8px) scale(1.1);
+            }
+        }
+
+        .icon-bounce {
+            animation: iconBounce 2s cubic-bezier(0.34, 1.56, 0.64, 1) infinite;
+        }
+
+        /* Gradient Border Animation */
+        @keyframes gradientBorder {
+            0% {
+                background-position: 0% 50%;
+            }
+            50% {
+                background-position: 100% 50%;
+            }
+            100% {
+                background-position: 0% 50%;
+            }
+        }
+
+        .border-gradient {
+            background-image: linear-gradient(45deg, #4f46e5, #f59e0b, #4f46e5);
+            background-size: 300% 300%;
+            animation: gradientBorder 5s ease infinite;
+        }
+
+        /* Flip Animation */
+        @keyframes flip {
+            0% {
+                transform: rotateY(0);
+                opacity: 1;
+            }
+            50% {
+                opacity: 0.7;
+            }
+            100% {
+                transform: rotateY(360deg);
+                opacity: 1;
+            }
+        }
+
+        .flip-animation {
+            animation: flip 0.8s cubic-bezier(0.34, 1.56, 0.64, 1);
+        }
+
+        /* Glitch Effect */
+        @keyframes glitch {
+            0% {
+                clip-path: inset(40% 0 61% 0);
+                transform: translate(-2px, -2px);
+            }
+            20% {
+                clip-path: inset(92% 0 1% 0);
+                transform: translate(2px, 2px);
+            }
+            40% {
+                clip-path: inset(43% 0 1% 0);
+                transform: translate(-2px, 2px);
+            }
+            60% {
+                clip-path: inset(25% 0 58% 0);
+                transform: translate(2px, -2px);
+            }
+            80% {
+                clip-path: inset(54% 0 7% 0);
+                transform: translate(-2px, -2px);
+            }
+            100% {
+                clip-path: inset(58% 0 43% 0);
+                transform: translate(2px, 2px);
+            }
+        }
+
+        .hover-glitch:hover::before {
+            animation: glitch 0.3s ease-in-out infinite;
+            opacity: 0.8;
+        }
+
+        /* Smooth Expand Animation */
+        @keyframes expandWidth {
+            from {
+                width: 0;
+                opacity: 0;
+            }
+            to {
+                width: 100%;
+                opacity: 1;
+            }
+        }
+
+        .expand-width {
+            animation: expandWidth 0.8s cubic-bezier(0.34, 1.56, 0.64, 1);
+        }
+
+        /* Bounce In Animation */
+        @keyframes bounceIn {
+            0% {
+                opacity: 0;
+                transform: scale(0.3);
+            }
+            50% {
+                opacity: 1;
+                transform: scale(1.05);
+            }
+            70% {
+                transform: scale(0.9);
+            }
+            100% {
+                transform: scale(1);
+            }
+        }
+
+        .bounce-in {
+            animation: bounceIn 0.6s cubic-bezier(0.34, 1.56, 0.64, 1);
+        }
+
+        /* Smooth Scroll Fade */
+        @keyframes scrollFade {
+            0% {
+                opacity: 0;
+                transform: translateY(40px) scale(0.95);
+            }
+            100% {
+                opacity: 1;
+                transform: translateY(0) scale(1);
+            }
+        }
+
+        .scroll-fade {
+            animation: scrollFade 0.8s cubic-bezier(0.34, 1.56, 0.64, 1) forwards;
+            opacity: 0;
+        }
+
+        /* Pulse Glow */
+        @keyframes pulseGlow {
+            0%, 100% {
+                box-shadow: 0 0 15px rgba(79, 70, 229, 0.2), inset 0 0 15px rgba(79, 70, 229, 0.1);
+            }
+            50% {
+                box-shadow: 0 0 30px rgba(79, 70, 229, 0.4), inset 0 0 30px rgba(79, 70, 229, 0.2);
+            }
+        }
+
+        .glow-pulse {
+            animation: pulseGlow 2.5s ease-in-out infinite;
+        }
+
+        /* Ripple Effect for Buttons */
+        .ripple {
+            position: absolute;
+            border-radius: 50%;
+            background: rgba(255, 255, 255, 0.6);
+            transform: scale(0);
+            animation: rippleEffect 0.6s ease-out;
+            pointer-events: none;
+        }
+
+        @keyframes rippleEffect {
+            to {
+                transform: scale(4);
+                opacity: 0;
+            }
+        }
+
+        /* Icon Hover Glow */
+        .icon-glow {
+            filter: drop-shadow(0 0 8px rgba(79, 70, 229, 0.3));
+            transition: filter 0.3s ease;
+        }
+
+        .icon-glow:hover {
+            filter: drop-shadow(0 0 16px rgba(79, 70, 229, 0.6));
+        }
+
+        .icon-glow-primary {
+            filter: drop-shadow(0 0 8px rgba(79, 70, 229, 0.4));
+            transition: filter 0.3s ease;
+        }
+
+        .icon-glow-primary:hover {
+            filter: drop-shadow(0 0 16px rgba(79, 70, 229, 0.8));
+        }
+
+        .icon-glow-accent {
+            filter: drop-shadow(0 0 8px rgba(245, 158, 11, 0.4));
+            transition: filter 0.3s ease;
+        }
+
+        .icon-glow-accent:hover {
+            filter: drop-shadow(0 0 16px rgba(245, 158, 11, 0.8));
+        }
+
+        .icon-glow-success {
+            filter: drop-shadow(0 0 8px rgba(34, 197, 94, 0.4));
+            transition: filter 0.3s ease;
+        }
+
+        .icon-glow-success:hover {
+            filter: drop-shadow(0 0 16px rgba(34, 197, 94, 0.8));
+        }
+
+        /* Hover Scale Animation */
+        .hover-scale {
+            transition: all 0.3s cubic-bezier(0.34, 1.56, 0.64, 1);
+        }
+
+        .hover-scale:hover {
+            transform: scale(1.05);
+        }
+
+        /* Feature Icons with Gradient */
+        .feature-icon {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            width: 48px;
+            height: 48px;
+            border-radius: 12px;
+            background: linear-gradient(135deg, #4f46e5, #6366f1);
+            color: white;
+            font-size: 24px;
+            transition: all 0.4s cubic-bezier(0.34, 1.56, 0.64, 1);
+        }
+
+        .feature-icon:hover {
+            transform: scale(1.15) rotate(5deg);
+            box-shadow: 0 8px 20px rgba(79, 70, 229, 0.4);
+        }
+
+        /* Price Tag Animation */
+        @keyframes priceShimmer {
+            0%, 100% {
+                color: #4f46e5;
+            }
+            50% {
+                color: #f59e0b;
+            }
+        }
+
+        .price-animate {
+            animation: priceShimmer 2s ease-in-out infinite;
+        }
+
+        /* Check Icon Animation */
+        @keyframes checkMark {
+            0% {
+                transform: scale(0) rotate(-45deg);
+                opacity: 0;
+            }
+            50% {
+                transform: scale(1.2) rotate(0deg);
+            }
+            100% {
+                transform: scale(1) rotate(0deg);
+                opacity: 1;
+            }
+        }
+
+        .check-animate {
+            animation: checkMark 0.6s cubic-bezier(0.34, 1.56, 0.64, 1) forwards;
+        }
+
+        /* Smooth List Item Animation */
+        @keyframes listSlideIn {
+            from {
+                opacity: 0;
+                transform: translateX(-20px);
+            }
+            to {
+                opacity: 1;
+                transform: translateX(0);
+            }
+        }
+
+        .list-slide {
+            animation: listSlideIn 0.5s cubic-bezier(0.34, 1.56, 0.64, 1) forwards;
+        }
+
+        .list-slide:nth-child(1) { animation-delay: 0.1s; }
+        .list-slide:nth-child(2) { animation-delay: 0.2s; }
+        .list-slide:nth-child(3) { animation-delay: 0.3s; }
+        .list-slide:nth-child(4) { animation-delay: 0.4s; }
+        .list-slide:nth-child(5) { animation-delay: 0.5s; }
+
+        /* Smooth Scale Animation */
+        @keyframes scaleIn {
+            from {
+                opacity: 0;
+                transform: scale(0.9);
+            }
+            to {
+                opacity: 1;
+                transform: scale(1);
+            }
+        }
+
+        .scale-in {
+            animation: scaleIn 0.6s cubic-bezier(0.34, 1.56, 0.64, 1);
+        }
+
+        /* Smooth Opacity Transition */
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(20px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .fade-in-up {
+            animation: fadeInUp 0.6s cubic-bezier(0.34, 1.56, 0.64, 1) forwards;
+        }
+
+        .fade-in-up:nth-child(1) { animation-delay: 0s; }
+        .fade-in-up:nth-child(2) { animation-delay: 0.1s; }
+        .fade-in-up:nth-child(3) { animation-delay: 0.2s; }
+
+        /* Rotating Border Animation */
+        @keyframes rotateBorder {
+            0% { transform: rotate(0deg); }
+            100% { transform: rotate(360deg); }
+        }
+
+        .rotate-border {
+            animation: rotateBorder 3s linear infinite;
+        }
+
+        /* Slide and Fade Combination */
+        @keyframes slideAndFade {
+            0% {
+                opacity: 0;
+                transform: translateY(30px) scale(0.95);
+            }
+            100% {
+                opacity: 1;
+                transform: translateY(0) scale(1);
+            }
+        }
+
+        .slide-and-fade {
+            animation: slideAndFade 0.7s cubic-bezier(0.34, 1.56, 0.64, 1) forwards;
+        }
+
+        /* Text Glow Effect */
+        @keyframes textGlow {
+            0%, 100% {
+                text-shadow: 0 0 10px rgba(79, 70, 229, 0.3);
+            }
+            50% {
+                text-shadow: 0 0 20px rgba(79, 70, 229, 0.6);
+            }
+        }
+
+        .text-glow {
+            animation: textGlow 2s ease-in-out infinite;
+        }
+
+        /* Smooth Slide from Right */
+        @keyframes slideFromRight {
+            from {
+                opacity: 0;
+                transform: translateX(40px) skewX(-10deg);
+            }
+            to {
+                opacity: 1;
+                transform: translateX(0) skewX(0deg);
+            }
+        }
+
+        .slide-from-right {
+            animation: slideFromRight 0.8s cubic-bezier(0.34, 1.56, 0.64, 1);
+        }
+
+        /* Smooth Slide from Left */
+        @keyframes slideFromLeft {
+            from {
+                opacity: 0;
+                transform: translateX(-40px) skewX(10deg);
+            }
+            to {
+                opacity: 1;
+                transform: translateX(0) skewX(0deg);
+            }
+        }
+
+        .slide-from-left {
+            animation: slideFromLeft 0.8s cubic-bezier(0.34, 1.56, 0.64, 1);
+        }
+
+        /* Hover Scale with Shadow */
+        .hover-scale {
+            transition: all 0.3s cubic-bezier(0.34, 1.56, 0.64, 1);
+        }
+
+        .hover-scale:hover {
+            transform: scale(1.05);
+            filter: drop-shadow(0 8px 16px rgba(79, 70, 229, 0.3));
+        }
+
+        /* Scale In with Fade */
+        @keyframes scaleInFade {
+            0% {
+                opacity: 0;
+                transform: scale(0.9) translateY(10px);
+            }
+            100% {
+                opacity: 1;
+                transform: scale(1) translateY(0);
+            }
+        }
+
+        .scale-in-fade {
+            animation: scaleInFade 0.5s cubic-bezier(0.34, 1.56, 0.64, 1) forwards;
+        }
+
+        /* Text Reveal Animation */
+        @keyframes textReveal {
+            0% {
+                clip-path: inset(0 100% 0 0);
+                opacity: 0;
+            }
+            100% {
+                clip-path: inset(0 0 0 0);
+                opacity: 1;
+            }
+        }
+
+        .text-reveal {
+            animation: textReveal 0.8s cubic-bezier(0.34, 1.56, 0.64, 1) forwards;
+        }
+
+        /* Social Icon Bounce */
+        @keyframes socialBounce {
+            0%, 100% {
+                transform: translateY(0);
+            }
+            50% {
+                transform: translateY(-8px);
+            }
+        }
+
+        .social-icon-bounce {
+            transition: all 0.3s cubic-bezier(0.34, 1.56, 0.64, 1);
+        }
+
+        .social-icon-bounce:hover {
+            animation: socialBounce 0.6s ease-in-out;
+            transform: scale(1.1);
+        }
+
+        /* ===== PREMIUM FEATURE CARD ANIMATIONS ===== */
+
+        /* Feature Card Container Animation */
+        @keyframes featureCardSlideIn {
+            0% {
+                opacity: 0;
+                transform: translateY(40px) scale(0.95);
+            }
+            100% {
+                opacity: 1;
+                transform: translateY(0) scale(1);
+            }
+        }
+
+        .group {
+            position: relative;
+        }
+
+        /* Premium Hover Glow Effect */
+        @keyframes cardGlow {
+            0%, 100% {
+                box-shadow: 0 0 0px rgba(79, 70, 229, 0);
+            }
+            50% {
+                box-shadow: 0 0 20px rgba(79, 70, 229, 0.2);
+            }
+        }
+
+        .group:hover {
+            animation: cardGlow 2s ease-in-out;
+        }
+
+        /* Feature Card Border Shimmer */
+        @keyframes borderShimmer {
+            0% {
+                background-position: -1000px 0;
+            }
+            100% {
+                background-position: 1000px 0;
+            }
+        }
+
+        .group::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            border-radius: inherit;
+            padding: 1px;
+            background: linear-gradient(90deg, transparent, rgba(79, 70, 229, 0.3), transparent);
+            background-size: 1000px 100%;
+            -webkit-mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+            -webkit-mask-composite: xor;
+            mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+            mask-composite: exclude;
+            opacity: 0;
+            transition: opacity 0.4s ease;
+        }
+
+        .group:hover::before {
+            opacity: 1;
+            animation: borderShimmer 2s infinite;
+        }
+
+        /* Icon Container Pulse */
+        @keyframes iconPulse {
+            0%, 100% {
+                box-shadow: 0 0 0px rgba(79, 70, 229, 0.4);
+            }
+            50% {
+                box-shadow: 0 0 20px rgba(79, 70, 229, 0.6);
+            }
+        }
+
+        .group:hover .icon-glow-primary {
+            animation: iconPulse 2s ease-in-out infinite;
+        }
+
+        .group:hover .icon-glow-accent {
+            animation: accentPulse 2s ease-in-out infinite;
+        }
+
+        .group:hover .icon-glow-success {
+            animation: successPulse 2s ease-in-out infinite;
+        }
+
+        @keyframes accentPulse {
+            0%, 100% {
+                box-shadow: 0 0 0px rgba(245, 158, 11, 0.4);
+            }
+            50% {
+                box-shadow: 0 0 20px rgba(245, 158, 11, 0.6);
+            }
+        }
+
+        @keyframes successPulse {
+            0%, 100% {
+                box-shadow: 0 0 0px rgba(34, 197, 94, 0.4);
+            }
+            50% {
+                box-shadow: 0 0 20px rgba(34, 197, 94, 0.6);
+            }
+        }
+
+        /* Feature Description Slide In */
+        @keyframes textSlideUp {
+            0% {
+                opacity: 0;
+                transform: translateY(20px);
+            }
+            100% {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .group:hover p {
+            animation: textSlideUp 0.5s cubic-bezier(0.34, 1.56, 0.64, 1) forwards;
+        }
+
+        /* Badge Animation */
+        @keyframes badgeScale {
+            0% {
+                transform: scale(0.8);
+                opacity: 0;
+            }
+            100% {
+                transform: scale(1);
+                opacity: 1;
+            }
+        }
+
+        .group:hover .text-xs {
+            animation: badgeScale 0.4s cubic-bezier(0.34, 1.56, 0.64, 1) forwards;
+        }
+
+        /* Feature Card Background Gradient Shift */
+        @keyframes bgGradientShift {
+            0% {
+                background-position: 0% 50%;
+            }
+            50% {
+                background-position: 100% 50%;
+            }
+            100% {
+                background-position: 0% 50%;
+            }
+        }
+
+        .group::after {
+            background-size: 200% 200%;
+            animation: bgGradientShift 6s ease infinite;
+        }
+
+        /* Icon Rotation on Hover */
+        @keyframes iconRotate {
+            0%, 100% {
+                transform: rotate(0deg);
+            }
+            50% {
+                transform: rotate(10deg);
+            }
+        }
+
+        /* Icon Rotation on Hover */
+        @keyframes iconRotate {
+            0%, 100% {
+                transform: rotate(0deg);
+            }
+            50% {
+                transform: rotate(10deg);
+            }
+        }
+
+        .group:hover .icon-bounce {
+            animation: iconRotate 0.6s cubic-bezier(0.34, 1.56, 0.64, 1) !important;
+        }
+
+        /* ===== FEATURE CARD SPECIFIC STYLING ===== */
+
+        .feature-card {
+            animation: featureCardSlideIn 0.6s cubic-bezier(0.34, 1.56, 0.64, 1) forwards;
+        }
+
+        /* Icon Container Enhanced Glow */
+        .feature-icon-container {
+            box-shadow: 0 0 15px rgba(79, 70, 229, 0.2);
+            transition: all 0.3s cubic-bezier(0.34, 1.56, 0.64, 1);
+        }
+
+        .feature-card:hover .feature-icon-container {
+            transform: scale(1.1) rotate(-5deg);
+            box-shadow: 0 0 30px rgba(79, 70, 229, 0.4);
+        }
+
+        /* Feature Card Border Animated Gradient */
+        .feature-card {
+            position: relative;
+            overflow: hidden;
+        }
+
+        .feature-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(
+                45deg,
+                transparent 30%,
+                rgba(79, 70, 229, 0.1) 50%,
+                transparent 70%
+            );
+            background-size: 200% 200%;
+            animation: shimmerMove 3s infinite;
+            pointer-events: none;
+            opacity: 0;
+            border-radius: 1rem;
+        }
+
+        @keyframes shimmerMove {
+            0% {
+                background-position: 200% 200%;
+            }
+            100% {
+                background-position: -200% -200%;
+            }
+        }
+
+        .feature-card:hover::before {
+            opacity: 1;
+        }
+
+        /* Feature Title Styling */
+        .feature-title {
+            background: linear-gradient(135deg, #0f172a 0%, #1e293b 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            transition: all 0.3s ease;
+        }
+
+        .feature-card:hover .feature-title {
+            background: linear-gradient(135deg, #4f46e5 0%, #6366f1 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            transform: translateX(5px);
+        }
+
+        /* Feature Description Styling */
+        .feature-desc {
+            transition: all 0.3s cubic-bezier(0.34, 1.56, 0.64, 1);
+        }
+
+        .feature-card:hover .feature-desc {
+            color: #374151;
+            transform: translateX(4px);
+        }
+
+        /* Badge Dot Animation */
+        .badge-dot {
+            animation: dotPulse 2s ease-in-out infinite;
+            transition: all 0.3s ease;
+        }
+
+        @keyframes dotPulse {
+            0%, 100% {
+                box-shadow: 0 0 0px rgba(79, 70, 229, 0.4), inset 0 0 0px rgba(79, 70, 229, 0.2);
+            }
+            50% {
+                box-shadow: 0 0 8px rgba(79, 70, 229, 0.8), inset 0 0 4px rgba(79, 70, 229, 0.4);
+            }
+        }
+
+        .feature-card:hover .badge-dot {
+            transform: scale(1.3);
+        }
+
+        /* Badge Row Animation */
+        .feature-badge-row {
+            animation: badgeSlideIn 0.6s cubic-bezier(0.34, 1.56, 0.64, 1) 0.3s forwards;
+            opacity: 0;
+        }
+
+        @keyframes badgeSlideIn {
+            from {
+                opacity: 0;
+                transform: translateY(10px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        /* Smooth Background Transition */
+        @keyframes bgShift {
+            0% {
+                background-position: 0% 50%;
+            }
+            50% {
+                background-position: 100% 50%;
+            }
+            100% {
+                background-position: 0% 50%;
+            }
+        }
+
+        .bg-shift {
+            background-size: 200% 200%;
+            animation: bgShift 6s ease infinite;
+        }
+
+        /* Bounce Entrance */
+        @keyframes bounceEntrance {
+            0% {
+                opacity: 0;
+                transform: translateY(-40px) scale(0.8);
+            }
+            50% {
+                opacity: 1;
+                transform: translateY(5px) scale(1.05);
+            }
+            100% {
+                opacity: 1;
+                transform: translateY(0) scale(1);
+            }
+        }
+
+        .bounce-entrance {
+            animation: bounceEntrance 0.7s cubic-bezier(0.34, 1.56, 0.64, 1);
+        }
+
+        /* Smooth Underline Expand */
+        @keyframes expandLine {
+            from {
+                width: 0;
+            }
+            to {
+                width: 100%;
+            }
+        }
+
+        .expand-line {
+            animation: expandLine 0.8s cubic-bezier(0.34, 1.56, 0.64, 1);
+        }
+
+
+        .animate-blob {
+            animation: blob 7s infinite;
+        }
+
+        .animation-delay-2000 {
+            animation-delay: 2s;
+        }
+
+        .animation-delay-4000 {
+            animation-delay: 4s;
+        }
+
+        /* Slide Up Animation */
+        .animate-slide-up {
+            animation: slideUp 0.8s ease-out;
+        }
+
+        /* Enhanced Input Fields */
+        input, textarea, select {
+            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+            border-color: #e2e8f0;
+        }
+
+        input:focus, textarea:focus, select:focus {
+            border-color: #4f46e5;
+            box-shadow: 0 0 0 3px rgba(79, 70, 229, 0.1);
+            outline: none;
+        }
+
+        /* List item with icon */
+        .feature-list li {
+            animation: slideUp 0.6s ease-out both;
+        }
+
+        .feature-list li:nth-child(1) { animation-delay: 100ms; }
+        .feature-list li:nth-child(2) { animation-delay: 200ms; }
+        .feature-list li:nth-child(3) { animation-delay: 300ms; }
+        .feature-list li:nth-child(4) { animation-delay: 400ms; }
+
+        /* CTA Button Enhancement */
+        .cta-button {
+            position: relative;
+            overflow: hidden;
+        }
+
+        .cta-button:before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: rgba(255, 255, 255, 0.1);
+            transition: left 0.5s;
+        }
+
+        .cta-button:hover:before {
+            left: 100%;
+        }
+
+        /* Professional Divider */
+        .divider-gradient {
+            background: linear-gradient(90deg, 
+                transparent 0%, 
+                rgba(79, 70, 229, 0.3) 20%, 
+                rgba(79, 70, 229, 0.3) 80%, 
+                transparent 100%);
+            height: 1px;
+        }
+
+        /* Hover shadow effect */
+        .hover-lift:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 20px 40px rgba(79, 70, 229, 0.15);
+        }
+
+        /* Text gradient underline on hover */
+        .underline-gradient {
+            background: linear-gradient(90deg, #4f46e5, #f59e0b);
+            background-size: 0 2px;
+            background-repeat: no-repeat;
+            background-position: left bottom;
+            transition: background-size 0.3s;
+        }
+
+        .underline-gradient:hover {
+            background-size: 100% 2px;
+        }
     </style>
 
 
 </head>
 
-<body class="bg-neutral-50 text-gray-700 font-sans">
+<body class="text-slate-700 font-sans scroll-smooth">
     <!-- ================= NAVBAR ================= -->
-    <nav class="fixed top-4 inset-x-0 mx-auto w-[90%] bg-white rounded-3xl shadow-soft-lg z-50 overflow-visible border border-neutral-100">
-        <div class="flex items-center justify-between px-6 py-3">
+    <nav class="fixed top-4 inset-x-0 mx-auto w-[90%] glass-effect rounded-2xl shadow-soft-lg z-50 overflow-visible">
+        <div class="flex items-center justify-between px-6 py-4">
 
             <!-- Logo -->
             <div class="flex items-center gap-3">
@@ -100,218 +1453,205 @@
 
 
             <!-- Desktop Menu -->
-            <ul class="hidden md:flex gap-8 text-neutral-700 font-medium">
-                <li><a href="./index.html" class="hover:text-primary-600 transition-colors">Home</a></li>
-                <li><a href="./About.html" class="hover:text-primary-600 transition-colors">About</a></li>
-                <li><a href="./Services.html" class="hover:text-primary-600 transition-colors">Services</a></li>
-                <li><a href="./Contact.html" class="hover:text-primary-600 transition-colors">Contact</a></li>
+            <ul class="hidden md:flex gap-8 font-medium">
+                <li><a href="./index.html" class="nav-link">Home</a></li>
+                <li><a href="./About.html" class="nav-link">About</a></li>
+                <li><a href="./Services.html" class="nav-link">Services</a></li>
+                <li><a href="./Contact.html" class="nav-link">Contact</a></li>
             </ul>
 
             <!-- CTA -->
-            <a href="./signUP.html" class="hidden md:inline-block bg-gradient-to-r from-primary-600 to-primary-700 text-white px-6 py-2 rounded-full font-semibold shadow-soft-md hover:shadow-soft-lg transition-all hover:-translate-y-0.5">
-                Register
-            </a>
+            <button class="hidden md:inline-block btn-primary" onclick="window.location.href='./signUP.html'">
+                Get Started
+            </button>
 
             <!-- Toggle Button -->
-            <button id="menu-btn" class="md:hidden text-2xl text-neutral-700 transition-transform duration-300 hover:text-primary-600">
+            <button id="menu-btn" class="md:hidden text-2xl text-slate-700 transition-transform duration-300 hover:text-primary-600">
                 <i class="fa-solid fa-bars"></i>
             </button>
         </div>
 
         <!-- Mobile Menu -->
-        <div id="mobile-menu" class="absolute top-full left-0 w-full bg-white rounded-3xl shadow-soft-xl z-40 mt-2
+        <div id="mobile-menu" class="absolute top-full left-0 w-full glass-effect rounded-2xl shadow-soft-xl z-40 mt-2
            opacity-0 -translate-y-6 pointer-events-none
            transition-all duration-500
-           ease-[cubic-bezier(.34,1.56,.64,1)]
-           border border-neutral-100">
-            <ul class="flex flex-col text-center py-6 gap-4 font-medium text-neutral-700">
-                <li><a href="./index.html" class="hover:text-primary-600 transition-colors">Home</a></li>
-                <li><a href="./About.html" class="hover:text-primary-600 transition-colors">About</a></li>
-                <li><a href="./Services.html" class="hover:text-primary-600 transition-colors">Services</a></li>
-                <li><a href="./Contact.html" class="hover:text-primary-600 transition-colors">Contact</a></li>
-                <li>
-                    <a href="./signUP.html" class="inline-block bg-gradient-to-r from-primary-600 to-primary-700 text-white px-6 py-2 rounded-full font-semibold shadow-soft-md mt-2 transition-all hover:-translate-y-0.5">
-                        Register
-                    </a>
+           ease-[cubic-bezier(.34,1.56,.64,1)]">
+            <ul class="flex flex-col text-center py-6 gap-4 font-medium">
+                <li><a href="./index.html" class="nav-link block">Home</a></li>
+                <li><a href="./About.html" class="nav-link block">About</a></li>
+                <li><a href="./Services.html" class="nav-link block">Services</a></li>
+                <li><a href="./Contact.html" class="nav-link block">Contact</a></li>
+                <li class="pt-2 border-t border-slate-200">
+                    <button class="btn-primary w-48" onclick="window.location.href='./signUP.html'">
+                        Get Started
+                    </button>
                 </li>
             </ul>
         </div>
     </nav>
 
-    <main class="pt-20">
-        <!-- home -->
-        <section class="bg-neutral-50 py-20 px-6">
-            <div class="relative max-w-7xl mx-auto rounded-3xl overflow-hidden bg-cover bg-center"
-                style="background-image: url('./asset/image/home2.jpg');"> 
-
-                <div class="absolute inset-0 bg-black/60"></div>
-
-                <!-- Content -->
-                <div class="relative p-12 md:p-20 text-white max-w-3xl">
-                    <h1 class="text-4xl md:text-5xl lg:text-5xl font-bold leading-tight" data-aos="zoom-in">
-                        <span class="text-primary-300">upPlan</span>, up your profitability <br />
-                    </h1>
-                    <p class="text-2xl mt-4 mb-4 text-neutral-200">We look then you leap</p>
-
-                    <button class="mt-12 w-full max-w-xs mx-auto block rounded-full bg-gradient-to-r from-primary-600 to-primary-700 px-6 py-3 font-semibold text-white
-                    shadow-soft-xl
-                    transition-all duration-250 hover:-translate-y-0.5 hover:shadow-soft-2xl active:translate-y-0">
-                        Get in Touch
-                    </button>
-
-
-                    <!-- Info Card -->
-                    <div class="mt-8 rounded-2xl bg-neutral-900/60 backdrop-blur-md p-6 grid grid-cols-1 sm:grid-cols-2 gap-6 border border-white/10"
-                        data-aos="flip-left">
-                        <div>
-                            <p class="text-sm text-primary-300 font-semibold">location</p>
-                            <p class="font-medium text-neutral-100">Abakaliki Ebonyi state</p>
+    <main class="pt-24">
+        <!-- HERO SECTION -->
+        <section class="relative py-32 px-6 overflow-hidden">
+            <!-- Animated Background -->
+            <div class="absolute top-0 right-0 w-96 h-96 bg-primary-400 rounded-full mix-blend-multiply filter blur-3xl opacity-20 animate-blob"></div>
+            <div class="absolute bottom-0 left-0 w-96 h-96 bg-accent-500 rounded-full mix-blend-multiply filter blur-3xl opacity-20 animate-blob animation-delay-2000"></div>
+            
+            <div class="relative max-w-7xl mx-auto">
+                <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+                    <!-- Left Content -->
+                    <div class="animate-slide-up" data-aos="fade-right">
+                        <div class="inline-block mb-6">
+                            <span class="badge-premium">Transform Your Trading</span>
                         </div>
-                        <div>
-                            <p class="text-sm text-primary-300 font-semibold">Phone</p>
-                            <p class="font-medium text-neutral-100">(+234) 9110 891 201</p>
-                        </div>
-                        <div>
-                            <p class="text-sm text-primary-300 font-semibold">Email</p>
-                            <p class="font-medium text-neutral-100">upplanoffical@gmail.com</p>
-                        </div>
-                        <div>
-                            <p class="text-sm text-primary-300 font-semibold">Twitter</p>
-                            <p class="font-medium text-neutral-100">@upPlanOffical</p>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </section>
-
-        <!-- FLOWING TEXT -->
-        <section class="relative overflow-hidden bg-neutral-900 py-6">
-            <div class="flex w-max animate-marquee">
-
-                <div class="flex whitespace-nowrap">
-                    <p class="mx-8 text-lg font-semibold text-primary-400">
-                        Your Strategy Is Not the Problem. Your Discipline Is • UpPlan exists to enforce what you already
-                        know you should do • Emotional trading eliminated • Start Building Discipline Today
-                    </p>
-                    <p class="mx-8 text-lg font-semibold text-primary-400">
-                        Your Strategy Is Not the Problem. Your Discipline Is • UpPlan exists to enforce what you already
-                        know you should do • Emotional trading eliminated • Start Building Discipline Today
-                    </p>
-                    <p class="mx-8 text-lg font-semibold text-primary-400">
-                        Your Strategy Is Not the Problem. Your Discipline Is • UpPlan exists to enforce what you already
-                        know you should do • Emotional trading eliminated • Start Building Discipline Today
-                    </p>
-                </div>
-
-                <!-- (DUPLICATE FOR LOOP) -->
-                <div class="flex whitespace-nowrap">
-                    <p class="mx-8 text-lg font-semibold text-primary-400">
-                        Your Strategy Is Not the Problem. Your Discipline Is • UpPlan exists to enforce what you already
-                        know you should do • Emotional trading eliminated • Start Building Discipline Today
-                    </p>
-                    <p class="mx-8 text-lg font-semibold text-primary-400">
-                        Your Strategy Is Not the Problem. Your Discipline Is • UpPlan exists to enforce what you already
-                        know you should do • Emotional trading eliminated • Start Building Discipline Today
-                    </p>
-                    <p class="mx-8 text-lg font-semibold text-primary-400">
-                        Your Strategy Is Not the Problem. Your Discipline Is • UpPlan exists to enforce what you already
-                        know you should do • Emotional trading eliminated • Start Building Discipline Today
-                    </p>
-                </div>
-
-            </div>
-        </section>
-
-        <section class="bg-white py-24 px-6">
-            <div class="max-w-7xl mx-auto grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
-
-                <!-- IMAGE SIDE -->
-                <div class="relative">
-
-                    <!-- Main image -->
-                    <img src="./asset/image/people.jpg" alt="Service preview"
-                        class="w-full rounded-3xl object-cover shadow-soft-2xl" />
-
-                    <!-- Floating image (HALF OVERLAP) -->
-                    <div class="absolute top-1/2 right-0 hidden md:block translate-x-1/4 -translate-y-1/2">
-                        <img src="./asset/image/people3.jpg" alt="Detail"
-                            class="w-72 rounded-3xl shadow-soft-2xl border border-primary-100" />
-                    </div>
-
-                    <!-- Experience badge -->
-                    <div class="absolute top-6 left-6 rounded-2xl bg-gradient-to-r from-primary-600 to-primary-700 text-white px-6 py-4 shadow-soft-lg font-medium">
-                        <p class="text-2xl font-bold">30+</p>
-                        <p class="text-sm">Active Traders</p>
-                    </div>
-
-                </div>
-
-
-                <!-- CONTENT SIDE -->
-                <div>
-                    <span class="inline-block mb-4 text-sm font-semibold tracking-widest text-primary-600 uppercase">
-                        Get to know
-                    </span>
-
-                    <h2 class="text-4xl lg:text-5xl font-bold text-neutral-900 leading-tight">
-                        We provide structured <br />
-                        <span class="text-primary-600">trading discipline</span> systems
-                    </h2>
-
-                    <p class="mt-6 text-neutral-600 max-w-xl leading-relaxed">
-                        UpPlan enforces accountability, risk management, and consistency —
-                        helping traders eliminate emotional decisions and scale sustainably.
-                    </p>
-
-                    <!-- Bullet points -->
-                    <ul class="mt-8 space-y-4">
-                        <li class="flex items-start gap-3">
-                            <span class="mt-1 h-2 w-2 rounded-full bg-primary-500 flex-shrink-0"></span>
-                            <span class="text-neutral-700">
-                                Enforced trading rules & risk limits
-                            </span>
-                        </li>
-
-                        <li class="flex items-start gap-3">
-                            <span class="mt-1 h-2 w-2 rounded-full bg-primary-500 flex-shrink-0"></span>
-                            <span class="text-neutral-700">
-                                Weekly discipline scoring & performance reviews
-                            </span>
-                        </li>
-
-                        <li class="flex items-start gap-3">
-                            <span class="mt-1 h-2 w-2 rounded-full bg-primary-500 flex-shrink-0"></span>
-                            <span class="text-neutral-700">
-                                Human + system accountability (not automated fluff)
-                            </span>
-                        </li>
-                    </ul>
-
-                    <!-- CTA -->
-                    <div class="mt-10 flex flex-col sm:flex-row items-start sm:items-center gap-6">
-                        <a href="#pricing">
-                            <button class="w-full sm:w-auto rounded-full bg-gradient-to-r from-primary-600 to-primary-700 px-8 py-3 font-semibold text-white
-                            shadow-soft-lg
-                            transition-all duration-250 hover:-translate-y-0.5 hover:shadow-soft-xl active:translate-y-0">
-                                Explore plans
+                        
+                        <h1 class="text-5xl md:text-6xl font-bold leading-tight mb-6">
+                            <span class="gradient-text">Discipline Beats Strategy</span>
+                        </h1>
+                        
+                        <p class="text-xl text-slate-600 mb-8 leading-relaxed">
+                            UpPlan enforces the structure, accountability, and consistency that separate winning traders from the rest. Your strategy isn't the problem—your discipline is.
+                        </p>
+                        
+                        <div class="flex flex-col sm:flex-row gap-4 mb-12">
+                            <button class="btn-primary" onclick="window.location.href='./signUP.html'">
+                                Start Free Trial
                             </button>
-                        </a>
-
-                        <div class="flex items-center gap-3">
-                            <div class="text-sm">
-                                <p class="font-semibold text-neutral-900">UpPlan Team</p>
-                                <p class="text-neutral-500">Trader Accountability</p>
+                            <button class="px-8 py-3 rounded-lg border-2 border-primary-500 text-primary-600 font-semibold hover:bg-primary-50 transition-all duration-300">
+                                Watch Demo
+                            </button>
+                        </div>
+                        
+                        <div class="grid grid-cols-3 gap-6">
+                            <div>
+                                <p class="text-3xl font-bold gradient-text">500+</p>
+                                <p class="text-sm text-slate-600 mt-1">Active Traders</p>
+                            </div>
+                            <div>
+                                <p class="text-3xl font-bold gradient-text">99%</p>
+                                <p class="text-sm text-slate-600 mt-1">Satisfaction</p>
+                            </div>
+                            <div>
+                                <p class="text-3xl font-bold gradient-text">24/7</p>
+                                <p class="text-sm text-slate-600 mt-1">Support</p>
                             </div>
                         </div>
                     </div>
+                    
+                    <!-- Right Visual -->
+                    <div class="relative" data-aos="fade-left">
+                        <div class="card-modern">
+                            <div class="absolute -top-4 -right-4 w-24 h-24 bg-primary-500 rounded-full opacity-10"></div>
+                            <img src="./asset/image/home2.jpg" alt="Dashboard Preview" class="w-full rounded-lg shadow-soft-xl" />
+                        </div>
+                    </div>
                 </div>
-
             </div>
         </section>
 
+        <!-- MARQUEE SECTION -->
+        <section class="relative overflow-hidden bg-gradient-to-r from-slate-900 via-slate-800 to-slate-900 py-8">
+            <div class="flex w-max animate-marquee">
+                <div class="flex whitespace-nowrap">
+                    <p class="mx-8 text-lg font-semibold text-accent-400">
+                        Your Strategy Is Not the Problem. Your Discipline Is • UpPlan enforces what you already know • Emotional trading eliminated • Start Building Discipline Today
+                    </p>
+                    <p class="mx-8 text-lg font-semibold text-accent-400">
+                        Your Strategy Is Not the Problem. Your Discipline Is • UpPlan enforces what you already know • Emotional trading eliminated • Start Building Discipline Today
+                    </p>
+                </div>
 
-        <!-- service -->
-        <section class="bg-white py-24 px-6">
+                <div class="flex whitespace-nowrap">
+                    <p class="mx-8 text-lg font-semibold text-accent-400">
+                        Your Strategy Is Not the Problem. Your Discipline Is • UpPlan enforces what you already know • Emotional trading eliminated • Start Building Discipline Today
+                    </p>
+                    <p class="mx-8 text-lg font-semibold text-accent-400">
+                        Your Strategy Is Not the Problem. Your Discipline Is • UpPlan enforces what you already know • Emotional trading eliminated • Start Building Discipline Today
+                    </p>
+                </div>
+            </div>
+        </section>
+
+        <!-- FEATURES SECTION -->
+        <section class="py-32 px-6 relative">
+            <div class="max-w-7xl mx-auto">
+                <div class="text-center mb-20" data-aos="fade-up">
+                    <span class="badge-premium mb-4">Our Solution</span>
+                    <h2 class="text-5xl font-bold mb-6">Structured Trading Discipline</h2>
+                    <p class="text-xl text-slate-600 max-w-2xl mx-auto">
+                        UpPlan enforces accountability, risk management, and consistency — helping traders eliminate emotional decisions
+                    </p>
+                </div>
+
+                <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                    <!-- Feature Card 1 -->
+                    <div class="card-modern group hover-scale" data-aos="fade-up" data-aos-delay="100">
+                        <div class="w-12 h-12 rounded-lg bg-gradient-to-br from-primary-500 to-primary-600 mb-4 flex items-center justify-center icon-glow-primary">
+                            <i class="fas fa-chart-line text-white text-xl icon-bounce"></i>
+                        </div>
+                        <h3 class="text-xl font-bold mb-3 text-neutral-900">Trading Rules</h3>
+                        <p class="text-slate-600 leading-relaxed">
+                            Enforced daily/weekly risk limits, maximum position sizes, and strategy rules that prevent emotional trading
+                        </p>
+                    </div>
+
+                    <!-- Feature Card 2 -->
+                    <div class="card-modern group hover-scale" data-aos="fade-up" data-aos-delay="200">
+                        <div class="w-12 h-12 rounded-lg bg-gradient-to-br from-accent-500 to-accent-600 mb-4 flex items-center justify-center icon-glow-accent">
+                            <i class="fas fa-bar-chart text-white text-xl icon-bounce"></i>
+                        </div>
+                        <h3 class="text-xl font-bold mb-3 text-neutral-900">Weekly Reviews</h3>
+                        <p class="text-slate-600 leading-relaxed">
+                            Comprehensive discipline scoring, performance analysis, and personalized feedback to improve consistency
+                        </p>
+                    </div>
+
+                    <!-- Feature Card 3 -->
+                    <div class="card-modern group hover-scale" data-aos="fade-up" data-aos-delay="300">
+                        <div class="w-12 h-12 rounded-lg bg-gradient-to-br from-success-500 to-success-600 mb-4 flex items-center justify-center icon-glow-success">
+                            <i class="fas fa-shield-alt text-white text-xl icon-bounce"></i>
+                        </div>
+                        <h3 class="text-xl font-bold mb-3 text-neutral-900">Accountability</h3>
+                        <p class="text-slate-600 leading-relaxed">
+                            Human review system that ensures traders stay accountable to their rules and discipline score
+                        </p>
+                    </div>
+
+                    <!-- Feature Card 4 -->
+                    <div class="card-modern group hover-scale" data-aos="fade-up" data-aos-delay="100">
+                        <div class="w-12 h-12 rounded-lg bg-gradient-to-br from-primary-500 to-primary-600 mb-4 flex items-center justify-center icon-glow-primary">
+                            <i class="fas fa-clock text-white text-xl icon-bounce"></i>
+                        </div>
+                        <h3 class="text-xl font-bold mb-3 text-neutral-900">Real-Time Monitoring</h3>
+                        <p class="text-slate-600 leading-relaxed">
+                            Live tracking of your trading activity with instant alerts for rule violations and near-violations
+                        </p>
+                    </div>
+
+                    <!-- Feature Card 5 -->
+                    <div class="card-modern group hover-scale" data-aos="fade-up" data-aos-delay="200">
+                        <div class="w-12 h-12 rounded-lg bg-gradient-to-br from-accent-500 to-accent-600 mb-4 flex items-center justify-center icon-glow-accent">
+                            <i class="fas fa-book text-white text-xl icon-bounce"></i>
+                        </div>
+                        <h3 class="text-xl font-bold mb-3 text-neutral-900">Trading Journal</h3>
+                        <p class="text-slate-600 leading-relaxed">
+                            Document your trades, decisions, and emotions. Identify patterns and improve your trading psychology
+                        </p>
+                    </div>
+
+                    <!-- Feature Card 6 -->
+                    <div class="card-modern group hover-scale" data-aos="fade-up" data-aos-delay="300">
+                        <div class="w-12 h-12 rounded-lg bg-gradient-to-br from-success-500 to-success-600 mb-4 flex items-center justify-center icon-glow-success">
+                            <i class="fas fa-users text-white text-xl icon-bounce"></i>
+                        </div>
+                        <h3 class="text-xl font-bold mb-3 text-neutral-900">Community</h3>
+                        <p class="text-slate-600 leading-relaxed">
+                            Connect with 500+ disciplined traders, share insights, and grow together in a supportive community
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </section>
             <div class="max-w-7xl mx-auto">
 
                 <!-- Section Header -->
@@ -546,6 +1886,187 @@
             </div>
         </section>
 
+        <!-- Premium Tracking Features Section -->
+        <section class="bg-gradient-to-b from-slate-50 to-white py-20 px-6">
+            <div class="max-w-7xl mx-auto">
+                
+                <!-- Section Header -->
+                <div class="text-center mb-20" data-aos="fade-up">
+                    <span class="inline-flex items-center gap-2 rounded-full
+                       bg-primary-100 px-4 py-2 text-sm font-semibold text-primary-600 tracking-widest uppercase mb-4">
+                        <i class="fas fa-sparkles"></i>
+                        Premium Features
+                    </span>
+                    <h2 class="mt-6 text-4xl md:text-5xl font-bold text-neutral-900 max-w-3xl mx-auto">
+                        Professional <span class="text-primary-600">Trade Monitoring</span><br>Built for Serious Traders
+                    </h2>
+                    <p class="mt-6 text-xl text-neutral-600 max-w-2xl mx-auto leading-relaxed">
+                        Get real-time insights, personalized feedback, and disciplined accountability to transform your trading execution
+                    </p>
+                </div>
+
+                <!-- Features Grid -->
+                <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-6">
+
+                    <!-- Feature 1: Trade-by-Trade Review -->
+                    <div class="group relative rounded-2xl border border-neutral-200 bg-white p-8 
+                         transition-all duration-300 hover:border-primary-300 hover:shadow-soft-xl hover:-translate-y-2 
+                         feature-card" 
+                         data-aos="fade-up" data-aos-delay="0">
+                        
+                        <div class="absolute inset-0 rounded-2xl bg-gradient-to-br from-primary-50 to-transparent opacity-0 group-hover:opacity-100 transition duration-500"></div>
+                        
+                        <div class="relative mb-6">
+                            <div class="w-14 h-14 rounded-xl bg-gradient-to-br from-primary-100 to-primary-50 
+                                      flex items-center justify-center icon-glow-primary mb-4 feature-icon-container">
+                                <i class="fas fa-microscope text-primary-600 text-2xl icon-bounce"></i>
+                            </div>
+                            <h3 class="text-lg font-bold text-neutral-900 feature-title">
+                                Trade-by-Trade<br>Review
+                            </h3>
+                        </div>
+                        
+                        <p class="relative text-neutral-600 text-sm leading-relaxed mb-6 feature-desc">
+                            Detailed analysis of every trade execution, entry logic, and exit strategy with actionable feedback
+                        </p>
+                        
+                        <div class="relative flex items-center gap-3 pt-4 border-t border-neutral-100 feature-badge-row">
+                            <div class="w-2 h-2 rounded-full bg-primary-500 badge-dot"></div>
+                            <span class="text-xs font-semibold text-primary-600 uppercase tracking-wider">Weekly Depth</span>
+                        </div>
+                    </div>
+
+                    <!-- Feature 2: Prop Challenge Monitoring -->
+                    <div class="group relative rounded-2xl border border-neutral-200 bg-white p-8 
+                         transition-all duration-300 hover:border-accent-300 hover:shadow-soft-xl hover:-translate-y-2 
+                         feature-card" 
+                         data-aos="fade-up" data-aos-delay="100">
+                        
+                        <div class="absolute inset-0 rounded-2xl bg-gradient-to-br from-accent-50 to-transparent opacity-0 group-hover:opacity-100 transition duration-500"></div>
+                        
+                        <div class="relative mb-6">
+                            <div class="w-14 h-14 rounded-xl bg-gradient-to-br from-accent-100 to-accent-50 
+                                      flex items-center justify-center icon-glow-accent mb-4 feature-icon-container">
+                                <i class="fas fa-gauge-high text-accent-600 text-2xl icon-bounce"></i>
+                            </div>
+                            <h3 class="text-lg font-bold text-neutral-900 feature-title">
+                                Prop Challenge<br>Monitoring
+                            </h3>
+                        </div>
+                        
+                        <p class="relative text-neutral-600 text-sm leading-relaxed mb-6 feature-desc">
+                            Real-time tracking of drawdown rules, daily loss limits, and prop firm compliance across all accounts
+                        </p>
+                        
+                        <div class="relative flex items-center gap-3 pt-4 border-t border-neutral-100 feature-badge-row">
+                            <div class="w-2 h-2 rounded-full bg-accent-500 badge-dot"></div>
+                            <span class="text-xs font-semibold text-accent-600 uppercase tracking-wider">24/7 Alerts</span>
+                        </div>
+                    </div>
+
+                    <!-- Feature 3: Priority Feedback -->
+                    <div class="group relative rounded-2xl border border-neutral-200 bg-white p-8 
+                         transition-all duration-300 hover:border-primary-300 hover:shadow-soft-xl hover:-translate-y-2 
+                         feature-card" 
+                         data-aos="fade-up" data-aos-delay="200">
+                        
+                        <div class="absolute inset-0 rounded-2xl bg-gradient-to-br from-primary-50 to-transparent opacity-0 group-hover:opacity-100 transition duration-500"></div>
+                        
+                        <div class="relative mb-6">
+                            <div class="w-14 h-14 rounded-xl bg-gradient-to-br from-primary-100 to-primary-50 
+                                      flex items-center justify-center icon-glow-primary mb-4 feature-icon-container">
+                                <i class="fas fa-comments text-primary-600 text-2xl icon-bounce"></i>
+                            </div>
+                            <h3 class="text-lg font-bold text-neutral-900 feature-title">
+                                Priority<br>Feedback
+                            </h3>
+                        </div>
+                        
+                        <p class="relative text-neutral-600 text-sm leading-relaxed mb-6 feature-desc">
+                            Personalized coaching notes highlighting your biggest mistakes and specific corrections for next week
+                        </p>
+                        
+                        <div class="relative flex items-center gap-3 pt-4 border-t border-neutral-100 feature-badge-row">
+                            <div class="w-2 h-2 rounded-full bg-primary-500 badge-dot"></div>
+                            <span class="text-xs font-semibold text-primary-600 uppercase tracking-wider">Weekly Report</span>
+                        </div>
+                    </div>
+
+                    <!-- Feature 4: Daily Trade Discipline -->
+                    <div class="group relative rounded-2xl border border-neutral-200 bg-white p-8 
+                         transition-all duration-300 hover:border-success-300 hover:shadow-soft-xl hover:-translate-y-2 
+                         feature-card" 
+                         data-aos="fade-up" data-aos-delay="300">
+                        
+                        <div class="absolute inset-0 rounded-2xl bg-gradient-to-br from-success-50 to-transparent opacity-0 group-hover:opacity-100 transition duration-500"></div>
+                        
+                        <div class="relative mb-6">
+                            <div class="w-14 h-14 rounded-xl bg-gradient-to-br from-success-100 to-success-50 
+                                      flex items-center justify-center icon-glow-success mb-4 feature-icon-container">
+                                <i class="fas fa-calendar-check text-success-600 text-2xl icon-bounce"></i>
+                            </div>
+                            <h3 class="text-lg font-bold text-neutral-900 feature-title">
+                                Daily Trade<br>Discipline Score
+                            </h3>
+                        </div>
+                        
+                        <p class="relative text-neutral-600 text-sm leading-relaxed mb-6 feature-desc">
+                            Daily discipline scoring (0-100) that tracks rule compliance and emotional trading patterns instantly
+                        </p>
+                        
+                        <div class="relative flex items-center gap-3 pt-4 border-t border-neutral-100 feature-badge-row">
+                            <div class="w-2 h-2 rounded-full bg-success-500 badge-dot"></div>
+                            <span class="text-xs font-semibold text-success-600 uppercase tracking-wider">Real-Time</span>
+                        </div>
+                    </div>
+
+                    <!-- Feature 5: Personalized Guidance -->
+                    <div class="group relative rounded-2xl border border-neutral-200 bg-white p-8 
+                         transition-all duration-300 hover:border-accent-300 hover:shadow-soft-xl hover:-translate-y-2 
+                         feature-card" 
+                         data-aos="fade-up" data-aos-delay="400">
+                        
+                        <div class="absolute inset-0 rounded-2xl bg-gradient-to-br from-accent-50 to-transparent opacity-0 group-hover:opacity-100 transition duration-500"></div>
+                        
+                        <div class="relative mb-6">
+                            <div class="w-14 h-14 rounded-xl bg-gradient-to-br from-accent-100 to-accent-50 
+                                      flex items-center justify-center icon-glow-accent mb-4 feature-icon-container">
+                                <i class="fas fa-lightbulb text-accent-600 text-2xl icon-bounce"></i>
+                            </div>
+                            <h3 class="text-lg font-bold text-neutral-900 feature-title">
+                                Personalized<br>Correction Path
+                            </h3>
+                        </div>
+                        
+                        <p class="relative text-neutral-600 text-sm leading-relaxed mb-6 feature-desc">
+                            Custom improvement roadmap based on your unique patterns, weak points, and trading psychology gaps
+                        </p>
+                        
+                        <div class="relative flex items-center gap-3 pt-4 border-t border-neutral-100 feature-badge-row">
+                            <div class="w-2 h-2 rounded-full bg-accent-500 badge-dot"></div>
+                            <span class="text-xs font-semibold text-accent-600 uppercase tracking-wider">Progressive</span>
+                        </div>
+                    </div>
+
+                </div>
+
+                <!-- CTA Section -->
+                <div class="mt-20 text-center" data-aos="fade-up" data-aos-delay="500">
+                    <p class="text-neutral-600 mb-6 text-lg">
+                        Transform your trading discipline with professional-grade monitoring and accountability
+                    </p>
+                    <div class="flex flex-col sm:flex-row justify-center gap-4">
+                        <button class="btn-primary px-8 py-4 text-lg rounded-xl" onclick="window.location.href='./signUP.html'">
+                            Start Your Review
+                        </button>
+                        <a href="./Services.html" class="px-8 py-4 text-lg rounded-xl border-2 border-primary-600 text-primary-600 
+                           font-semibold hover:bg-primary-50 transition-all duration-300">
+                            View All Services
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </section>
 
         <!-- Breach System -->
         <section class="relative bg-fixed bg-center bg-cover py-28 px-6"
@@ -644,131 +2165,114 @@
 
 
         <!-- Pricing -->
-        <section id="pricing" class="relative py-32 px-6 bg-white text-neutral-900">
-            <div class="max-w-7xl mx-auto">
+        <section id="pricing" class="relative py-32 px-6">
+            <div class="absolute inset-0 bg-gradient-to-b from-transparent via-primary-50/20 to-transparent opacity-40"></div>
+            
+            <div class="relative max-w-7xl mx-auto">
 
                 <!-- Header -->
-                <div class="mb-24 text-center" data-aos="fade-up" data-aos-anchor-placement="center-bottom">
-                    <p class="text-primary-600 tracking-widest uppercase text-sm font-bold">
-                        Pricing
+                <div class="mb-24 text-center" data-aos="fade-up">
+                    <span class="badge-premium mb-4">Simple Pricing</span>
+                    <h2 class="text-5xl font-bold mb-6">Choose Your Plan</h2>
+                    <p class="text-xl text-slate-600 max-w-2xl mx-auto">
+                        Scale your discipline with pricing that grows with your success
                     </p>
-                    <h2 class="mt-4 text-5xl font-bold">
-                        Choose your level of discipline
-                    </h2>
                 </div>
 
                 <!-- Pricing Grid -->
-                <div class="grid grid-cols-1 lg:grid-cols-2 gap-12">
+                <div class="grid grid-cols-1 lg:grid-cols-2 gap-8">
 
                     <!-- Plan 1: Builder -->
-                    <div class="relative rounded-3xl border border-neutral-200 p-12
-                                    bg-white text-neutral-900
-                                    shadow-soft-lg
-                                    transition-all duration-300 hover:border-primary-300 hover:shadow-soft-xl hover:-translate-y-1" data-aos="fade-right" data-aos-offset="300"
-                        data-aos-easing="ease-in-sine">
+                    <div class="card-modern" data-aos="fade-right">
+                        <div class="mb-8">
+                            <h3 class="text-3xl font-bold mb-3">UpPlan Builder</h3>
+                            <p class="text-slate-600">Perfect for traders building their foundation</p>
+                        </div>
 
-                        <h3 class="text-3xl font-semibold text-neutral-900">UpPlan Builder</h3>
-                        <p class="mt-3 text-neutral-600">
-                            For traders building structure and consistency.
-                        </p>
+                        <div class="mb-8">
+                            <div class="text-5xl font-bold gradient-text">$20</div>
+                            <p class="text-slate-500 mt-2">/month • Billed yearly: $200</p>
+                        </div>
 
-                        <p class="mt-10 text-6xl font-bold text-neutral-900">
-                            $20<span class="text-2xl text-neutral-600 font-normal">/mo</span>
-                        </p>
-
-                        <p class="mt-4 text-sm text-neutral-500">
-                            $55 quarterly · $105 semi-annually · $200 yearly
-                        </p>
-
-                        <div class="my-10 h-px bg-neutral-200"></div>
-
-                        <ul class="space-y-4 text-neutral-700">
+                        <ul class="space-y-4 mb-8">
                             <li class="flex items-start gap-3">
-                                <span class="h-1.5 w-1.5 rounded-full bg-primary-500 mt-1.5 flex-shrink-0"></span>
-                                <span>Trading plan setup & review</span>
+                                <svg class="w-5 h-5 text-success-500 flex-shrink-0 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
+                                </svg>
+                                <span class="text-slate-700">Trading plan creation & setup</span>
                             </li>
                             <li class="flex items-start gap-3">
-                                <span class="h-1.5 w-1.5 rounded-full bg-primary-500 mt-1.5 flex-shrink-0"></span>
-                                <span>Weekly discipline score tracking</span>
+                                <svg class="w-5 h-5 text-success-500 flex-shrink-0 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
+                                </svg>
+                                <span class="text-slate-700">Weekly discipline scoring</span>
                             </li>
                             <li class="flex items-start gap-3">
-                                <span class="h-1.5 w-1.5 rounded-full bg-primary-500 mt-1.5 flex-shrink-0"></span>
-                                <span>Trade journaling & logging</span>
+                                <svg class="w-5 h-5 text-success-500 flex-shrink-0 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
+                                </svg>
+                                <span class="text-slate-700">Trade journaling system</span>
                             </li>
                             <li class="flex items-start gap-3">
-                                <span class="h-1.5 w-1.5 rounded-full bg-primary-500 mt-1.5 flex-shrink-0"></span>
-                                <span>Performance summaries</span>
+                                <svg class="w-5 h-5 text-success-500 flex-shrink-0 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
+                                </svg>
+                                <span class="text-slate-700">Performance dashboard</span>
                             </li>
                         </ul>
 
-                        <button class="mt-12 w-full rounded-full border border-primary-500 py-3 font-semibold text-primary-600
-                                         transition-all duration-250 hover:bg-primary-50 hover:border-primary-600">
-                            Start with Builder
+                        <button class="w-full btn-primary">
+                            Get Started
                         </button>
                     </div>
 
                     <!-- Plan 2: Accelerator (Featured) -->
-                    <div class="relative rounded-3xl border border-primary-400 p-12
-                                    bg-gradient-to-br from-white via-white to-primary-50 text-neutral-900
-                                    shadow-soft-2xl
-                                    transition-all duration-300 hover:shadow-soft-3xl hover:-translate-y-2">
+                    <div class="card-modern relative border-2 border-primary-500 scale-105 lg:scale-100" data-aos="fade-left">
+                        <div class="absolute -top-4 left-1/2 -translate-x-1/2">
+                            <span class="badge-premium">Most Popular</span>
+                        </div>
 
-                        <span class="absolute -top-4 left-1/2 -translate-x-1/2
-                                       rounded-full bg-gradient-to-r from-primary-600 to-primary-700 px-6 py-2 text-xs
-                                       font-bold text-white tracking-widest uppercase">
-                            Most Chosen
-                        </span>
+                        <div class="mb-8 pt-4">
+                            <h3 class="text-3xl font-bold mb-3">UpPlan Accelerator</h3>
+                            <p class="text-slate-600">For serious traders scaling funded accounts</p>
+                        </div>
 
-                        <h3 class="text-3xl font-semibold text-neutral-900">UpPlan Accelerator</h3>
-                        <p class="mt-3 text-neutral-600">
-                            For traders scaling funded accounts with elite discipline.
-                        </p>
+                        <div class="mb-8">
+                            <div class="text-5xl font-bold gradient-text">$50</div>
+                            <p class="text-slate-500 mt-2">/month • Billed yearly: $500</p>
+                        </div>
 
-                        <p class="mt-10 text-6xl font-bold text-primary-600">
-                            $50<span class="text-2xl text-neutral-600 font-normal">/mo</span>
-                        </p>
-
-                        <p class="mt-4 text-sm text-neutral-500">
-                            $140 quarterly · $270 semi-annually · $500 yearly
-                        </p>
-
-                        <div class="my-10 h-px bg-primary-200"></div>
-
-                        <ul class="space-y-4 text-neutral-700">
+                        <ul class="space-y-4 mb-8">
                             <li class="flex items-start gap-3">
-                                <span class="h-1.5 w-1.5 rounded-full bg-primary-500 mt-1.5 flex-shrink-0"></span>
-                                <span><strong>Everything in Builder</strong></span>
+                                <svg class="w-5 h-5 text-success-500 flex-shrink-0 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
+                                </svg>
+                                <span class="text-slate-700 font-semibold">Everything in Builder, plus:</span>
                             </li>
                             <li class="flex items-start gap-3">
-                                <span class="h-1.5 w-1.5 rounded-full bg-primary-500 mt-1.5 flex-shrink-0"></span>
-                                <span>Trade-by-trade review</span>
+                                <svg class="w-5 h-5 text-success-500 flex-shrink-0 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
+                                </svg>
+                                <span class="text-slate-700">1-on-1 weekly accountability calls</span>
                             </li>
                             <li class="flex items-start gap-3">
-                                <span class="h-1.5 w-1.5 rounded-full bg-primary-500 mt-1.5 flex-shrink-0"></span>
-                                <span>Prop challenge monitoring</span>
+                                <svg class="w-5 h-5 text-success-500 flex-shrink-0 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
+                                </svg>
+                                <span class="text-slate-700">Personalized trading plan review</span>
                             </li>
                             <li class="flex items-start gap-3">
-                                <span class="h-1.5 w-1.5 rounded-full bg-primary-500 mt-1.5 flex-shrink-0"></span>
-                                <span>Priority feedback</span>
-                            </li>
-                            <li class="flex items-start gap-3">
-                                <span class="h-1.5 w-1.5 rounded-full bg-primary-500 mt-1.5 flex-shrink-0"></span>
-                                <span>Daily trade discipline tracking</span>
-                            </li>
-                            <li class="flex items-start gap-3">
-                                <span class="h-1.5 w-1.5 rounded-full bg-primary-500 mt-1.5 flex-shrink-0"></span>
-                                <span>Personalized correction guidance</span>
+                                <svg class="w-5 h-5 text-success-500 flex-shrink-0 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
+                                </svg>
+                                <span class="text-slate-700">Priority support & exclusive community</span>
                             </li>
                         </ul>
 
-                        <button class="mt-12 w-full rounded-full bg-gradient-to-r from-primary-600 to-primary-700 py-3
-                                         font-semibold text-white
-                                         shadow-soft-lg
-                                         transition-all duration-250 hover:-translate-y-0.5 hover:shadow-soft-xl active:translate-y-0">
-                            Upgrade to Accelerator
+                        <button class="w-full btn-primary">
+                            Start Accelerating
                         </button>
                     </div>
-
                 </div>
             </div>
         </section>
@@ -920,14 +2424,14 @@
         <section class="bg-white py-16 px-6">
             <div class="max-w-6xl mx-auto">
 
-                <div class="max-w-3xl mb-20">
+                <div class="max-w-3xl mb-20" data-aos="fade-up">
                     <p class="text-primary-600 uppercase tracking-widest text-sm font-bold">
                         FAQ
                     </p>
-                    <h2 class="mt-4 text-4xl md:text-5xl font-bold text-neutral-900">
+                    <h2 class="mt-4 text-4xl md:text-5xl font-bold text-neutral-900 text-reveal">
                         Clear Rules. No Ambiguity.
                     </h2>
-                    <p class="mt-6 text-neutral-600 text-lg leading-relaxed">
+                    <p class="mt-6 text-neutral-600 text-lg leading-relaxed fade-in-up">
                         UpPlan operates on enforcement and accountability.
                         These answers are direct — by design.
                     </p>
@@ -935,7 +2439,7 @@
 
                 <div class="space-y-4">
 
-                    <div class="faq-item rounded-2xl border border-neutral-200 bg-white transition-all duration-300 hover:border-primary-300 hover:shadow-soft-md">
+                    <div class="faq-item rounded-2xl border border-neutral-200 bg-white transition-all duration-300 hover:border-primary-300 hover:shadow-soft-md scale-in-fade" data-aos="fade-up" data-aos-delay="100">
                         <button class="faq-btn flex w-full items-center justify-between px-8 py-6 text-left">
                             <span class="text-lg font-semibold text-neutral-900">
                                 What happens if I break a rule?
@@ -952,7 +2456,7 @@
                         </div>
                     </div>
 
-                    <div class="faq-item rounded-2xl border border-neutral-200 bg-white transition-all duration-300 hover:border-primary-300 hover:shadow-soft-md">
+                    <div class="faq-item rounded-2xl border border-neutral-200 bg-white transition-all duration-300 hover:border-primary-300 hover:shadow-soft-md scale-in-fade" data-aos="fade-up" data-aos-delay="150">
                         <button class="faq-btn flex w-full items-center justify-between px-8 py-6 text-left">
                             <span class="text-lg font-semibold text-neutral-900">
                                 Can I hide trades?
@@ -988,7 +2492,7 @@
                     </div>
 
                     <!-- Item -->
-                    <div class="faq-item rounded-3xl border border-neutral-200 bg-white">
+                    <div class="faq-item rounded-3xl border border-neutral-200 bg-white scale-in-fade" data-aos="fade-up" data-aos-delay="250">
                         <button class="faq-btn flex w-full items-center justify-between px-8 py-6 text-left">
                             <span class="text-lg font-semibold text-neutral-900">
                                 What if my discipline score drops?
@@ -1011,79 +2515,76 @@
 
     </main>
 
-    <footer class="bg-neutral-950 text-neutral-400 pt-20 pb-10 px-6 border-t border-neutral-800">
-        <div class="max-w-7xl mx-auto grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-12">
+    <footer class="bg-gradient-to-b from-slate-900 to-slate-950 text-slate-300 py-20 px-6 border-t border-slate-800">
+        <div class="max-w-7xl mx-auto">
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12 mb-12">
+                <!-- Brand -->
+                <div class="flex flex-col items-start">
+                    <h4 class="text-white font-semibold mb-6 tracking-wide text-sm uppercase">UpPlan</h4>
+                    <p class="text-sm text-slate-400 leading-relaxed font-sans">
+                        Enforcing discipline, accountability, and consistency in every trading decision.
+                    </p>
+                </div>
 
-            <!-- Brand -->
-            <div>
-                <img src="./asset/image/logo2-remove.png" alt="upPlan logo" width="100" class="h-15 mb-4">
-                <p class="text-sm leading-relaxed text-neutral-500">
-                    upPlan is a trader accountability and performance-tracking platform
-                    built to enforce discipline, structure, and long-term consistency.
-                </p>
-            </div>
+                <!-- Company -->
+                <div class="flex flex-col items-start">
+                    <h4 class="text-white font-semibold mb-6 tracking-wide text-sm uppercase">Company</h4>
+                    <ul class="space-y-3 text-sm">
+                        <li><a href="./About.html" class="text-slate-400 hover:text-primary-400 transition-colors duration-300">About Us</a></li>
+                        <li><a href="./Services.html" class="text-slate-400 hover:text-primary-400 transition-colors duration-300">Services</a></li>
+                        <li><a href="#pricing" class="text-slate-400 hover:text-primary-400 transition-colors duration-300">Pricing</a></li>
+                        <li><a href="./Contact.html" class="text-slate-400 hover:text-primary-400 transition-colors duration-300">Contact</a></li>
+                    </ul>
+                </div>
 
-            <!-- Company -->
-            <div>
-                <h4 class="text-white font-semibold mb-4 tracking-wide">Company</h4>
-                <ul class="space-y-3 text-sm">
-                    <li><a href="#" class="text-neutral-400 hover:text-primary-400 transition-colors">About Us</a></li>
-                    <li><a href="#" class="text-neutral-400 hover:text-primary-400 transition-colors">Services</a></li>
-                    <li><a href="#" class="text-neutral-400 hover:text-primary-400 transition-colors">Pricing</a></li>
-                    <li><a href="#" class="text-neutral-400 hover:text-primary-400 transition-colors">Contact</a></li>
-                </ul>
-            </div>
+                <!-- Resources -->
+                <div class="flex flex-col items-start">
+                    <h4 class="text-white font-semibold mb-6 tracking-wide text-sm uppercase">Resources</h4>
+                    <ul class="space-y-3 text-sm">
+                        <li><a href="#" class="text-slate-400 hover:text-primary-400 transition-colors duration-300">Documentation</a></li>
+                        <li><a href="#" class="text-slate-400 hover:text-primary-400 transition-colors duration-300">FAQ</a></li>
+                        <li><a href="#" class="text-slate-400 hover:text-primary-400 transition-colors duration-300">Blog</a></li>
+                        <li><a href="#" class="text-slate-400 hover:text-primary-400 transition-colors duration-300">Support</a></li>
+                    </ul>
+                </div>
 
-            <!-- Resources -->
-            <div>
-                <h4 class="text-white font-semibold mb-4 tracking-wide">Resources</h4>
-                <ul class="space-y-3 text-sm">
-                    <li><a href="#" class="text-neutral-400 hover:text-primary-400 transition-colors">FAQs</a></li>
-                    <li><a href="#" class="text-neutral-400 hover:text-primary-400 transition-colors">Terms & Conditions</a></li>
-                    <li><a href="#" class="text-neutral-400 hover:text-primary-400 transition-colors">Privacy Policy</a></li>
-                    <li><a href="#" class="text-neutral-400 hover:text-primary-400 transition-colors">Discipline Rules</a></li>
-                </ul>
-            </div>
+                <!-- Contact -->
+                <div class="flex flex-col items-start">
+                    <h4 class="text-white font-semibold mb-6 tracking-wide text-sm uppercase">Get In Touch</h4>
+                    <div class="space-y-4 mb-8 flex flex-col">
+                        <div>
+                            <span class="text-primary-400 font-semibold text-sm block mb-1">Email</span>
+                            <a href="mailto:upplanoffical@gmail.com" class="text-slate-400 hover:text-primary-400 transition-colors duration-300 text-sm">upplanoffical@gmail.com</a>
+                        </div>
+                        <div>
+                            <span class="text-primary-400 font-semibold text-sm block mb-1">Phone</span>
+                            <a href="tel:+234911089201" class="text-slate-400 hover:text-primary-400 transition-colors duration-300 text-sm">(+234) 9110 891 201</a>
+                        </div>
+                        <div>
+                            <span class="text-primary-400 font-semibold text-sm block mb-1">Location</span>
+                            <span class="text-slate-400 text-sm">Abakaliki, Ebonyi State</span>
+                        </div>
+                    </div>
 
-            <!-- Contact -->
-            <div>
-                <h4 class="text-white font-semibold mb-4 tracking-wide">Contact</h4>
-                <ul class="space-y-3 text-sm">
-                    <li>
-                        <span class="text-primary-400 font-semibold">Email:</span><br>
-                        <span class="text-neutral-400">upplanoffical@gmail.com</span>
-                    </li>
-                    <li>
-                        <span class="text-primary-400 font-semibold">Phone:</span><br>
-                        <span class="text-neutral-400">(+234) 9110 891 201</span>
-                    </li>
-                    <li>
-                        <span class="text-primary-400 font-semibold">Location:</span><br>
-                        <span class="text-neutral-400">Abakaliki, Ebonyi State</span>
-                    </li>
-                </ul>
-
-                <!-- Social Icons -->
-                <div class="flex gap-4 mt-6">
-                    <a href="#" class="h-10 w-10 flex items-center justify-center rounded-full
-                                bg-neutral-800 text-neutral-400 hover:bg-primary-600/20 hover:text-primary-400 transition-all duration-250">
-                        <i class="fab fa-twitter text-sm"></i>
-                    </a>
-                    <a href="#" class="h-10 w-10 flex items-center justify-center rounded-full
-                                bg-neutral-800 text-neutral-400 hover:bg-primary-600/20 hover:text-primary-400 transition-all duration-250">
-                        <i class="fab fa-instagram text-sm"></i>
-                    </a>
-                    <a href="#" class="h-10 w-10 flex items-center justify-center rounded-full
-                                bg-neutral-800 text-neutral-400 hover:bg-primary-600/20 hover:text-primary-400 transition-all duration-250">
-                        <i class="fab fa-linkedin-in text-sm"></i>
-                    </a>
+                    <!-- Social Icons -->
+                    <div class="flex gap-3">
+                        <a href="#" class="h-10 w-10 flex items-center justify-center rounded-full bg-slate-800 text-slate-400 hover:bg-primary-600 hover:text-white transition-all duration-300 social-icon-bounce">
+                            <i class="fab fa-twitter text-sm"></i>
+                        </a>
+                        <a href="#" class="h-10 w-10 flex items-center justify-center rounded-full bg-slate-800 text-slate-400 hover:bg-primary-600 hover:text-white transition-all duration-300 social-icon-bounce">
+                            <i class="fab fa-instagram text-sm"></i>
+                        </a>
+                        <a href="#" class="h-10 w-10 flex items-center justify-center rounded-full bg-slate-800 text-slate-400 hover:bg-primary-600 hover:text-white transition-all duration-300 social-icon-bounce">
+                            <i class="fab fa-linkedin-in text-sm"></i>
+                        </a>
+                    </div>
                 </div>
             </div>
-        </div>
 
-        <!-- Divider -->
-        <div class="border-t border-neutral-800 mt-16 pt-6 text-center text-sm text-neutral-600">
-            © <span class="text-neutral-400">upPlan</span> <span id="year"></span>. All rights reserved.
+            <!-- Divider -->
+            <div class="border-t border-slate-800 pt-8 text-center text-sm text-slate-500">
+                <p>© <span id="year"></span> UpPlan. All rights reserved. Built with discipline.</p>
+            </div>
         </div>
     </footer>
 
@@ -1111,6 +2612,178 @@
 
     <script>
         document.getElementById("year").textContent = new Date().getFullYear();
+
+        /* ========================================================
+           ADVANCED ANIMATION SYSTEM
+           ======================================================== */
+
+        // 1. CARD STAGGER ANIMATION
+        const setupCardStagger = () => {
+            const cards = document.querySelectorAll('.card-modern');
+            cards.forEach((card, index) => {
+                card.style.animation = `staggerFade 0.6s cubic-bezier(0.34, 1.56, 0.64, 1) forwards`;
+                card.style.animationDelay = `${index * 0.15}s`;
+                card.style.opacity = '0';
+            });
+        };
+
+        // 2. SCROLL REVEAL ANIMATION
+        const setupScrollReveal = () => {
+            const observer = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        entry.target.classList.add('scroll-fade');
+                        const computedStyle = window.getComputedStyle(entry.target);
+                        entry.target.style.opacity = '1';
+                    }
+                });
+            }, { threshold: 0.1, rootMargin: '0px 0px -50px 0px' });
+
+            document.querySelectorAll('[data-aos]').forEach(el => {
+                if (!el.classList.contains('scroll-fade')) {
+                    observer.observe(el);
+                }
+            });
+        };
+
+        // 3. COUNTER ANIMATION
+        const animateCounter = (element, target) => {
+            let current = 0;
+            const increment = target / 30;
+            
+            const timer = setInterval(() => {
+                current += increment;
+                if (current >= target) {
+                    element.textContent = target;
+                    clearInterval(timer);
+                } else {
+                    element.textContent = Math.floor(current);
+                }
+            }, 50);
+        };
+
+        // 4. MOUSE TRACKING FOR CARDS
+        const setupMouseTracking = () => {
+            document.querySelectorAll('.card-modern').forEach(card => {
+                card.addEventListener('mousemove', (e) => {
+                    const rect = card.getBoundingClientRect();
+                    const x = e.clientX - rect.left;
+                    const y = e.clientY - rect.top;
+                    
+                    card.style.setProperty('--mouse-x', x + 'px');
+                    card.style.setProperty('--mouse-y', y + 'px');
+                });
+            });
+        };
+
+        // 5. PARALLAX EFFECT ON SCROLL
+        const setupParallax = () => {
+            const parallaxElements = document.querySelectorAll('[data-parallax]');
+            
+            window.addEventListener('scroll', () => {
+                parallaxElements.forEach(el => {
+                    const scrollPosition = window.scrollY;
+                    const offset = scrollPosition * 0.5;
+                    el.style.transform = `translateY(${offset}px)`;
+                });
+            });
+        };
+
+        // 6. BUTTON RIPPLE EFFECT
+        const setupRippleEffect = () => {
+            document.querySelectorAll('.btn-primary').forEach(btn => {
+                btn.addEventListener('click', function(e) {
+                    const ripple = document.createElement('span');
+                    const rect = this.getBoundingClientRect();
+                    const size = Math.max(rect.width, rect.height);
+                    const x = e.clientX - rect.left - size / 2;
+                    const y = e.clientY - rect.top - size / 2;
+                    
+                    ripple.style.width = ripple.style.height = size + 'px';
+                    ripple.style.left = x + 'px';
+                    ripple.style.top = y + 'px';
+                    ripple.classList.add('ripple');
+                    
+                    this.appendChild(ripple);
+                    
+                    setTimeout(() => ripple.remove(), 600);
+                });
+            });
+        };
+
+        // 7. SMOOTH SCROLL BEHAVIOR
+        const setupSmoothScroll = () => {
+            document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+                anchor.addEventListener('click', function (e) {
+                    e.preventDefault();
+                    const target = document.querySelector(this.getAttribute('href'));
+                    if (target) {
+                        target.scrollIntoView({
+                            behavior: 'smooth',
+                            block: 'start'
+                        });
+                    }
+                });
+            });
+        };
+
+        // 8. FLOATING ELEMENT ANIMATION
+        const setupFloatingElements = () => {
+            const floatingEls = document.querySelectorAll('[data-float]');
+            floatingEls.forEach(el => {
+                el.classList.add('float-animation');
+            });
+        };
+
+        // 9. ICON BOUNCE ON HOVER
+        const setupIconBounce = () => {
+            document.querySelectorAll('[data-icon-bounce]').forEach(icon => {
+                icon.addEventListener('mouseenter', function() {
+                    this.style.animation = 'iconBounce 0.6s cubic-bezier(0.34, 1.56, 0.64, 1)';
+                });
+            });
+        };
+
+        // 10. TEXT REVEAL ANIMATION
+        const setupTextReveal = () => {
+            document.querySelectorAll('[data-text-reveal]').forEach((el, index) => {
+                el.classList.add('text-reveal');
+                el.style.animationDelay = `${index * 0.1}s`;
+            });
+        };
+
+        // 11. GRADIENT TEXT ANIMATION
+        const animateGradientText = () => {
+            const gradientTexts = document.querySelectorAll('.gradient-text');
+            gradientTexts.forEach(el => {
+                const style = el.style;
+                let hue = 0;
+                setInterval(() => {
+                    hue = (hue + 1) % 360;
+                }, 50);
+            });
+        };
+
+        // INITIALIZE ALL ANIMATIONS
+        document.addEventListener('DOMContentLoaded', () => {
+            setupCardStagger();
+            setupMouseTracking();
+            setupRippleEffect();
+            setupSmoothScroll();
+            setupFloatingElements();
+            setupIconBounce();
+            setupTextReveal();
+            animateGradientText();
+            
+            // Delay parallax for better performance
+            setTimeout(setupParallax, 100);
+            setTimeout(setupScrollReveal, 200);
+        });
+
+        // Re-init on page load
+        window.addEventListener('load', () => {
+            setupCardStagger();
+        });
     </script>
 
     <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
