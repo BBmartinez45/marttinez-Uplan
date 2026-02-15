@@ -1,0 +1,228 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Create Account | UpPlan</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <script src="https://cdn.tailwindcss.com"></script>
+
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            primary: '#4DA742'
+          }
+        }
+      }
+    }
+  </script>
+</head>
+
+<body class="min-h-screen bg-[#0b0f1a] flex items-center justify-center px-6">
+
+<section class="w-full max-w-6xl grid grid-cols-1 lg:grid-cols-2 rounded-3xl overflow-hidden shadow-2xl">
+
+  <!-- LEFT BRAND PANEL -->
+  <div class="relative hidden lg:flex items-center justify-center bg-cover bg-center"
+       style="background-image:url('./asset/image/home1.jpg');">
+    <div class="absolute inset-0 bg-black/70"></div>
+
+    <div class="relative z-10 max-w-sm bg-white/10 backdrop-blur-xl rounded-3xl p-10 text-white">
+      <h2 class="text-4xl font-bold leading-tight">
+        Discipline<br>Before<br>Profits.
+      </h2>
+
+      <p class="mt-6 text-sm text-neutral-300">
+        UpPlan enforces structure, accountability and consistency.
+      </p>
+
+      <p class="mt-6 text-xs text-neutral-400">
+        Trusted by disciplined traders worldwide.
+      </p>
+    </div>
+  </div>
+
+  <!-- RIGHT FORM PANEL -->
+  <div class="flex items-center justify-center bg-[#0b0f1a] p-10">
+
+    <div class="w-full max-w-md bg-[#111827]/90 backdrop-blur rounded-3xl p-10 border border-white/10">
+
+      <h3 class="text-2xl font-semibold text-white">Create your account</h3>
+      <p class="mt-1 text-sm text-neutral-400">
+        Choose discipline. Choose consistency.
+      </p>
+
+      <form id="registerForm" class="mt-8 space-y-5">
+
+        <!-- Full Name -->
+        <div>
+          <input type="text" id="name" placeholder="Full name"
+            class="input">
+          <p class="error-text"></p>
+        </div>
+
+        <!-- Email -->
+        <div>
+          <input type="email" id="email" placeholder="Email address"
+            class="input">
+          <p class="error-text"></p>
+        </div>
+
+        <!-- Password -->
+        <div>
+          <input type="password" id="password" placeholder="Password (min 8 characters)"
+            class="input">
+          <p class="error-text"></p>
+        </div>
+
+        <!-- Confirm Password -->
+        <div>
+          <input type="password" id="confirmPassword" placeholder="Confirm password"
+            class="input">
+          <p class="error-text"></p>
+        </div>
+
+        <!-- Discord / Telegram -->
+        <div>
+          <input type="text" id="handle" placeholder="Discord or Telegram username"
+            class="input">
+          <p class="error-text"></p>
+        </div>
+
+        <!-- Plan -->
+        <div>
+          <select id="plan" class="input">
+            <option value="">Select plan</option>
+            <option value="builder">UpPlan Builder — $20/month</option>
+            <option value="accelerator">UpPlan Accelerator — $50/month</option>
+          </select>
+          <p class="error-text"></p>
+        </div>
+
+        <p class="mt-6 text-center text-sm text-neutral-400">
+            Already have an account?
+            <a href="./signIN.html"
+               class="font-semibold text-primary hover:underline">
+              Sign in
+            </a>
+          </p>
+          
+
+        <!-- Submit -->
+        <button
+          type="submit"
+          class="w-full rounded-xl bg-primary py-3 font-semibold text-black
+                 shadow-[0_20px_40px_rgba(77,167,66,0.4)]
+                 transition hover:scale-[1.02]">
+          Continue to Payment
+        </button>
+
+        <p class="text-center text-xs text-neutral-500">
+          Secure checkout • Discipline enforced
+        </p>
+
+      </form>
+
+    </div>
+  </div>
+
+</section>
+
+<!-- SUCCESS POPUP -->
+<div id="successModal"
+  class="fixed inset-0 bg-black/70 flex items-center justify-center opacity-0 pointer-events-none transition">
+  <div class="bg-[#111827] rounded-3xl p-8 max-w-sm text-center border border-primary">
+    <h3 class="text-xl font-semibold text-white">Account details valid ✅</h3>
+    <p class="mt-4 text-sm text-neutral-400">
+      Proceeding to secure payment...
+    </p>
+  </div>
+</div>
+
+<!-- STYLES -->
+<style>
+  .input {
+    width: 100%;
+    border-radius: 0.75rem;
+    background: rgba(0,0,0,0.45);
+    border: 1px solid rgba(255,255,255,0.12);
+    padding: 0.75rem 1rem;
+    color: white;
+    outline: none;
+  }
+  .input:focus {
+    border-color: #4DA742;
+  }
+  .error-text {
+    font-size: 0.75rem;
+    color: #f87171;
+    margin-top: 0.25rem;
+  }
+</style>
+
+<!-- VALIDATION SCRIPT -->
+<script>
+const form = document.getElementById("registerForm");
+const successModal = document.getElementById("successModal");
+
+form.addEventListener("submit", function (e) {
+  e.preventDefault();
+
+  let valid = true;
+
+  document.querySelectorAll(".error-text").forEach(el => el.textContent = "");
+
+  const name = document.getElementById("name");
+  const email = document.getElementById("email");
+  const password = document.getElementById("password");
+  const confirmPassword = document.getElementById("confirmPassword");
+  const handle = document.getElementById("handle");
+  const plan = document.getElementById("plan");
+
+  if (name.value.trim() === "") {
+    showError(name, "Name is required");
+    valid = false;
+  }
+
+  if (!email.value.includes("@")) {
+    showError(email, "Enter a valid email");
+    valid = false;
+  }
+
+  if (password.value.length < 8) {
+    showError(password, "Password must be at least 8 characters");
+    valid = false;
+  }
+
+  if (password.value !== confirmPassword.value) {
+    showError(confirmPassword, "Passwords do not match");
+    valid = false;
+  }
+
+  if (handle.value.trim() === "") {
+    showError(handle, "Discord or Telegram username required");
+    valid = false;
+  }
+
+  if (plan.value === "") {
+    showError(plan, "Please select a plan");
+    valid = false;
+  }
+
+  if (valid) {
+    successModal.classList.remove("opacity-0", "pointer-events-none");
+    setTimeout(() => {
+      successModal.classList.add("opacity-0", "pointer-events-none");
+      // redirect to payment later
+    }, 2000);
+  }
+});
+
+function showError(input, message) {
+  input.nextElementSibling.textContent = message;
+}
+</script>
+
+</body>
+</html>

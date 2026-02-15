@@ -1,0 +1,533 @@
+/* ================================================================
+   DESIGN SYSTEM - PROFESSIONAL SAAS AESTHETIC
+   ================================================================ */
+
+:root {
+    /* PRIMARY COLOR SYSTEM - Professional Teal-Blue */
+    --primary-900: #0d3d41;
+    --primary-800: #145a5f;
+    --primary-700: #1a7a7e;
+    --primary-600: #1f9a9f;
+    --primary-500: #24bcc5;
+    --primary-400: #4dd1d5;
+    --primary-300: #7fe1e5;
+    --primary-200: #b8eff1;
+    --primary-100: #e6f8f9;
+
+    /* ACCENT - Modern Coral */
+    --accent-600: #e8522a;
+    --accent-500: #ff6b4a;
+    --accent-400: #ff8c6b;
+
+    /* NEUTRALS - Professional Grays */
+    --neutral-950: #0a0e14;
+    --neutral-900: #141b25;
+    --neutral-800: #222b37;
+    --neutral-700: #3d4a5c;
+    --neutral-600: #5a6b7d;
+    --neutral-500: #77869a;
+    --neutral-400: #99a8b8;
+    --neutral-300: #b8c5d6;
+    --neutral-200: #d6dce5;
+    --neutral-100: #e8ecf1;
+    --neutral-50: #f5f7fa;
+
+    /* SEMANTIC COLORS */
+    --success: #10b981;
+    --warning: #f59e0b;
+    --danger: #ef4444;
+    --info: #3b82f6;
+
+    /* SHADOWS - Subtle & Elevation */
+    --shadow-xs: 0 1px 2px rgba(10, 14, 20, 0.06);
+    --shadow-sm: 0 2px 4px rgba(10, 14, 20, 0.08);
+    --shadow-md: 0 4px 8px rgba(10, 14, 20, 0.1);
+    --shadow-lg: 0 8px 16px rgba(10, 14, 20, 0.12);
+    --shadow-xl: 0 16px 32px rgba(10, 14, 20, 0.16);
+    --shadow-2xl: 0 24px 48px rgba(10, 14, 20, 0.2);
+    --shadow-3xl: 0 32px 64px rgba(10, 14, 20, 0.25);
+
+    /* FOCUS-VISIBLE STYLES */
+    --focus-ring: 2px solid var(--primary-400);
+    --focus-ring-offset: 2px;
+
+    /* TRANSITIONS */
+    --transition-fast: 150ms cubic-bezier(0.4, 0, 0.2, 1);
+    --transition-base: 250ms cubic-bezier(0.4, 0, 0.2, 1);
+    --transition-slow: 350ms cubic-bezier(0.4, 0, 0.2, 1);
+
+    /* BORDER RADIUS */
+    --radius-sm: 6px;
+    --radius-md: 12px;
+    --radius-lg: 16px;
+    --radius-xl: 20px;
+    --radius-2xl: 24px;
+    --radius-3xl: 32px;
+}
+
+/* ================================================================
+   GLOBAL STYLES
+   ================================================================ */
+
+* {
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
+        'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue', sans-serif;
+    color: var(--neutral-700);
+    background: var(--neutral-50);
+    transition: background-color var(--transition-base);
+}
+
+/* ================================================================
+   TYPOGRAPHY ENHANCEMENTS
+   ================================================================ */
+
+h1, h2, h3, h4, h5, h6 {
+    font-weight: 600;
+    line-height: 1.2;
+    color: var(--neutral-900);
+    letter-spacing: -0.5px;
+}
+
+h1 {
+    font-size: clamp(2rem, 5vw, 3.5rem);
+}
+
+h2 {
+    font-size: clamp(1.875rem, 4vw, 3rem);
+}
+
+h3 {
+    font-size: clamp(1.5rem, 3vw, 2rem);
+}
+
+p {
+    line-height: 1.6;
+    color: var(--neutral-600);
+}
+
+a {
+    color: var(--primary-600);
+    text-decoration: none;
+    transition: color var(--transition-fast);
+}
+
+a:hover {
+    color: var(--primary-700);
+}
+
+/* ================================================================
+   NAVBAR REFINEMENTS
+   ================================================================ */
+
+nav {
+    background: white !important;
+    border: 1px solid rgba(0, 0, 0, 0.04) !important;
+    box-shadow: var(--shadow-md) !important;
+    backdrop-filter: blur(10px);
+}
+
+nav ul li a {
+    color: var(--neutral-700) !important;
+    font-weight: 500;
+    letter-spacing: 0.3px;
+    transition: color var(--transition-fast);
+    position: relative;
+}
+
+nav ul li a::after {
+    content: '';
+    position: absolute;
+    bottom: -4px;
+    left: 0;
+    width: 0;
+    height: 2px;
+    background: linear-gradient(to right, var(--primary-500), var(--accent-500));
+    transition: width var(--transition-fast);
+}
+
+nav ul li a:hover::after {
+    width: 100%;
+}
+
+nav ul li a:hover {
+    color: var(--primary-600) !important;
+}
+
+/* Register button in navbar */
+nav a[href*="signUP"] {
+    background: linear-gradient(135deg, var(--primary-600), var(--primary-700)) !important;
+    color: white !important;
+    font-weight: 600;
+    box-shadow: 0 4px 16px rgba(31, 154, 159, 0.25);
+    transition: all var(--transition-fast);
+}
+
+nav a[href*="signUP"]:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 8px 24px rgba(31, 154, 159, 0.35);
+}
+
+/* Mobile menu refinement */
+#mobile-menu {
+    background: white;
+    border: 1px solid rgba(0, 0, 0, 0.04);
+    margin-top: 8px;
+}
+
+/* ================================================================
+   BUTTON STYLES
+   ================================================================ */
+
+button.rounded-full,
+a.rounded-full {
+    font-weight: 600;
+    transition: all var(--transition-fast);
+    border: none;
+}
+
+/* Primary Button */
+button[class*="bg-primary"],
+.btn-primary {
+    background: linear-gradient(135deg, var(--primary-600) 0%, var(--primary-700) 100%) !important;
+    color: white !important;
+    box-shadow: 0 6px 20px rgba(31, 154, 159, 0.3);
+    border: none;
+    transition: all var(--transition-base);
+}
+
+button[class*="bg-primary"]:hover,
+.btn-primary:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 10px 32px rgba(31, 154, 159, 0.45);
+}
+
+button[class*="bg-primary"]:active,
+.btn-primary:active {
+    transform: translateY(0);
+}
+
+/* Secondary Button */
+button[class*="border-white"],
+.btn-secondary {
+    border: 1.5px solid var(--neutral-300) !important;
+    color: var(--neutral-700) !important;
+    background: white !important;
+    transition: all var(--transition-fast);
+}
+
+button[class*="border-white"]:hover,
+.btn-secondary:hover {
+    border-color: var(--primary-600) !important;
+    color: var(--primary-600) !important;
+    box-shadow: 0 4px 12px rgba(31, 154, 159, 0.15);
+}
+
+/* ================================================================
+   CARD STYLES
+   ================================================================ */
+
+.group.rounded-3xl {
+    border: 1px solid rgba(0, 0, 0, 0.04) !important;
+    transition: all var(--transition-base);
+    overflow: hidden;
+}
+
+.group.rounded-3xl:hover {
+    border-color: var(--primary-300) !important;
+    box-shadow: 0 12px 40px rgba(31, 154, 159, 0.15) !important;
+}
+
+/* ================================================================
+   FORM ELEMENTS
+   ================================================================ */
+
+input, textarea, select {
+    border: 1px solid var(--neutral-300);
+    border-radius: var(--radius-md);
+    padding: 12px 16px;
+    font-size: 1rem;
+    transition: all var(--transition-fast);
+    background: white;
+    color: var(--neutral-900);
+}
+
+input:focus, textarea:focus, select:focus {
+    outline: none;
+    border-color: var(--primary-500);
+    box-shadow: 0 0 0 3px rgba(36, 188, 197, 0.1);
+}
+
+input::placeholder {
+    color: var(--neutral-400);
+}
+
+/* ================================================================
+   BADGES & LABELS
+   ================================================================ */
+
+.badge,
+[class*="text-xs"][class*="font-semibold"] {
+    font-weight: 600;
+    letter-spacing: 0.5px;
+    text-transform: uppercase;
+}
+
+span[class*="text-primary"][class*="text-xs"],
+span[class*="text-primary"][class*="uppercase"] {
+    color: var(--primary-600);
+    font-weight: 700;
+    letter-spacing: 1px;
+}
+
+/* ================================================================
+   HERO & SECTIONS
+   ================================================================ */
+
+section {
+    scroll-behavior: smooth;
+}
+
+/* Hero section background overlay */
+.absolute.inset-0.bg-black {
+    opacity: 0.6;
+}
+
+/* ================================================================
+   SERVICE CARDS REFINEMENT
+   ================================================================ */
+
+.group.relative.rounded-3xl {
+    border: 1px solid rgba(0, 0, 0, 0.05);
+    background: white;
+}
+
+.group.relative.rounded-3xl .absolute.inset-0 {
+    background: linear-gradient(135deg, rgba(36, 188, 197, 0.08), rgba(255, 107, 74, 0.04));
+}
+
+/* Icon container */
+[class*="bg-primary/10"][class*="rounded-2xl"] {
+    background: linear-gradient(135deg, rgba(36, 188, 197, 0.15), rgba(36, 188, 197, 0.05)) !important;
+    border: 1px solid rgba(36, 188, 197, 0.1);
+}
+
+/* ================================================================
+   FAQ SECTION
+   ================================================================ */
+
+.faq-item {
+    border: 1px solid var(--neutral-200);
+    background: white;
+    transition: all var(--transition-base);
+}
+
+.faq-item:hover {
+    border-color: var(--primary-300);
+    box-shadow: var(--shadow-md);
+}
+
+.faq-btn {
+    color: var(--neutral-900);
+}
+
+.faq-btn:hover {
+    color: var(--primary-600);
+}
+
+.faq-btn i {
+    color: var(--primary-500);
+    transition: transform var(--transition-base);
+}
+
+.faq-content {
+    color: var(--neutral-600);
+}
+
+/* ================================================================
+   FOOTER REFINEMENT
+   ================================================================ */
+
+footer {
+    background: var(--neutral-950);
+    color: var(--neutral-400);
+    border-top: 1px solid rgba(255, 255, 255, 0.05);
+}
+
+footer a {
+    color: var(--neutral-400);
+    transition: color var(--transition-fast);
+}
+
+footer a:hover {
+    color: var(--primary-400);
+}
+
+footer h4 {
+    color: white;
+}
+
+/* Social icons */
+[class*="hover:bg-primary"]  {
+    transition: all var(--transition-fast);
+}
+
+/* ================================================================
+   ANIMATIONS & MICRO-INTERACTIONS
+   ================================================================ */
+
+@keyframes slideInUp {
+    from {
+        opacity: 0;
+        transform: translateY(16px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes slideInDown {
+    from {
+        opacity: 0;
+        transform: translateY(-16px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes scaleIn {
+    from {
+        opacity: 0;
+        transform: scale(0.95);
+    }
+    to {
+        opacity: 1;
+        transform: scale(1);
+    }
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
+
+@keyframes shimmer {
+    0% {
+        background-position: -1000px 0;
+    }
+    100% {
+        background-position: 1000px 0;
+    }
+}
+
+@keyframes glow {
+    0%, 100% {
+        box-shadow: 0 0 20px rgba(36, 188, 197, 0);
+    }
+    50% {
+        box-shadow: 0 0 30px rgba(36, 188, 197, 0.2);
+    }
+}
+
+/* Apply animations to elements */
+[data-aos] {
+    animation-duration: 800ms;
+}
+
+button:not(:disabled) {
+    cursor: pointer;
+}
+
+button:disabled {
+    opacity: 0.5;
+    cursor: not-allowed;
+}
+
+/* Smooth focus transitions */
+:focus-visible {
+    outline: var(--focus-ring);
+    outline-offset: var(--focus-ring-offset);
+}
+
+/* ================================================================
+   SCROLLBAR STYLING
+   ================================================================ */
+
+::-webkit-scrollbar {
+    width: 8px;
+    height: 8px;
+}
+
+::-webkit-scrollbar-track {
+    background: var(--neutral-100);
+}
+
+::-webkit-scrollbar-thumb {
+    background: var(--primary-400);
+    border-radius: 4px;
+    transition: background var(--transition-fast);
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background: var(--primary-500);
+}
+
+/* ================================================================
+   UTILITY ANIMATIONS
+   ================================================================ */
+
+.fade-out {
+    opacity: 0;
+    visibility: hidden;
+    transition: opacity 0.6s ease, visibility 0.6s ease;
+}
+
+/* Smooth transitions for all interactive elements */
+a, button, input, select, textarea {
+    transition: color var(--transition-fast), background-color var(--transition-fast),
+                border-color var(--transition-fast), box-shadow var(--transition-fast);
+}
+
+/* ================================================================
+   RESPONSIVE DESIGN
+   ================================================================ */
+
+@media (max-width: 991px) {
+    h1 {
+        font-size: clamp(1.75rem, 4vw, 2.5rem);
+    }
+
+    h2 {
+        font-size: clamp(1.5rem, 3.5vw, 2.25rem);
+    }
+}
+
+@media (max-width: 640px) {
+    h1 {
+        font-size: 1.75rem;
+    }
+
+    h2 {
+        font-size: 1.5rem;
+    }
+
+    button {
+        padding: 10px 16px;
+        font-size: 0.95rem;
+    }
+}
+

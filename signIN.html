@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Login — UpPlan</title>
+
+  <!-- Tailwind CDN -->
+  <script src="https://cdn.tailwindcss.com"></script>
+
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            primary: '#4DA742'
+          }
+        }
+      }
+    }
+  </script>
+</head>
+
+<body class="min-h-screen bg-neutral-950 flex items-center justify-center px-6">
+
+  <!-- BACKGROUND -->
+  <div class="absolute inset-0">
+    <img src="./asset/image/branch-bg.jpg"
+         class="w-full h-full object-cover opacity-20" />
+    <div class="absolute inset-0 bg-black/70"></div>
+  </div>
+
+  <div class="relative w-full max-w-md rounded-2xl border border-white/10
+              bg-white/5 backdrop-blur-xl shadow-2xl p-8 text-white">
+
+    <!-- Header -->
+    <div class="mb-8 text-center">
+      <h1 class="text-3xl font-bold">Welcome back</h1>
+      <p class="mt-2 text-sm text-white/60">
+        Sign in to continue to your dashboard
+      </p>
+    </div>
+
+    <!-- FORM -->
+    <form id="loginForm" class="space-y-6">
+
+      <!-- Email -->
+      <div>
+        <label class="block text-sm mb-1">Email address</label>
+        <input
+          type="email"
+          id="email"
+          placeholder="you@example.com"
+          class="w-full rounded-lg bg-black/40 border border-white/10
+                 px-4 py-3 text-sm focus:outline-none focus:border-primary"
+        />
+        <p id="emailError" class="mt-1 text-xs text-red-500 hidden"></p>
+      </div>
+
+      <!-- Password -->
+      <div>
+        <label class="block text-sm mb-1">Password</label>
+        <input
+          type="password"
+          id="password"
+          placeholder="••••••••"
+          class="w-full rounded-lg bg-black/40 border border-white/10
+                 px-4 py-3 text-sm focus:outline-none focus:border-primary"
+        />
+        <p id="passwordError" class="mt-1 text-xs text-red-500 hidden"></p>
+      </div>
+
+      <!-- Remember / Forgot -->
+      <div class="flex items-center justify-between text-sm">
+        <label class="flex items-center gap-2 text-white/70">
+          <input type="checkbox" required class="accent-primary" />
+          Remember me
+        </label>
+        <a href="#" class="text-primary hover:underline">
+          Forgot password?
+        </a>
+      </div>
+
+      <button
+        type="submit"
+        id="loginBtn"
+        class="w-full rounded-full bg-primary py-3 font-semibold text-black
+               transition hover:scale-[1.02] active:scale-[0.98]">
+        Sign In
+      </button>
+
+    </form>
+
+    <div class="my-6 flex items-center gap-3 text-white/30">
+      <span class="h-px w-full bg-white/10"></span>
+      OR
+      <span class="h-px w-full bg-white/10"></span>
+    </div>
+
+    <div class="grid grid-cols-2 gap-4">
+      <button class="rounded-lg bg-white/10 py-2 text-sm hover:bg-white/20">
+        Google
+      </button>
+      <button class="rounded-lg bg-white/10 py-2 text-sm hover:bg-white/20">
+        GitHub
+      </button>
+    </div>
+
+    <p class="mt-6 text-center text-sm text-white/60">
+      Don’t have an account?
+      <a href="./signUP.html" class="text-primary font-semibold hover:underline">
+        Create one
+      </a>
+    </p>
+
+  </div>
+
+  <!-- JS VALIDATION -->
+  <script>
+    const form = document.getElementById("loginForm");
+    const email = document.getElementById("email");
+    const password = document.getElementById("password");
+    const btn = document.getElementById("loginBtn");
+
+    form.addEventListener("submit", function (e) {
+      e.preventDefault();
+
+      let valid = true;
+
+      document.getElementById("emailError").classList.add("hidden");
+      document.getElementById("passwordError").classList.add("hidden");
+
+      if (!email.value.includes("@")) {
+        showError("emailError", "Enter a valid email");
+        valid = false;
+      }
+
+      if (password.value.length < 8) {
+        showError("passwordError", "Password must be at least 8 characters");
+        valid = false;
+      }
+
+      if (!valid) return;
+
+      // Loading state
+      btn.textContent = "Signing in...";
+      btn.disabled = true;
+
+      setTimeout(() => {
+        btn.textContent = "Signed in ✔";
+        btn.classList.add("bg-green-500");
+      }, 1500);
+    });
+
+    function showError(id, message) {
+      const el = document.getElementById(id);
+      el.textContent = message;
+      el.classList.remove("hidden");
+    }
+  </script>
+
+</body>
+</html>
