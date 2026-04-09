@@ -1,2796 +1,775 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
-
 <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>welcome to upPlan</title>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Calm Nerve — Early Access</title>
+  <link rel="stylesheet" href="styles.css">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800&display=swap" rel="stylesheet">
+</head>
+<body>
+  <header class="site-header">
+    <div class="container header-inner">
+      <div class="brand">
+        <img src="cropped-logo.png" alt="Calm Nerve logo" class="logo" />
+      </div>
+      <nav class="nav-right" aria-label="Primary">
+        <a class="nav-link" href="#how-it-works">How it works</a>
+        <a class="btn btn-primary small" href="#final-cta">Join Early Access</a>
+      </nav>
+    </div>
+  </header>
 
-    <!-- Tailwind -->
-    <script src="https://cdn.tailwindcss.com"></script>
-
-    <!-- Font Awesome -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
-    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+  <main>
     
-    <!-- Google Fonts - Premium Typography -->
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Poppins:wght@600;700;800&display=swap" rel="stylesheet">
+    <section class="hero" id="hero">
+      <div class="container">
+        <div class="hero-card">
+          <div class="hero-content">
+            <h1>End Tingling, Burning & Numbness — Naturally.</h1>
+            <p class="hero-sub">Be the First to Try Calm Nerve When It Launches!</p>
+            <p class="lead">A breakthrough nerve support supplement designed to help you feel your feet and hands again — safely and naturally.</p>
+
+            <div class="hero-ctas">
+              <a class="btn btn-primary" href="#final-cta">Yes, notify me at launch</a>
+              <a class="btn btn-ghost" href="#how-it-works">How it works</a>
+            </div>
+          </div>
+
+          <div class="hero-media">
+            <img src="calm%20nerve.jpeg" alt="Calm Nerve bottle" class="product-image">
+            <div class="hero-note">10% off for early signups · Priority shipping</div>
+          </div>
+        </div>
+      </div>
+    </section>
+
     
-    <!-- Tailwind config -->
-    <script>
-        tailwind.config = {
-            theme: {
-                fontFamily: {
-                    'sans': ['Inter', 'system-ui', 'sans-serif'],
-                    'heading': ['Poppins', 'sans-serif'],
-                },
-                extend: {
-                    colors: {
-                        primary: {
-                            '50': '#f0f4ff',
-                            '100': '#e0e9ff',
-                            '200': '#c7d2fe',
-                            '300': '#a5b4fc',
-                            '400': '#818cf8',
-                            '500': '#6366f1',
-                            '600': '#4f46e5',
-                            '700': '#4338ca',
-                            '800': '#3730a3',
-                            '900': '#312e81',
-                        },
-                        accent: {
-                            '400': '#fbbf24',
-                            '500': '#f59e0b',
-                            '600': '#d97706',
-                        },
-                        success: {
-                            '400': '#4ade80',
-                            '500': '#22c55e',
-                            '600': '#16a34a',
-                        },
-                        dark: '#0f172a',
-                        light: '#f8fafc',
-                    },
-                    boxShadow: {
-                        'soft-sm': '0 2px 4px rgba(15, 23, 42, 0.08)',
-                        'soft-md': '0 4px 12px rgba(15, 23, 42, 0.1)',
-                        'soft-lg': '0 8px 24px rgba(15, 23, 42, 0.12)',
-                        'soft-xl': '0 16px 40px rgba(15, 23, 42, 0.16)',
-                        'soft-2xl': '0 24px 48px rgba(15, 23, 42, 0.2)',
-                        'glow': '0 0 30px rgba(79, 70, 229, 0.3)',
-                        'glow-sm': '0 0 15px rgba(79, 70, 229, 0.2)',
-                    },
-                    borderRadius: {
-                        'sm': '8px',
-                        'md': '12px',
-                        'lg': '16px',
-                        'xl': '20px',
-                        '2xl': '24px',
-                        '3xl': '32px',
-                    },
-                    animation: {
-                        marquee: 'marquee 50s linear infinite',
-                        'fade-in': 'fadeIn 0.8s ease-in-out',
-                        'slide-up': 'slideUp 0.8s ease-out',
-                        'pulse-glow': 'pulseGlow 2s ease-in-out infinite',
-                    },
-                    keyframes: {
-                        marquee: {
-                            '0%': { transform: 'translateX(0)' },
-                            '100%': { transform: 'translateX(-50%)' },
-                        },
-                        fadeIn: {
-                            '0%': { opacity: '0' },
-                            '100%': { opacity: '1' },
-                        },
-                        slideUp: {
-                            '0%': { opacity: '0', transform: 'translateY(20px)' },
-                            '100%': { opacity: '1', transform: 'translateY(0)' },
-                        },
-                        pulseGlow: {
-                            '0%, 100%': { boxShadow: '0 0 15px rgba(79, 70, 229, 0.2)' },
-                            '50%': { boxShadow: '0 0 30px rgba(79, 70, 229, 0.4)' },
-                        },
-                    },
-                    transitionTimingFunction: {
-                        'smooth': 'cubic-bezier(0.4, 0, 0.2, 1)',
-                        'elastic': 'cubic-bezier(0.34, 1.56, 0.64, 1)',
-                    },
-                    backdropBlur: {
-                        'xs': '2px',
-                        'sm': '4px',
-                        'md': '8px',
-                        'lg': '16px',
-                    },
-                    backgroundImage: {
-                        'gradient-radial': 'radial-gradient(var(--tw-gradient-stops))',
-                        'gradient-conic': 'conic-gradient(from 180deg at 50% 50%, var(--tw-gradient-stops))',
-                    },
-                },
-            },
-        }
-    </script>
-
-    <style>
-        :root {
-            /* Premium Color Palette */
-            --primary-600: #4f46e5;
-            --primary-500: #6366f1;
-            --accent-500: #f59e0b;
-            --success-500: #22c55e;
-        }
-
-        /* Global Typography */
-        html {
-            scroll-behavior: smooth;
-        }
-
-        body {
-            background: linear-gradient(135deg, #f8fafc 0%, #f1f5f9 100%);
-            color: #475569;
-            overflow-x: hidden;
-        }
-
-        /* Modern Heading Styles */
-        h1, h2, h3, h4, h5, h6 {
-            font-family: 'Poppins', sans-serif;
-            font-weight: 700;
-            letter-spacing: -0.01em;
-            color: #0f172a;
-        }
-
-        h1 { font-size: clamp(2rem, 5vw, 4rem); line-height: 1.2; }
-        h2 { font-size: clamp(1.5rem, 4vw, 3rem); line-height: 1.3; }
-        h3 { font-size: clamp(1.25rem, 3vw, 2rem); line-height: 1.4; }
-
-        /* ============================================================
-           MODERN ANIMATION SYSTEM
-           ============================================================ */
-
-        /* Text Reveal Animation */
-        @keyframes textReveal {
-            0% {
-                opacity: 0;
-                clip-path: inset(0 100% 0 0);
-            }
-            100% {
-                opacity: 1;
-                clip-path: inset(0 0 0 0);
-            }
-        }
-
-        .text-reveal {
-            animation: textReveal 0.8s cubic-bezier(0.77, 0, 0.175, 1) forwards;
-        }
-
-        /* Smooth fade-out for animations */
-        .fade-out {
-            opacity: 0;
-            visibility: hidden;
-            transition: opacity 0.6s ease, visibility 0.6s ease;
-        }
-
-        /* Premium Glass-morphism Effect */
-        .glass-effect {
-            background: rgba(255, 255, 255, 0.7);
-            backdrop-filter: blur(10px);
-            -webkit-backdrop-filter: blur(10px);
-            border: 1px solid rgba(255, 255, 255, 0.18);
-            transition: all 0.5s cubic-bezier(0.4, 0, 0.2, 1);
-        }
-
-        .glass-effect:hover {
-            background: rgba(255, 255, 255, 0.85);
-            border-color: rgba(79, 70, 229, 0.3);
-        }
-
-        .glass-dark {
-            background: rgba(15, 23, 42, 0.4);
-            backdrop-filter: blur(10px);
-            -webkit-backdrop-filter: blur(10px);
-            border: 1px solid rgba(255, 255, 255, 0.05);
-        }
-
-        /* Gradient Overlay */
-        .gradient-overlay {
-            background: linear-gradient(135deg, rgba(79, 70, 229, 0.1) 0%, rgba(245, 158, 11, 0.05) 100%);
-        }
-
-        /* ENHANCED BUTTON WITH MODERN EFFECTS */
-        .btn-primary {
-            background: linear-gradient(135deg, #4f46e5 0%, #4338ca 100%);
-            color: white;
-            padding: 12px 28px;
-            border-radius: 12px;
-            font-weight: 600;
-            font-size: 0.95rem;
-            border: none;
-            cursor: pointer;
-            transition: all 0.4s cubic-bezier(0.34, 1.56, 0.64, 1);
-            box-shadow: 0 4px 15px rgba(79, 70, 229, 0.3);
-            position: relative;
-            overflow: hidden;
-            will-change: transform, box-shadow;
-            letter-spacing: 0.3px;
-        }
-
-        .btn-primary::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: -100%;
-            width: 100%;
-            height: 100%;
-            background: linear-gradient(90deg, transparent, rgba(255,255,255,0.3), transparent);
-            transition: left 0.6s cubic-bezier(0.4, 0, 0.2, 1);
-            z-index: 1;
-        }
-
-        .btn-primary::after {
-            content: '';
-            position: absolute;
-            inset: 0;
-            border-radius: 12px;
-            opacity: 0;
-            background: radial-gradient(circle at center, rgba(255,255,255,0.3) 0%, transparent 70%);
-            transition: opacity 0.4s ease;
-        }
-
-        .btn-primary:hover::before {
-            left: 100%;
-        }
-
-        .btn-primary:hover::after {
-            opacity: 1;
-        }
-
-        .btn-primary:hover {
-            transform: translateY(-4px) scale(1.02);
-            box-shadow: 0 16px 40px rgba(79, 70, 229, 0.5), 0 0 30px rgba(79, 70, 229, 0.3);
-        }
-
-        .btn-primary:active {
-            transform: translateY(-1px) scale(0.98);
-        }
-
-        /* Stagger Animation for Cards */
-        @keyframes staggerFade {
-            0% {
-                opacity: 0;
-                transform: translateY(30px) scale(0.95);
-            }
-            100% {
-                opacity: 1;
-                transform: translateY(0) scale(1);
-            }
-        }
-
-        .card-stagger {
-            animation: staggerFade 0.6s cubic-bezier(0.34, 1.56, 0.64, 1) both;
-        }
-
-        .card-stagger:nth-child(1) { animation-delay: 0.1s; }
-        .card-stagger:nth-child(2) { animation-delay: 0.2s; }
-        .card-stagger:nth-child(3) { animation-delay: 0.3s; }
-        .card-stagger:nth-child(4) { animation-delay: 0.4s; }
-        .card-stagger:nth-child(5) { animation-delay: 0.5s; }
-        .card-stagger:nth-child(6) { animation-delay: 0.6s; }
-
-        /* Card Enhancement with Modern Interactions */
-        .card-modern {
-            background: white;
-            border-radius: 16px;
-            padding: 24px;
-            border: 1px solid #e2e8f0;
-            transition: all 0.5s cubic-bezier(0.34, 1.56, 0.64, 1);
-            box-shadow: 0 4px 12px rgba(15, 23, 42, 0.08);
-            position: relative;
-            will-change: transform, box-shadow, border-color;
-            overflow: hidden;
-        }
-
-        .card-modern::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: 0;
-            right: 0;
-            height: 3px;
-            background: linear-gradient(90deg, #4f46e5, #f59e0b);
-            border-radius: 16px 16px 0 0;
-            opacity: 0;
-            transform: scaleX(0);
-            transform-origin: left;
-            transition: all 0.5s cubic-bezier(0.34, 1.56, 0.64, 1);
-        }
-
-        .card-modern::after {
-            content: '';
-            position: absolute;
-            inset: 0;
-            background: radial-gradient(600px at var(--mouse-x, 50%) var(--mouse-y, 50%), rgba(79, 70, 229, 0.1), transparent 80%);
-            opacity: 0;
-            transition: opacity 0.3s ease;
-            pointer-events: none;
-        }
-
-        .card-modern:hover {
-            transform: translateY(-12px) scale(1.02);
-            box-shadow: 0 20px 50px rgba(15, 23, 42, 0.15);
-            border-color: #c7d2fe;
-        }
-
-        .card-modern:hover::before {
-            opacity: 1;
-            transform: scaleX(1);
-        }
-
-        .card-modern:hover::after {
-            opacity: 1;
-        }
-
-        /* Feature Badge with Pulse */
-        @keyframes badgePulse {
-            0%, 100% {
-                box-shadow: 0 2px 8px rgba(79, 70, 229, 0.3);
-            }
-            50% {
-                box-shadow: 0 2px 16px rgba(79, 70, 229, 0.6);
-            }
-        }
-
-        .badge-premium {
-            display: inline-block;
-            padding: 6px 12px;
-            background: linear-gradient(135deg, #4f46e5, #6366f1);
-            color: white;
-            border-radius: 8px;
-            font-size: 0.75rem;
-            font-weight: 700;
-            letter-spacing: 0.05em;
-            text-transform: uppercase;
-            box-shadow: 0 2px 8px rgba(79, 70, 229, 0.3);
-            animation: badgePulse 2s ease-in-out infinite;
-            position: relative;
-            overflow: hidden;
-        }
-
-        .badge-premium::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: -100%;
-            width: 100%;
-            height: 100%;
-            background: linear-gradient(90deg, transparent, rgba(255,255,255,0.3), transparent);
-            animation: shimmer 3s infinite;
-        }
-
-        @keyframes shimmer {
-            0% { left: -100%; }
-            100% { left: 100%; }
-        }
-
-        /* Accent Highlight */
-        .accent-highlight {
-            background: linear-gradient(135deg, #f59e0b, #fbbf24);
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-            background-clip: text;
-            font-weight: 700;
-        }
-
-        /* Smooth Underline Effect with Modern Easing */
-        .nav-link {
-            position: relative;
-            color: #475569;
-            text-decoration: none;
-            font-weight: 500;
-            transition: color 0.4s cubic-bezier(0.34, 1.56, 0.64, 1);
-        }
-
-        .nav-link::after {
-            content: '';
-            position: absolute;
-            bottom: -2px;
-            left: 0;
-            width: 0;
-            height: 2px;
-            background: linear-gradient(90deg, #4f46e5, #f59e0b);
-            transition: width 0.5s cubic-bezier(0.34, 1.56, 0.64, 1);
-        }
-
-        .nav-link:hover {
-            color: #4f46e5;
-        }
-
-        .nav-link:hover::after {
-            width: 100%;
-        }
-
-        /* Floating Animation - Enhanced */
-        @keyframes float {
-            0%, 100% { 
-                transform: translateY(0px);
-            }
-            25% { 
-                transform: translateY(-15px);
-            }
-            50% { 
-                transform: translateY(-8px);
-            }
-            75% { 
-                transform: translateY(-12px);
-            }
-        }
-
-        .float-animation {
-            animation: float 4s ease-in-out infinite;
-        }
-
-        /* Gradient Animated Text */
-        @keyframes gradientShift {
-            0% {
-                background-position: 0% 50%;
-            }
-            50% {
-                background-position: 100% 50%;
-            }
-            100% {
-                background-position: 0% 50%;
-            }
-        }
-
-        .gradient-text {
-            background: linear-gradient(90deg, #4f46e5, #f59e0b, #4f46e5);
-            background-size: 200% auto;
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-            background-clip: text;
-            animation: gradientShift 6s ease infinite;
-        }
-
-        /* Section Divider */
-        .section-divider {
-            height: 1px;
-            background: linear-gradient(90deg, transparent, #e2e8f0, transparent);
-        }
-
-        /* Loading Pulse - Enhanced */
-        @keyframes loadingPulse {
-            0%, 100% { 
-                opacity: 1;
-                transform: scale(1);
-            }
-            50% { 
-                opacity: 0.5;
-                transform: scale(0.98);
-            }
-        }
-
-        .loading-pulse {
-            animation: loadingPulse 2s cubic-bezier(0.4, 0, 0.6, 1) infinite;
-        }
-
-        /* Blob Animation - Enhanced Fluid Motion */
-        @keyframes blob {
-            0%, 100% { 
-                transform: translate(0, 0) scale(1) rotate(0deg);
-            }
-            33% { 
-                transform: translate(30px, -50px) scale(1.15) rotate(120deg);
-            }
-            66% { 
-                transform: translate(-20px, 20px) scale(0.85) rotate(240deg);
-            }
-        }
-
-        .animate-blob {
-            animation: blob 8s ease-in-out infinite;
-            will-change: transform;
-        }
-
-        .animation-delay-2000 {
-            animation-delay: 2s;
-        }
-
-        .animation-delay-4000 {
-            animation-delay: 4s;
-        }
-
-        /* Slide Up Animation */
-        @keyframes slideUp {
-            0% {
-                opacity: 0;
-                transform: translateY(30px);
-            }
-            100% {
-                opacity: 1;
-                transform: translateY(0);
-            }
-        }
-
-        .animate-slide-up {
-            animation: slideUp 0.8s cubic-bezier(0.34, 1.56, 0.64, 1);
-        }
-
-        /* Counter Animation for Numbers */
-        @keyframes countUp {
-            from {
-                opacity: 0;
-                transform: translateY(15px);
-            }
-            to {
-                opacity: 1;
-                transform: translateY(0);
-            }
-        }
-
-        .counter-animate {
-            animation: countUp 0.6s cubic-bezier(0.34, 1.56, 0.64, 1) forwards;
-        }
-
-        .counter-animate:nth-child(1) { animation-delay: 0.2s; }
-        .counter-animate:nth-child(2) { animation-delay: 0.4s; }
-        .counter-animate:nth-child(3) { animation-delay: 0.6s; }
-
-        /* Feature Icon Animation */
-        @keyframes iconBounce {
-            0%, 100% {
-                transform: translateY(0) scale(1);
-            }
-            50% {
-                transform: translateY(-8px) scale(1.1);
-            }
-        }
-
-        .icon-bounce {
-            animation: iconBounce 2s cubic-bezier(0.34, 1.56, 0.64, 1) infinite;
-        }
-
-        /* Gradient Border Animation */
-        @keyframes gradientBorder {
-            0% {
-                background-position: 0% 50%;
-            }
-            50% {
-                background-position: 100% 50%;
-            }
-            100% {
-                background-position: 0% 50%;
-            }
-        }
-
-        .border-gradient {
-            background-image: linear-gradient(45deg, #4f46e5, #f59e0b, #4f46e5);
-            background-size: 300% 300%;
-            animation: gradientBorder 5s ease infinite;
-        }
-
-        /* Flip Animation */
-        @keyframes flip {
-            0% {
-                transform: rotateY(0);
-                opacity: 1;
-            }
-            50% {
-                opacity: 0.7;
-            }
-            100% {
-                transform: rotateY(360deg);
-                opacity: 1;
-            }
-        }
-
-        .flip-animation {
-            animation: flip 0.8s cubic-bezier(0.34, 1.56, 0.64, 1);
-        }
-
-        /* Glitch Effect */
-        @keyframes glitch {
-            0% {
-                clip-path: inset(40% 0 61% 0);
-                transform: translate(-2px, -2px);
-            }
-            20% {
-                clip-path: inset(92% 0 1% 0);
-                transform: translate(2px, 2px);
-            }
-            40% {
-                clip-path: inset(43% 0 1% 0);
-                transform: translate(-2px, 2px);
-            }
-            60% {
-                clip-path: inset(25% 0 58% 0);
-                transform: translate(2px, -2px);
-            }
-            80% {
-                clip-path: inset(54% 0 7% 0);
-                transform: translate(-2px, -2px);
-            }
-            100% {
-                clip-path: inset(58% 0 43% 0);
-                transform: translate(2px, 2px);
-            }
-        }
-
-        .hover-glitch:hover::before {
-            animation: glitch 0.3s ease-in-out infinite;
-            opacity: 0.8;
-        }
-
-        /* Smooth Expand Animation */
-        @keyframes expandWidth {
-            from {
-                width: 0;
-                opacity: 0;
-            }
-            to {
-                width: 100%;
-                opacity: 1;
-            }
-        }
-
-        .expand-width {
-            animation: expandWidth 0.8s cubic-bezier(0.34, 1.56, 0.64, 1);
-        }
-
-        /* Bounce In Animation */
-        @keyframes bounceIn {
-            0% {
-                opacity: 0;
-                transform: scale(0.3);
-            }
-            50% {
-                opacity: 1;
-                transform: scale(1.05);
-            }
-            70% {
-                transform: scale(0.9);
-            }
-            100% {
-                transform: scale(1);
-            }
-        }
-
-        .bounce-in {
-            animation: bounceIn 0.6s cubic-bezier(0.34, 1.56, 0.64, 1);
-        }
-
-        /* Smooth Scroll Fade */
-        @keyframes scrollFade {
-            0% {
-                opacity: 0;
-                transform: translateY(40px) scale(0.95);
-            }
-            100% {
-                opacity: 1;
-                transform: translateY(0) scale(1);
-            }
-        }
-
-        .scroll-fade {
-            animation: scrollFade 0.8s cubic-bezier(0.34, 1.56, 0.64, 1) forwards;
-            opacity: 0;
-        }
-
-        /* Pulse Glow */
-        @keyframes pulseGlow {
-            0%, 100% {
-                box-shadow: 0 0 15px rgba(79, 70, 229, 0.2), inset 0 0 15px rgba(79, 70, 229, 0.1);
-            }
-            50% {
-                box-shadow: 0 0 30px rgba(79, 70, 229, 0.4), inset 0 0 30px rgba(79, 70, 229, 0.2);
-            }
-        }
-
-        .glow-pulse {
-            animation: pulseGlow 2.5s ease-in-out infinite;
-        }
-
-        /* Ripple Effect for Buttons */
-        .ripple {
-            position: absolute;
-            border-radius: 50%;
-            background: rgba(255, 255, 255, 0.6);
-            transform: scale(0);
-            animation: rippleEffect 0.6s ease-out;
-            pointer-events: none;
-        }
-
-        @keyframes rippleEffect {
-            to {
-                transform: scale(4);
-                opacity: 0;
-            }
-        }
-
-        /* Icon Hover Glow */
-        .icon-glow {
-            filter: drop-shadow(0 0 8px rgba(79, 70, 229, 0.3));
-            transition: filter 0.3s ease;
-        }
-
-        .icon-glow:hover {
-            filter: drop-shadow(0 0 16px rgba(79, 70, 229, 0.6));
-        }
-
-        .icon-glow-primary {
-            filter: drop-shadow(0 0 8px rgba(79, 70, 229, 0.4));
-            transition: filter 0.3s ease;
-        }
-
-        .icon-glow-primary:hover {
-            filter: drop-shadow(0 0 16px rgba(79, 70, 229, 0.8));
-        }
-
-        .icon-glow-accent {
-            filter: drop-shadow(0 0 8px rgba(245, 158, 11, 0.4));
-            transition: filter 0.3s ease;
-        }
-
-        .icon-glow-accent:hover {
-            filter: drop-shadow(0 0 16px rgba(245, 158, 11, 0.8));
-        }
-
-        .icon-glow-success {
-            filter: drop-shadow(0 0 8px rgba(34, 197, 94, 0.4));
-            transition: filter 0.3s ease;
-        }
-
-        .icon-glow-success:hover {
-            filter: drop-shadow(0 0 16px rgba(34, 197, 94, 0.8));
-        }
-
-        /* Hover Scale Animation */
-        .hover-scale {
-            transition: all 0.3s cubic-bezier(0.34, 1.56, 0.64, 1);
-        }
-
-        .hover-scale:hover {
-            transform: scale(1.05);
-        }
-
-        /* Feature Icons with Gradient */
-        .feature-icon {
-            display: inline-flex;
-            align-items: center;
-            justify-content: center;
-            width: 48px;
-            height: 48px;
-            border-radius: 12px;
-            background: linear-gradient(135deg, #4f46e5, #6366f1);
-            color: white;
-            font-size: 24px;
-            transition: all 0.4s cubic-bezier(0.34, 1.56, 0.64, 1);
-        }
-
-        .feature-icon:hover {
-            transform: scale(1.15) rotate(5deg);
-            box-shadow: 0 8px 20px rgba(79, 70, 229, 0.4);
-        }
-
-        /* Price Tag Animation */
-        @keyframes priceShimmer {
-            0%, 100% {
-                color: #4f46e5;
-            }
-            50% {
-                color: #f59e0b;
-            }
-        }
-
-        .price-animate {
-            animation: priceShimmer 2s ease-in-out infinite;
-        }
-
-        /* Check Icon Animation */
-        @keyframes checkMark {
-            0% {
-                transform: scale(0) rotate(-45deg);
-                opacity: 0;
-            }
-            50% {
-                transform: scale(1.2) rotate(0deg);
-            }
-            100% {
-                transform: scale(1) rotate(0deg);
-                opacity: 1;
-            }
-        }
-
-        .check-animate {
-            animation: checkMark 0.6s cubic-bezier(0.34, 1.56, 0.64, 1) forwards;
-        }
-
-        /* Smooth List Item Animation */
-        @keyframes listSlideIn {
-            from {
-                opacity: 0;
-                transform: translateX(-20px);
-            }
-            to {
-                opacity: 1;
-                transform: translateX(0);
-            }
-        }
-
-        .list-slide {
-            animation: listSlideIn 0.5s cubic-bezier(0.34, 1.56, 0.64, 1) forwards;
-        }
-
-        .list-slide:nth-child(1) { animation-delay: 0.1s; }
-        .list-slide:nth-child(2) { animation-delay: 0.2s; }
-        .list-slide:nth-child(3) { animation-delay: 0.3s; }
-        .list-slide:nth-child(4) { animation-delay: 0.4s; }
-        .list-slide:nth-child(5) { animation-delay: 0.5s; }
-
-        /* Smooth Scale Animation */
-        @keyframes scaleIn {
-            from {
-                opacity: 0;
-                transform: scale(0.9);
-            }
-            to {
-                opacity: 1;
-                transform: scale(1);
-            }
-        }
-
-        .scale-in {
-            animation: scaleIn 0.6s cubic-bezier(0.34, 1.56, 0.64, 1);
-        }
-
-        /* Smooth Opacity Transition */
-        @keyframes fadeInUp {
-            from {
-                opacity: 0;
-                transform: translateY(20px);
-            }
-            to {
-                opacity: 1;
-                transform: translateY(0);
-            }
-        }
-
-        .fade-in-up {
-            animation: fadeInUp 0.6s cubic-bezier(0.34, 1.56, 0.64, 1) forwards;
-        }
-
-        .fade-in-up:nth-child(1) { animation-delay: 0s; }
-        .fade-in-up:nth-child(2) { animation-delay: 0.1s; }
-        .fade-in-up:nth-child(3) { animation-delay: 0.2s; }
-
-        /* Rotating Border Animation */
-        @keyframes rotateBorder {
-            0% { transform: rotate(0deg); }
-            100% { transform: rotate(360deg); }
-        }
-
-        .rotate-border {
-            animation: rotateBorder 3s linear infinite;
-        }
-
-        /* Slide and Fade Combination */
-        @keyframes slideAndFade {
-            0% {
-                opacity: 0;
-                transform: translateY(30px) scale(0.95);
-            }
-            100% {
-                opacity: 1;
-                transform: translateY(0) scale(1);
-            }
-        }
-
-        .slide-and-fade {
-            animation: slideAndFade 0.7s cubic-bezier(0.34, 1.56, 0.64, 1) forwards;
-        }
-
-        /* Text Glow Effect */
-        @keyframes textGlow {
-            0%, 100% {
-                text-shadow: 0 0 10px rgba(79, 70, 229, 0.3);
-            }
-            50% {
-                text-shadow: 0 0 20px rgba(79, 70, 229, 0.6);
-            }
-        }
-
-        .text-glow {
-            animation: textGlow 2s ease-in-out infinite;
-        }
-
-        /* Smooth Slide from Right */
-        @keyframes slideFromRight {
-            from {
-                opacity: 0;
-                transform: translateX(40px) skewX(-10deg);
-            }
-            to {
-                opacity: 1;
-                transform: translateX(0) skewX(0deg);
-            }
-        }
-
-        .slide-from-right {
-            animation: slideFromRight 0.8s cubic-bezier(0.34, 1.56, 0.64, 1);
-        }
-
-        /* Smooth Slide from Left */
-        @keyframes slideFromLeft {
-            from {
-                opacity: 0;
-                transform: translateX(-40px) skewX(10deg);
-            }
-            to {
-                opacity: 1;
-                transform: translateX(0) skewX(0deg);
-            }
-        }
-
-        .slide-from-left {
-            animation: slideFromLeft 0.8s cubic-bezier(0.34, 1.56, 0.64, 1);
-        }
-
-        /* Hover Scale with Shadow */
-        .hover-scale {
-            transition: all 0.3s cubic-bezier(0.34, 1.56, 0.64, 1);
-        }
-
-        .hover-scale:hover {
-            transform: scale(1.05);
-            filter: drop-shadow(0 8px 16px rgba(79, 70, 229, 0.3));
-        }
-
-        /* Scale In with Fade */
-        @keyframes scaleInFade {
-            0% {
-                opacity: 0;
-                transform: scale(0.9) translateY(10px);
-            }
-            100% {
-                opacity: 1;
-                transform: scale(1) translateY(0);
-            }
-        }
-
-        .scale-in-fade {
-            animation: scaleInFade 0.5s cubic-bezier(0.34, 1.56, 0.64, 1) forwards;
-        }
-
-        /* Text Reveal Animation */
-        @keyframes textReveal {
-            0% {
-                clip-path: inset(0 100% 0 0);
-                opacity: 0;
-            }
-            100% {
-                clip-path: inset(0 0 0 0);
-                opacity: 1;
-            }
-        }
-
-        .text-reveal {
-            animation: textReveal 0.8s cubic-bezier(0.34, 1.56, 0.64, 1) forwards;
-        }
-
-        /* Social Icon Bounce */
-        @keyframes socialBounce {
-            0%, 100% {
-                transform: translateY(0);
-            }
-            50% {
-                transform: translateY(-8px);
-            }
-        }
-
-        .social-icon-bounce {
-            transition: all 0.3s cubic-bezier(0.34, 1.56, 0.64, 1);
-        }
-
-        .social-icon-bounce:hover {
-            animation: socialBounce 0.6s ease-in-out;
-            transform: scale(1.1);
-        }
-
-        /* ===== PREMIUM FEATURE CARD ANIMATIONS ===== */
-
-        /* Feature Card Container Animation */
-        @keyframes featureCardSlideIn {
-            0% {
-                opacity: 0;
-                transform: translateY(40px) scale(0.95);
-            }
-            100% {
-                opacity: 1;
-                transform: translateY(0) scale(1);
-            }
-        }
-
-        .group {
-            position: relative;
-        }
-
-        /* Premium Hover Glow Effect */
-        @keyframes cardGlow {
-            0%, 100% {
-                box-shadow: 0 0 0px rgba(79, 70, 229, 0);
-            }
-            50% {
-                box-shadow: 0 0 20px rgba(79, 70, 229, 0.2);
-            }
-        }
-
-        .group:hover {
-            animation: cardGlow 2s ease-in-out;
-        }
-
-        /* Feature Card Border Shimmer */
-        @keyframes borderShimmer {
-            0% {
-                background-position: -1000px 0;
-            }
-            100% {
-                background-position: 1000px 0;
-            }
-        }
-
-        .group::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: 0;
-            right: 0;
-            bottom: 0;
-            border-radius: inherit;
-            padding: 1px;
-            background: linear-gradient(90deg, transparent, rgba(79, 70, 229, 0.3), transparent);
-            background-size: 1000px 100%;
-            -webkit-mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
-            -webkit-mask-composite: xor;
-            mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
-            mask-composite: exclude;
-            opacity: 0;
-            transition: opacity 0.4s ease;
-        }
-
-        .group:hover::before {
-            opacity: 1;
-            animation: borderShimmer 2s infinite;
-        }
-
-        /* Icon Container Pulse */
-        @keyframes iconPulse {
-            0%, 100% {
-                box-shadow: 0 0 0px rgba(79, 70, 229, 0.4);
-            }
-            50% {
-                box-shadow: 0 0 20px rgba(79, 70, 229, 0.6);
-            }
-        }
-
-        .group:hover .icon-glow-primary {
-            animation: iconPulse 2s ease-in-out infinite;
-        }
-
-        .group:hover .icon-glow-accent {
-            animation: accentPulse 2s ease-in-out infinite;
-        }
-
-        .group:hover .icon-glow-success {
-            animation: successPulse 2s ease-in-out infinite;
-        }
-
-        @keyframes accentPulse {
-            0%, 100% {
-                box-shadow: 0 0 0px rgba(245, 158, 11, 0.4);
-            }
-            50% {
-                box-shadow: 0 0 20px rgba(245, 158, 11, 0.6);
-            }
-        }
-
-        @keyframes successPulse {
-            0%, 100% {
-                box-shadow: 0 0 0px rgba(34, 197, 94, 0.4);
-            }
-            50% {
-                box-shadow: 0 0 20px rgba(34, 197, 94, 0.6);
-            }
-        }
-
-        /* Feature Description Slide In */
-        @keyframes textSlideUp {
-            0% {
-                opacity: 0;
-                transform: translateY(20px);
-            }
-            100% {
-                opacity: 1;
-                transform: translateY(0);
-            }
-        }
-
-        .group:hover p {
-            animation: textSlideUp 0.5s cubic-bezier(0.34, 1.56, 0.64, 1) forwards;
-        }
-
-        /* Badge Animation */
-        @keyframes badgeScale {
-            0% {
-                transform: scale(0.8);
-                opacity: 0;
-            }
-            100% {
-                transform: scale(1);
-                opacity: 1;
-            }
-        }
-
-        .group:hover .text-xs {
-            animation: badgeScale 0.4s cubic-bezier(0.34, 1.56, 0.64, 1) forwards;
-        }
-
-        /* Feature Card Background Gradient Shift */
-        @keyframes bgGradientShift {
-            0% {
-                background-position: 0% 50%;
-            }
-            50% {
-                background-position: 100% 50%;
-            }
-            100% {
-                background-position: 0% 50%;
-            }
-        }
-
-        .group::after {
-            background-size: 200% 200%;
-            animation: bgGradientShift 6s ease infinite;
-        }
-
-        /* Icon Rotation on Hover */
-        @keyframes iconRotate {
-            0%, 100% {
-                transform: rotate(0deg);
-            }
-            50% {
-                transform: rotate(10deg);
-            }
-        }
-
-        /* Icon Rotation on Hover */
-        @keyframes iconRotate {
-            0%, 100% {
-                transform: rotate(0deg);
-            }
-            50% {
-                transform: rotate(10deg);
-            }
-        }
-
-        .group:hover .icon-bounce {
-            animation: iconRotate 0.6s cubic-bezier(0.34, 1.56, 0.64, 1) !important;
-        }
-
-        /* ===== FEATURE CARD SPECIFIC STYLING ===== */
-
-        .feature-card {
-            animation: featureCardSlideIn 0.6s cubic-bezier(0.34, 1.56, 0.64, 1) forwards;
-        }
-
-        /* Icon Container Enhanced Glow */
-        .feature-icon-container {
-            box-shadow: 0 0 15px rgba(79, 70, 229, 0.2);
-            transition: all 0.3s cubic-bezier(0.34, 1.56, 0.64, 1);
-        }
-
-        .feature-card:hover .feature-icon-container {
-            transform: scale(1.1) rotate(-5deg);
-            box-shadow: 0 0 30px rgba(79, 70, 229, 0.4);
-        }
-
-        /* Feature Card Border Animated Gradient */
-        .feature-card {
-            position: relative;
-            overflow: hidden;
-        }
-
-        .feature-card::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            background: linear-gradient(
-                45deg,
-                transparent 30%,
-                rgba(79, 70, 229, 0.1) 50%,
-                transparent 70%
-            );
-            background-size: 200% 200%;
-            animation: shimmerMove 3s infinite;
-            pointer-events: none;
-            opacity: 0;
-            border-radius: 1rem;
-        }
-
-        @keyframes shimmerMove {
-            0% {
-                background-position: 200% 200%;
-            }
-            100% {
-                background-position: -200% -200%;
-            }
-        }
-
-        .feature-card:hover::before {
-            opacity: 1;
-        }
-
-        /* Feature Title Styling */
-        .feature-title {
-            background: linear-gradient(135deg, #0f172a 0%, #1e293b 100%);
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-            background-clip: text;
-            transition: all 0.3s ease;
-        }
-
-        .feature-card:hover .feature-title {
-            background: linear-gradient(135deg, #4f46e5 0%, #6366f1 100%);
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-            background-clip: text;
-            transform: translateX(5px);
-        }
-
-        /* Feature Description Styling */
-        .feature-desc {
-            transition: all 0.3s cubic-bezier(0.34, 1.56, 0.64, 1);
-        }
-
-        .feature-card:hover .feature-desc {
-            color: #374151;
-            transform: translateX(4px);
-        }
-
-        /* Badge Dot Animation */
-        .badge-dot {
-            animation: dotPulse 2s ease-in-out infinite;
-            transition: all 0.3s ease;
-        }
-
-        @keyframes dotPulse {
-            0%, 100% {
-                box-shadow: 0 0 0px rgba(79, 70, 229, 0.4), inset 0 0 0px rgba(79, 70, 229, 0.2);
-            }
-            50% {
-                box-shadow: 0 0 8px rgba(79, 70, 229, 0.8), inset 0 0 4px rgba(79, 70, 229, 0.4);
-            }
-        }
-
-        .feature-card:hover .badge-dot {
-            transform: scale(1.3);
-        }
-
-        /* Badge Row Animation */
-        .feature-badge-row {
-            animation: badgeSlideIn 0.6s cubic-bezier(0.34, 1.56, 0.64, 1) 0.3s forwards;
-            opacity: 0;
-        }
-
-        @keyframes badgeSlideIn {
-            from {
-                opacity: 0;
-                transform: translateY(10px);
-            }
-            to {
-                opacity: 1;
-                transform: translateY(0);
-            }
-        }
-
-        /* Smooth Background Transition */
-        @keyframes bgShift {
-            0% {
-                background-position: 0% 50%;
-            }
-            50% {
-                background-position: 100% 50%;
-            }
-            100% {
-                background-position: 0% 50%;
-            }
-        }
-
-        .bg-shift {
-            background-size: 200% 200%;
-            animation: bgShift 6s ease infinite;
-        }
-
-        /* Bounce Entrance */
-        @keyframes bounceEntrance {
-            0% {
-                opacity: 0;
-                transform: translateY(-40px) scale(0.8);
-            }
-            50% {
-                opacity: 1;
-                transform: translateY(5px) scale(1.05);
-            }
-            100% {
-                opacity: 1;
-                transform: translateY(0) scale(1);
-            }
-        }
-
-        .bounce-entrance {
-            animation: bounceEntrance 0.7s cubic-bezier(0.34, 1.56, 0.64, 1);
-        }
-
-        /* Smooth Underline Expand */
-        @keyframes expandLine {
-            from {
-                width: 0;
-            }
-            to {
-                width: 100%;
-            }
-        }
-
-        .expand-line {
-            animation: expandLine 0.8s cubic-bezier(0.34, 1.56, 0.64, 1);
-        }
-
-
-        .animate-blob {
-            animation: blob 7s infinite;
-        }
-
-        .animation-delay-2000 {
-            animation-delay: 2s;
-        }
-
-        .animation-delay-4000 {
-            animation-delay: 4s;
-        }
-
-        /* Slide Up Animation */
-        .animate-slide-up {
-            animation: slideUp 0.8s ease-out;
-        }
-
-        /* Enhanced Input Fields */
-        input, textarea, select {
-            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
-            border-color: #e2e8f0;
-        }
-
-        input:focus, textarea:focus, select:focus {
-            border-color: #4f46e5;
-            box-shadow: 0 0 0 3px rgba(79, 70, 229, 0.1);
-            outline: none;
-        }
-
-        /* List item with icon */
-        .feature-list li {
-            animation: slideUp 0.6s ease-out both;
-        }
-
-        .feature-list li:nth-child(1) { animation-delay: 100ms; }
-        .feature-list li:nth-child(2) { animation-delay: 200ms; }
-        .feature-list li:nth-child(3) { animation-delay: 300ms; }
-        .feature-list li:nth-child(4) { animation-delay: 400ms; }
-
-        /* CTA Button Enhancement */
-        .cta-button {
-            position: relative;
-            overflow: hidden;
-        }
-
-        .cta-button:before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: -100%;
-            width: 100%;
-            height: 100%;
-            background: rgba(255, 255, 255, 0.1);
-            transition: left 0.5s;
-        }
-
-        .cta-button:hover:before {
-            left: 100%;
-        }
-
-        /* Professional Divider */
-        .divider-gradient {
-            background: linear-gradient(90deg, 
-                transparent 0%, 
-                rgba(79, 70, 229, 0.3) 20%, 
-                rgba(79, 70, 229, 0.3) 80%, 
-                transparent 100%);
-            height: 1px;
-        }
-
-        /* Hover shadow effect */
-        .hover-lift:hover {
-            transform: translateY(-8px);
-            box-shadow: 0 20px 40px rgba(79, 70, 229, 0.15);
-        }
-
-        /* Text gradient underline on hover */
-        .underline-gradient {
-            background: linear-gradient(90deg, #4f46e5, #f59e0b);
-            background-size: 0 2px;
-            background-repeat: no-repeat;
-            background-position: left bottom;
-            transition: background-size 0.3s;
-        }
-
-        .underline-gradient:hover {
-            background-size: 100% 2px;
-        }
+    <section class="section section--calm">
+      <div class="container">
+        <div class="calm-grid">
+          <div>
+            <h3>Neuropathy affects millions — but relief is possible.</h3>
+            <p class="muted">Calm Nerve combines 9 powerful ingredients shown to support nerve repair, reduce inflammation, and improve comfort.</p>
+          </div>
+          <div class="card small">Made in a GMP-certified facility<br>Third-party tested</div>
+        </div>
+      </div>
+    </section>
+
+    
+    <section class="section" id="what-is">
+      <div class="container">
+        <h3>What Is Calm Nerve?</h3>
+        <p>Calm Nerve is a science-inspired nerve support formula created to help people who struggle with:</p>
+        <ul class="feature-list">
+          <li>Tingling feet or hands</li>
+          <li>Burning sensations</li>
+          <li>Numbness or loss of feeling</li>
+          <li>Diabetic nerve pain</li>
+          <li>Poor circulation</li>
+          <li>Leg or foot discomfort</li>
+        </ul>
+      </div>
+    </section>
+
+    
+    <section class="section alt" id="ingredients">
+      <div class="container">
+        <h3>What Makes Calm Nerve Different?</h3>
+        <p class="muted">Clinically studied, well-tolerated ingredients that target inflammation, oxidation, and nerve repair.</p>
+
+        <div class="ingredients-grid">
+          <div class="ingredient">
+            <strong>Benfotiamine</strong>
+            <div class="muted">Supports healthy nerve regeneration</div>
+          </div>
+          <div class="ingredient">
+            <strong>Alpha-Lipoic Acid (ALA)</strong>
+            <div class="muted">Reduces oxidative stress linked to nerve damage</div>
+          </div>
+          <div class="ingredient">
+            <strong>Methylcobalamin (B12)</strong>
+            <div class="muted">Essential for nerve sheath repair</div>
+          </div>
+          <div class="ingredient">
+            <strong>Acetyl-L-Carnitine</strong>
+            <div class="muted">Supports healthy nerve communication</div>
+          </div>
+          <div class="ingredient">
+            <strong>Lion’s Mane</strong>
+            <div class="muted">Stimulates nerve growth factor (NGF)</div>
+          </div>
+          <div class="ingredient">
+            <strong>Magnesium L-Threonate</strong>
+            <div class="muted">Supports nerve signaling</div>
+          </div>
+          <div class="ingredient">
+            <strong>Turmeric • Boswellia • Ashwagandha</strong>
+            <div class="muted">Reduce inflammation that worsens nerve pain</div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    
+    <section class="section">
+      <div class="container">
+        <h3>Early Access Benefits</h3>
+        <ul class="benefits">
+          <li><svg class="icon" viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2"><path d="M20 6L9 17l-5-5" /></svg> 10% Off Your First Bottle</li>
+          <li><svg class="icon" viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2"><path d="M20 6L9 17l-5-5" /></svg> Priority Shipping Before Public Release</li>
+          <li><svg class="icon" viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2"><path d="M20 6L9 17l-5-5" /></svg> Founders‑Only Launch Bonuses</li>
+        </ul>
+      </div>
+    </section>
+
+    
+    <section class="section alt" id="how-it-works">
+      <div class="container">
+        <h3>How Calm Nerve Works</h3>
+        <div class="how-steps">
+          <div class="how-step">
+            <div class="step-number">1</div>
+            <h4>Reduce nerve stress & inflammation</h4>
+            <p class="muted">ALA, Turmeric, Boswellia, Ashwagandha</p>
+          </div>
+          <div class="how-step">
+            <div class="step-number">2</div>
+            <h4>Nourish, repair & protect the nerves</h4>
+            <p class="muted">Benfotiamine, Methyl B12, ALCAR, Lion’s Mane</p>
+          </div>
+          <div class="how-step">
+            <div class="step-number">3</div>
+            <h4>Improve nerve communication & circulation</h4>
+            <p class="muted">Magnesium L-Threonate, ALA, Lion’s Mane</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    
+    <section class="section">
+      <div class="container">
+        <h3>What early testers say</h3>
+        <div class="testimonials">
+          <div class="testimonial">
+            <blockquote>
+              <p>“Within a few weeks I noticed less numbness and more comfort in my feet.”</p>
+              <cite>— T.M., Early tester</cite>
+            </blockquote>
+          </div>
+          <div class="testimonial">
+            <blockquote>
+              <p>“Finally something that helps me sleep through the night without constant tingling.”</p>
+              <cite>— J.O., Early tester</cite>
+            </blockquote>
+          </div>
+          <div class="testimonial">
+            <blockquote>
+              <p>“I appreciate the natural formula — my hands feel clearer and steadier.”</p>
+              <cite>— R.S., Early tester</cite>
+            </blockquote>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    
+    <section class="section alt" aria-labelledby="faq-heading">
+      <div class="container">
+        <h3 id="faq-heading">FAQ</h3>
+        <div class="faq-list">
+          <details class="faq-item">
+            <summary class="faq-question">When is the official launch?</summary>
+            <div class="faq-answer">We expect to ship early orders in the next few weeks.</div>
+          </details>
+
+          <details class="faq-item">
+            <summary class="faq-question">Is Calm Nerve safe?</summary>
+            <div class="faq-answer">It’s made in a GMP-certified facility using natural ingredients with strong scientific support. Consult your doctor if you have concerns.</div>
+          </details>
+
+          <details class="faq-item">
+            <summary class="faq-question">Who should not take Calm Nerve?</summary>
+            <div class="faq-answer">Anyone on medication or who is pregnant should consult their doctor before taking new supplements.</div>
+          </details>
+
+          <details class="faq-item">
+            <summary class="faq-question">What will the price be?</summary>
+            <div class="faq-answer">The early access price will be $39, with exclusive discounts for early signups.</div>
+          </details>
+        </div>
+      </div>
+    </section>
+
+    
+    <section class="section section-cta" id="final-cta">
+      <div class="container">
+        <div class="cta-grid">
+          <div>
+            <h3>Be the First to Try Calm Nerve</h3>
+            <p class="muted">Launch is happening soon — join the list now and save.</p>
+          </div>
+          <div>
+            <!-- MailerLite embedded form -->
+            <style type="text/css">@import url("https://assets.mlcdn.com/fonts.css?version=1766132");</style>
+    <style type="text/css">
+    /* LOADER */
+    .ml-form-embedSubmitLoad {
+      display: inline-block;
+      width: 20px;
+      height: 20px;
+    }
+
+  .g-recaptcha {
+  transform: scale(1);
+  -webkit-transform: scale(1);
+  transform-origin: 0 0;
+  -webkit-transform-origin: 0 0;
+  }
+
+    .sr-only {
+      position: absolute;
+      width: 1px;
+      height: 1px;
+      padding: 0;
+      margin: -1px;
+      overflow: hidden;
+      clip: rect(0,0,0,0);
+      border: 0;
+    }
+
+    .ml-form-embedSubmitLoad:after {
+      content: " ";
+      display: block;
+      width: 11px;
+      height: 11px;
+      margin: 1px;
+      border-radius: 50%;
+      border: 4px solid #fff;
+    border-color: #ffffff #ffffff #ffffff transparent;
+    animation: ml-form-embedSubmitLoad 1.2s linear infinite;
+    }
+    @keyframes ml-form-embedSubmitLoad {
+      0% {
+      transform: rotate(0deg);
+      }
+      100% {
+      transform: rotate(360deg);
+      }
+    }
+      #mlb2-35189939.ml-form-embedContainer {
+        box-sizing: border-box;
+        display: table;
+        margin: 0 auto;
+        position: static;
+        width: 100% !important;
+      }
+      #mlb2-35189939.ml-form-embedContainer h4,
+      #mlb2-35189939.ml-form-embedContainer p,
+      #mlb2-35189939.ml-form-embedContainer span,
+      #mlb2-35189939.ml-form-embedContainer button {
+        text-transform: none !important;
+        letter-spacing: normal !important;
+      }
+      #mlb2-35189939.ml-form-embedContainer .ml-form-embedWrapper {
+        background-color: #f6f6f6;
+        
+        border-width: 0px;
+        border-color: transparent;
+        border-radius: 4px;
+        border-style: solid;
+        box-sizing: border-box;
+        display: inline-block !important;
+        margin: 0;
+        padding: 0;
+        position: relative;
+              }
+      #mlb2-35189939.ml-form-embedContainer .ml-form-embedWrapper.embedPopup,
+      #mlb2-35189939.ml-form-embedContainer .ml-form-embedWrapper.embedDefault { width: 400px; }
+      #mlb2-35189939.ml-form-embedContainer .ml-form-embedWrapper.embedForm { max-width: 400px; width: 100%; }
+      #mlb2-35189939.ml-form-embedContainer .ml-form-align-left { text-align: left; }
+      #mlb2-35189939.ml-form-embedContainer .ml-form-align-center { text-align: center; }
+      #mlb2-35189939.ml-form-embedContainer .ml-form-align-default { display: table-cell !important; vertical-align: middle !important; text-align: center !important; }
+      #mlb2-35189939.ml-form-embedContainer .ml-form-align-right { text-align: right; }
+      #mlb2-35189939.ml-form-embedContainer .ml-form-embedWrapper .ml-form-embedHeader img {
+        border-top-left-radius: 4px;
+        border-top-right-radius: 4px;
+        height: auto;
+        margin: 0 auto !important;
+        max-width: 100%;
+        width: undefinedpx;
+      }
+      #mlb2-35189939.ml-form-embedContainer .ml-form-embedWrapper .ml-form-embedBody,
+      #mlb2-35189939.ml-form-embedContainer .ml-form-embedWrapper .ml-form-successBody {
+        padding: 20px 20px 0 20px;
+      }
+      #mlb2-35189939.ml-form-embedContainer .ml-form-embedWrapper .ml-form-embedBody.ml-form-embedBodyHorizontal {
+        padding-bottom: 0;
+      }
+      #mlb2-35189939.ml-form-embedContainer .ml-form-embedWrapper .ml-form-embedBody .ml-form-embedContent,
+      #mlb2-35189939.ml-form-embedContainer .ml-form-embedWrapper .ml-form-successBody .ml-form-successContent {
+        text-align: left;
+        margin: 0 0 20px 0;
+      }
+      #mlb2-35189939.ml-form-embedContainer .ml-form-embedWrapper .ml-form-embedBody .ml-form-embedContent h4,
+      #mlb2-35189939.ml-form-embedContainer .ml-form-embedWrapper .ml-form-successBody .ml-form-successContent h4 {
+        color: #000000;
+        font-family: 'Open Sans', Arial, Helvetica, sans-serif;
+        font-size: 30px;
+        font-weight: 400;
+        margin: 0 0 10px 0;
+        text-align: left;
+        word-break: break-word;
+      }
+      #mlb2-35189939.ml-form-embedContainer .ml-form-embedWrapper .ml-form-embedBody .ml-form-embedContent p,
+      #mlb2-35189939.ml-form-embedContainer .ml-form-embedWrapper .ml-form-successBody .ml-form-successContent p {
+        color: #000000;
+        font-family: 'Open Sans', Arial, Helvetica, sans-serif;
+        font-size: 14px;
+        font-weight: 400;
+        line-height: 20px;
+        margin: 0 0 10px 0;
+        text-align: left;
+      }
+      #mlb2-35189939.ml-form-embedContainer .ml-form-embedWrapper .ml-form-embedBody .ml-form-embedContent ul,
+      #mlb2-35189939.ml-form-embedContainer .ml-form-embedWrapper .ml-form-embedBody .ml-form-embedContent ol,
+      #mlb2-35189939.ml-form-embedContainer .ml-form-embedWrapper .ml-form-successBody .ml-form-successContent ul,
+      #mlb2-35189939.ml-form-embedContainer .ml-form-embedWrapper .ml-form-successBody .ml-form-successContent ol {
+        color: #000000;
+        font-family: 'Open Sans', Arial, Helvetica, sans-serif;
+        font-size: 14px;
+      }
+      #mlb2-35189939.ml-form-embedContainer .ml-form-embedWrapper .ml-form-embedBody .ml-form-embedContent ol ol,
+      #mlb2-35189939.ml-form-embedContainer .ml-form-embedWrapper .ml-form-successBody .ml-form-successContent ol ol {
+        list-style-type: lower-alpha;
+      }
+      #mlb2-35189939.ml-form-embedContainer .ml-form-embedWrapper .ml-form-embedBody .ml-form-embedContent ol ol ol,
+      #mlb2-35189939.ml-form-embedContainer .ml-form-embedWrapper .ml-form-successBody .ml-form-successContent ol ol ol {
+        list-style-type: lower-roman;
+      }
+      #mlb2-35189939.ml-form-embedContainer .ml-form-embedWrapper .ml-form-embedBody .ml-form-embedContent p a,
+      #mlb2-35189939.ml-form-embedContainer .ml-form-embedWrapper .ml-form-successBody .ml-form-successContent p a {
+        color: #000000;
+        text-decoration: underline;
+      }
+
+      #mlb2-35189939.ml-form-embedContainer .ml-form-embedWrapper .ml-block-form .ml-field-group {
+        text-align: left!important;
+      }
+
+      #mlb2-35189939.ml-form-embedContainer .ml-form-embedWrapper .ml-block-form .ml-field-group label {
+        margin-bottom: 5px;
+        color: #333333;
+        font-size: 14px;
+        font-family: 'Open Sans', Arial, Helvetica, sans-serif;
+        font-weight: bold; font-style: normal; text-decoration: none;;
+        display: inline-block;
+        line-height: 20px;
+      }
+      #mlb2-35189939.ml-form-embedContainer .ml-form-embedWrapper .ml-form-embedBody .ml-form-embedContent p:last-child,
+      #mlb2-35189939.ml-form-embedContainer .ml-form-embedWrapper .ml-form-successBody .ml-form-successContent p:last-child {
+        margin: 0;
+      }
+      #mlb2-35189939.ml-form-embedContainer .ml-form-embedWrapper .ml-form-embedBody form {
+        margin: 0;
+        width: 100%;
+      }
+      #mlb2-35189939.ml-form-embedContainer .ml-form-embedWrapper .ml-form-embedBody .ml-form-formContent,
+      #mlb2-35189939.ml-form-embedContainer .ml-form-embedWrapper .ml-form-embedBody .ml-form-checkboxRow {
+        margin: 0 0 20px 0;
+        width: 100%;
+      }
+      #mlb2-35189939.ml-form-embedContainer .ml-form-embedWrapper .ml-form-embedBody .ml-form-checkboxRow {
+        float: left;
+      }
+      #mlb2-35189939.ml-form-embedContainer .ml-form-embedWrapper .ml-form-embedBody .ml-form-formContent.horozintalForm {
+        margin: 0;
+        padding: 0 0 20px 0;
+        width: 100%;
+        height: auto;
+        float: left;
+      }
+      #mlb2-35189939.ml-form-embedContainer .ml-form-embedWrapper .ml-form-embedBody .ml-form-fieldRow {
+        margin: 0 0 10px 0;
+        width: 100%;
+      }
+      #mlb2-35189939.ml-form-embedContainer .ml-form-embedWrapper .ml-form-embedBody .ml-form-fieldRow.ml-last-item {
+        margin: 0;
+      }
+      #mlb2-35189939.ml-form-embedContainer .ml-form-embedWrapper .ml-form-embedBody .ml-form-fieldRow.ml-formfieldHorizintal {
+        margin: 0;
+      }
+      #mlb2-35189939.ml-form-embedContainer .ml-form-embedWrapper .ml-form-embedBody .ml-form-fieldRow input {
+        background-color: #ffffff !important;
+        color: #333333 !important;
+        border-color: #cccccc;
+        border-radius: 4px !important;
+        border-style: solid !important;
+        border-width: 1px !important;
+        font-family: 'Open Sans', Arial, Helvetica, sans-serif;
+        font-size: 14px !important;
+        height: auto;
+        line-height: 21px !important;
+        margin-bottom: 0;
+        margin-top: 0;
+        margin-left: 0;
+        margin-right: 0;
+        padding: 10px 10px !important;
+        width: 100% !important;
+        box-sizing: border-box !important;
+        max-width: 100% !important;
+      }
+      #mlb2-35189939.ml-form-embedContainer .ml-form-embedWrapper .ml-form-embedBody .ml-form-fieldRow input::-webkit-input-placeholder,
+      #mlb2-35189939.ml-form-embedContainer .ml-form-embedWrapper .ml-form-embedBody .ml-form-horizontalRow input::-webkit-input-placeholder { color: #333333; }
+
+      #mlb2-35189939.ml-form-embedContainer .ml-form-embedWrapper .ml-form-embedBody .ml-form-fieldRow input::-moz-placeholder,
+      #mlb2-35189939.ml-form-embedContainer .ml-form-embedWrapper .ml-form-embedBody .ml-form-horizontalRow input::-moz-placeholder { color: #333333; }
+
+      #mlb2-35189939.ml-form-embedContainer .ml-form-embedWrapper .ml-form-embedBody .ml-form-fieldRow input:-ms-input-placeholder,
+      #mlb2-35189939.ml-form-embedContainer .ml-form-embedWrapper .ml-form-embedBody .ml-form-horizontalRow input:-ms-input-placeholder { color: #333333; }
+
+      #mlb2-35189939.ml-form-embedContainer .ml-form-embedWrapper .ml-form-embedBody .ml-form-fieldRow input:-moz-placeholder,
+      #mlb2-35189939.ml-form-embedContainer .ml-form-embedWrapper .ml-form-embedBody .ml-form-horizontalRow input:-moz-placeholder { color: #333333; }
+
+      #mlb2-35189939.ml-form-embedContainer .ml-form-embedWrapper .ml-form-embedBody .ml-form-fieldRow textarea, #mlb2-35189939.ml-form-embedContainer .ml-form-embedWrapper .ml-form-embedBody .ml-form-horizontalRow textarea {
+        background-color: #ffffff !important;
+        color: #333333 !important;
+        border-color: #cccccc;
+        border-radius: 4px !important;
+        border-style: solid !important;
+        border-width: 1px !important;
+        font-family: 'Open Sans', Arial, Helvetica, sans-serif;
+        font-size: 14px !important;
+        height: auto;
+        line-height: 21px !important;
+        margin-bottom: 0;
+        margin-top: 0;
+        padding: 10px 10px !important;
+        width: 100% !important;
+        box-sizing: border-box !important;
+        max-width: 100% !important;
+      }
+
+      #mlb2-35189939.ml-form-embedContainer .ml-form-embedWrapper .ml-form-embedBody .ml-form-fieldRow .custom-radio .custom-control-label::before, #mlb2-35189939.ml-form-embedContainer .ml-form-embedWrapper .ml-form-embedBody .ml-form-horizontalRow .custom-radio .custom-control-label::before, #mlb2-35189939.ml-form-embedContainer .ml-form-embedWrapper .ml-form-embedBody .ml-form-fieldRow .custom-checkbox .custom-control-label::before, #mlb2-35189939.ml-form-embedContainer .ml-form-embedWrapper .ml-form-embedBody .ml-form-horizontalRow .custom-checkbox .custom-control-label::before, #mlb2-35189939.ml-form-embedContainer .ml-form-embedWrapper .ml-form-embedBody .ml-form-embedPermissions .ml-form-embedPermissionsOptionsCheckbox .label-description::before, #mlb2-35189939.ml-form-embedContainer .ml-form-embedWrapper .ml-form-embedBody .ml-form-interestGroupsRow .ml-form-interestGroupsRowCheckbox .label-description::before {
+          border-color: #cccccc!important;
+          background-color: #ffffff!important;
+      }
+
+      #mlb2-35189939.ml-form-embedContainer .ml-form-embedWrapper .ml-form-embedBody .ml-form-fieldRow .custom-control, #mlb2-35189939.ml-form-embedContainer .ml-form-embedWrapper .ml-form-embedBody .ml-form-horizontalRow .custom-control {
+        position: relative;
+        display: block;
+        min-height: 1.5rem;
+        padding-left: 1.5rem;
+      }
+
+      #mlb2-35189939.ml-form-embedContainer .ml-form-embedWrapper .ml-form-embedBody .ml-form-fieldRow .custom-radio .custom-control-input, #mlb2-35189939.ml-form-embedContainer .ml-form-embedWrapper .ml-form-embedBody .ml-form-horizontalRow .custom-radio .custom-control-input, #mlb2-35189939.ml-form-embedContainer .ml-form-embedWrapper .ml-form-embedBody .ml-form-fieldRow .custom-checkbox .custom-control-input, #mlb2-35189939.ml-form-embedContainer .ml-form-embedWrapper .ml-form-embedBody .ml-form-horizontalRow .custom-checkbox .custom-control-input {
+          position: absolute;
+          z-index: -1;
+          opacity: 0;
+          box-sizing: border-box;
+          padding: 0;
+      }
+
+    #mlb2-35189939.ml-form-embedContainer .ml-form-embedWrapper .ml-form-embedBody .ml-form-fieldRow .custom-radio .custom-control-label, #mlb2-35189939.ml-form-embedContainer .ml-form-embedWrapper .ml-form-embedBody .ml-form-horizontalRow .custom-radio .custom-control-label, #mlb2-35189939.ml-form-embedContainer .ml-form-embedWrapper .ml-form-embedBody .ml-form-fieldRow .custom-checkbox .custom-control-label, #mlb2-35189939.ml-form-embedContainer .ml-form-embedWrapper .ml-form-embedBody .ml-form-horizontalRow .custom-checkbox .custom-control-label {
+      color: #000000;
+      font-size: 12px!important;
+      font-family: 'Open Sans', Arial, Helvetica, sans-serif;
+      line-height: 22px;
+      margin-bottom: 0;
+      position: relative;
+      font-style: normal;
+      font-weight: 700;
+    }
+
+      #mlb2-35189939.ml-form-embedContainer .ml-form-embedWrapper .ml-form-embedBody .ml-form-fieldRow .custom-select, #mlb2-35189939.ml-form-embedContainer .ml-form-embedWrapper .ml-form-embedBody .ml-form-horizontalRow .custom-select {
+        background-color: #ffffff !important;
+        color: #333333 !important;
+        border-color: #cccccc;
+        border-radius: 4px !important;
+        border-style: solid !important;
+        border-width: 1px !important;
+        font-family: 'Open Sans', Arial, Helvetica, sans-serif;
+        font-size: 14px !important;
+        line-height: 20px !important;
+        margin-bottom: 0;
+        margin-top: 0;
+        padding: 10px 28px 10px 12px !important;
+        width: 100% !important;
+        box-sizing: border-box !important;
+        max-width: 100% !important;
+        height: auto;
+        display: inline-block;
+        vertical-align: middle;
+        background: url('https://assets.mlcdn.com/ml/images/default/dropdown.svg') no-repeat right .75rem center/8px 10px;
+        -webkit-appearance: none;
+        -moz-appearance: none;
+        appearance: none;
+      }
+
+      #mlb2-35189939.ml-form-embedContainer .ml-form-embedWrapper .ml-form-embedBody .ml-form-horizontalRow {
+        height: auto;
+        width: 100%;
+        float: left;
+      }
+      .ml-form-formContent.horozintalForm .ml-form-horizontalRow .ml-input-horizontal { width: 70%; float: left; }
+      .ml-form-formContent.horozintalForm .ml-form-horizontalRow .ml-button-horizontal { width: 30%; float: left; }
+      .ml-form-formContent.horozintalForm .ml-form-horizontalRow .ml-button-horizontal.labelsOn { padding-top: 25px;  }
+      #mlb2-35189939.ml-form-embedContainer .ml-form-embedWrapper .ml-form-embedBody .ml-form-horizontalRow input {
+        background-color: #ffffff;
+        color: #333333;
+        border-color: #cccccc;
+        border-radius: 4px;
+        border-style: solid;
+        border-width: 1px;
+        font-family: 'Open Sans', Arial, Helvetica, sans-serif;
+        font-size: 14px;
+        line-height: 20px;
+        margin-bottom: 0;
+        margin-top: 0;
+        padding: 10px 10px;
+        width: 100%;
+        box-sizing: border-box;
+        overflow-y: initial;
+      }
+      #mlb2-35189939.ml-form-embedContainer .ml-form-embedWrapper .ml-form-embedBody .ml-form-horizontalRow button {
+        background-color: #000000 !important;
+        border-color: #000000;
+        border-style: solid;
+        border-width: 1px;
+        border-radius: 4px;
+        box-shadow: none;
+        color: #ffffff !important;
+        cursor: pointer;
+        font-family: 'Open Sans', Arial, Helvetica, sans-serif;
+        font-size: 14px !important;
+        font-weight: 700 !important;
+        line-height: 20px !important;
+        margin: 0 !important;
+        padding: 10px !important;
+        width: 100%;
+        height: auto;
+      }
+      #mlb2-35189939.ml-form-embedContainer .ml-form-embedWrapper .ml-form-embedBody .ml-form-horizontalRow button:hover {
+        background-color: #333333 !important;
+        border-color: #333333 !important;
+      }
+      #mlb2-35189939.ml-form-embedContainer .ml-form-embedWrapper .ml-form-embedBody .ml-form-checkboxRow input[type="checkbox"] {
+        box-sizing: border-box;
+        padding: 0;
+        position: absolute;
+        z-index: -1;
+        opacity: 0;
+        margin-top: 5px;
+        margin-left: -1.5rem;
+        overflow: visible;
+      }
+      #mlb2-35189939.ml-form-embedContainer .ml-form-embedWrapper .ml-form-embedBody .ml-form-checkboxRow .label-description {
+        color: #000000;
+        display: block;
+        font-family: 'Open Sans', Arial, Helvetica, sans-serif;
+        font-size: 12px;
+        text-align: left;
+        margin-bottom: 0;
+        position: relative;
+      }
+      #mlb2-35189939.ml-form-embedContainer .ml-form-embedWrapper .ml-form-embedBody .ml-form-checkboxRow label {
+        font-weight: normal;
+        margin: 0;
+        padding: 0;
+        position: relative;
+        display: block;
+        min-height: 24px;
+        padding-left: 24px;
+
+      }
+      #mlb2-35189939.ml-form-embedContainer .ml-form-embedWrapper .ml-form-embedBody .ml-form-checkboxRow label a {
+        color: #000000;
+        text-decoration: underline;
+      }
+      #mlb2-35189939.ml-form-embedContainer .ml-form-embedWrapper .ml-form-embedBody .ml-form-checkboxRow label p {
+        color: #000000 !important;
+        font-family: 'Open Sans', Arial, Helvetica, sans-serif !important;
+        font-size: 12px !important;
+        font-weight: normal !important;
+        line-height: 18px !important;
+        padding: 0 !important;
+        margin: 0 5px 0 0 !important;
+      }
+      #mlb2-35189939.ml-form-embedContainer .ml-form-embedWrapper .ml-form-embedBody .ml-form-checkboxRow label p:last-child {
+        margin: 0;
+      }
+      #mlb2-35189939.ml-form-embedContainer .ml-form-embedWrapper .ml-form-embedBody .ml-form-embedSubmit {
+        margin: 0 0 20px 0;
+        float: left;
+        width: 100%;
+      }
+      #mlb2-35189939.ml-form-embedContainer .ml-form-embedWrapper .ml-form-embedBody .ml-form-embedSubmit button {
+        background-color: #000000 !important;
+        border: none !important;
+        border-radius: 4px !important;
+        box-shadow: none !important;
+        color: #ffffff !important;
+        cursor: pointer;
+        font-family: 'Open Sans', Arial, Helvetica, sans-serif !important;
+        font-size: 14px !important;
+        font-weight: 700 !important;
+        line-height: 21px !important;
+        height: auto;
+        padding: 10px !important;
+        width: 100% !important;
+        box-sizing: border-box !important;
+      }
+      #mlb2-35189939.ml-form-embedContainer .ml-form-embedWrapper .ml-form-embedBody .ml-form-embedSubmit button.loading {
+        display: none;
+      }
+      #mlb2-35189939.ml-form-embedContainer .ml-form-embedWrapper .ml-form-embedBody .ml-form-embedSubmit button:hover {
+        background-color: #333333 !important;
+      }
+      .ml-subscribe-close {
+        width: 30px;
+        height: 30px;
+        background: url('https://assets.mlcdn.com/ml/images/default/modal_close.png') no-repeat;
+        background-size: 30px;
+        cursor: pointer;
+        margin-top: -10px;
+        margin-right: -10px;
+        position: absolute;
+        top: 0;
+        right: 0;
+      }
+      .ml-error input, .ml-error textarea, .ml-error select {
+        border-color: red!important;
+      }
+
+      .ml-error .custom-checkbox-radio-list {
+        border: 1px solid red !important;
+        border-radius: 4px;
+        padding: 10px;
+      }
+
+      .ml-error .label-description,
+      .ml-error .label-description p,
+      .ml-error .label-description p a,
+      .ml-error label:first-child {
+        color: #ff0000 !important;
+      }
+
+      #mlb2-35189939.ml-form-embedContainer .ml-form-embedWrapper .ml-form-embedBody .ml-form-checkboxRow.ml-error .label-description p,
+      #mlb2-35189939.ml-form-embedContainer .ml-form-embedWrapper .ml-form-embedBody .ml-form-checkboxRow.ml-error .label-description p:first-letter {
+        color: #ff0000 !important;
+      }
+            @media only screen and (max-width: 400px){
+
+        .ml-form-embedWrapper.embedDefault, .ml-form-embedWrapper.embedPopup { width: 100%!important; }
+        .ml-form-formContent.horozintalForm { float: left!important; }
+        .ml-form-formContent.horozintalForm .ml-form-horizontalRow { height: auto!important; width: 100%!important; float: left!important; }
+        .ml-form-formContent.horozintalForm .ml-form-horizontalRow .ml-input-horizontal { width: 100%!important; }
+        .ml-form-formContent.horozintalForm .ml-form-horizontalRow .ml-input-horizontal > div { padding-right: 0px!important; padding-bottom: 10px; }
+        .ml-form-formContent.horozintalForm .ml-button-horizontal { width: 100%!important; }
+        .ml-form-formContent.horozintalForm .ml-button-horizontal.labelsOn { padding-top: 0px!important; }
+
+      }
     </style>
 
+            <!-- Netlify hosted form (replaces MailerLite embed) -->
 
-</head>
+            <form name="early-access" method="POST" data-netlify="true" netlify-honeypot="bot-field" action="/thankyou.html" class="ml-block-form">
+              <input type="hidden" name="form-name" value="early-access">
+              <p class="sr-only"><label>Don’t fill this out if you're human: <input name="bot-field"></label></p>
 
-<body class="text-slate-700 font-sans scroll-smooth">
-    <!-- ================= NAVBAR ================= -->
-    <nav class="fixed top-4 inset-x-0 mx-auto w-[90%] glass-effect rounded-2xl shadow-soft-lg z-50 overflow-visible">
-        <div class="flex items-center justify-between px-6 py-4">
+              <div class="ml-form-embedContent">
+                <h4>Join Early Access</h4>
+                <p>Signup for news and special offers!</p>
+              </div>
 
-            <!-- Logo -->
-            <div class="flex items-center gap-3">
-                <img src="./asset/image/logo1-remove.png" alt="upPlan logo" width="90" class="h-12" />
-            </div>
-
-
-            <!-- Desktop Menu -->
-            <ul class="hidden md:flex gap-8 font-medium">
-                <li><a href="./index.html" class="nav-link">Home</a></li>
-                <li><a href="./About.html" class="nav-link">About</a></li>
-                <li><a href="./Services.html" class="nav-link">Services</a></li>
-                <li><a href="./Contact.html" class="nav-link">Contact</a></li>
-            </ul>
-
-            <!-- CTA -->
-            <button class="hidden md:inline-block btn-primary" onclick="window.location.href='./signUP.html'">
-                Get Started
-            </button>
-
-            <!-- Toggle Button -->
-            <button id="menu-btn" class="md:hidden text-2xl text-slate-700 transition-transform duration-300 hover:text-primary-600">
-                <i class="fa-solid fa-bars"></i>
-            </button>
-        </div>
-
-        <!-- Mobile Menu -->
-        <div id="mobile-menu" class="absolute top-full left-0 w-full glass-effect rounded-2xl shadow-soft-xl z-40 mt-2
-           opacity-0 -translate-y-6 pointer-events-none
-           transition-all duration-500
-           ease-[cubic-bezier(.34,1.56,.64,1)]">
-            <ul class="flex flex-col text-center py-6 gap-4 font-medium">
-                <li><a href="./index.html" class="nav-link block">Home</a></li>
-                <li><a href="./About.html" class="nav-link block">About</a></li>
-                <li><a href="./Services.html" class="nav-link block">Services</a></li>
-                <li><a href="./Contact.html" class="nav-link block">Contact</a></li>
-                <li class="pt-2 border-t border-slate-200">
-                    <button class="btn-primary w-48" onclick="window.location.href='./signUP.html'">
-                        Get Started
-                    </button>
-                </li>
-            </ul>
-        </div>
-    </nav>
-
-    <main class="pt-24">
-        <!-- HERO SECTION -->
-        <section class="relative py-32 px-6 overflow-hidden">
-            <!-- Animated Background -->
-            <div class="absolute top-0 right-0 w-96 h-96 bg-primary-400 rounded-full mix-blend-multiply filter blur-3xl opacity-20 animate-blob"></div>
-            <div class="absolute bottom-0 left-0 w-96 h-96 bg-accent-500 rounded-full mix-blend-multiply filter blur-3xl opacity-20 animate-blob animation-delay-2000"></div>
-            
-            <div class="relative max-w-7xl mx-auto">
-                <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
-                    <!-- Left Content -->
-                    <div class="animate-slide-up" data-aos="fade-right">
-                        <div class="inline-block mb-6">
-                            <span class="badge-premium">Transform Your Trading</span>
-                        </div>
-                        
-                        <h1 class="text-5xl md:text-6xl font-bold leading-tight mb-6">
-                            <span class="gradient-text">Discipline Beats Strategy</span>
-                        </h1>
-                        
-                        <p class="text-xl text-slate-600 mb-8 leading-relaxed">
-                            UpPlan enforces the structure, accountability, and consistency that separate winning traders from the rest. Your strategy isn't the problem—your discipline is.
-                        </p>
-                        
-                        <div class="flex flex-col sm:flex-row gap-4 mb-12">
-                            <button class="btn-primary" onclick="window.location.href='./signUP.html'">
-                                Start Free Trial
-                            </button>
-                            <button class="px-8 py-3 rounded-lg border-2 border-primary-500 text-primary-600 font-semibold hover:bg-primary-50 transition-all duration-300">
-                                Watch Demo
-                            </button>
-                        </div>
-                        
-                        <div class="grid grid-cols-3 gap-6">
-                            <div>
-                                <p class="text-3xl font-bold gradient-text">500+</p>
-                                <p class="text-sm text-slate-600 mt-1">Active Traders</p>
-                            </div>
-                            <div>
-                                <p class="text-3xl font-bold gradient-text">99%</p>
-                                <p class="text-sm text-slate-600 mt-1">Satisfaction</p>
-                            </div>
-                            <div>
-                                <p class="text-3xl font-bold gradient-text">24/7</p>
-                                <p class="text-sm text-slate-600 mt-1">Support</p>
-                            </div>
-                        </div>
-                    </div>
-                    
-                    <!-- Right Visual -->
-                    <div class="relative" data-aos="fade-left">
-                        <div class="card-modern">
-                            <div class="absolute -top-4 -right-4 w-24 h-24 bg-primary-500 rounded-full opacity-10"></div>
-                            <img src="./asset/image/home2.jpg" alt="Dashboard Preview" class="w-full rounded-lg shadow-soft-xl" />
-                        </div>
-                    </div>
+              <div class="ml-form-fieldRow ml-last-item">
+                <div class="ml-field-group ml-field-name">
+                  <input id="early-name" name="name" type="text" class="form-control" placeholder="Full name" autocomplete="name">
                 </div>
-            </div>
-        </section>
+              </div>
 
-        <!-- MARQUEE SECTION -->
-        <section class="relative overflow-hidden bg-gradient-to-r from-slate-900 via-slate-800 to-slate-900 py-8">
-            <div class="flex w-max animate-marquee">
-                <div class="flex whitespace-nowrap">
-                    <p class="mx-8 text-lg font-semibold text-accent-400">
-                        Your Strategy Is Not the Problem. Your Discipline Is • UpPlan enforces what you already know • Emotional trading eliminated • Start Building Discipline Today
-                    </p>
-                    <p class="mx-8 text-lg font-semibold text-accent-400">
-                        Your Strategy Is Not the Problem. Your Discipline Is • UpPlan enforces what you already know • Emotional trading eliminated • Start Building Discipline Today
-                    </p>
+              <div class="ml-form-fieldRow ml-last-item">
+                <div class="ml-field-group ml-field-email ml-validate-email ml-validate-required">
+                  <input id="early-email" aria-label="email" aria-required="true" type="email" class="form-control" name="email" placeholder="Email" autocomplete="email" required>
                 </div>
+              </div>
+
+              <div class="ml-form-fieldRow">
+                <label class="label-description"><input type="checkbox" name="beta" value="yes"> Join beta testers</label>
+              </div>
+
+              <div class="ml-form-embedSubmit">
+                <button type="submit" class="primary">Join Early Access</button>
+              </div>
+            </form>
+
+            <script>
+              // Best-effort forwarding to MailerLite via Netlify Function using navigator.sendBeacon
+              (function(){
+                var form = document.querySelector('form[name="early-access"]');
+                if(!form) return;
+                form.addEventListener('submit', function(e){
+                  try {
+                    var data = new FormData(form);
+                    var obj = {};
+                    data.forEach(function(value,key){ obj[key]=value; });
+                    var payload = JSON.stringify(obj);
+                    var url = '/.netlify/functions/forward-mailerlite';
+                    if (navigator.sendBeacon) {
+                      var blob = new Blob([payload], {type: 'application/json'});
+                      navigator.sendBeacon(url, blob);
+                    } else {
+                      fetch(url, {method:'POST', headers:{'Content-Type':'application/json'}, body: payload}).catch(function(){});
+                    }
+                  } catch (err) {
+                    console.warn('Forwarding to MailerLite failed', err);
+                  }
+                  // allow native form submission to continue so Netlify Forms captures the entry
+                });
+              })();
+            </script>
 
-                <div class="flex whitespace-nowrap">
-                    <p class="mx-8 text-lg font-semibold text-accent-400">
-                        Your Strategy Is Not the Problem. Your Discipline Is • UpPlan enforces what you already know • Emotional trading eliminated • Start Building Discipline Today
-                    </p>
-                    <p class="mx-8 text-lg font-semibold text-accent-400">
-                        Your Strategy Is Not the Problem. Your Discipline Is • UpPlan enforces what you already know • Emotional trading eliminated • Start Building Discipline Today
-                    </p>
-                </div>
-            </div>
-        </section>
-
-        <!-- FEATURES SECTION -->
-        <section class="py-32 px-6 relative">
-            <div class="max-w-7xl mx-auto">
-                <div class="text-center mb-20" data-aos="fade-up">
-                    <span class="badge-premium mb-4">Our Solution</span>
-                    <h2 class="text-5xl font-bold mb-6">Structured Trading Discipline</h2>
-                    <p class="text-xl text-slate-600 max-w-2xl mx-auto">
-                        UpPlan enforces accountability, risk management, and consistency — helping traders eliminate emotional decisions
-                    </p>
-                </div>
-
-                <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-                    <!-- Feature Card 1 -->
-                    <div class="card-modern group hover-scale" data-aos="fade-up" data-aos-delay="100">
-                        <div class="w-12 h-12 rounded-lg bg-gradient-to-br from-primary-500 to-primary-600 mb-4 flex items-center justify-center icon-glow-primary">
-                            <i class="fas fa-chart-line text-white text-xl icon-bounce"></i>
-                        </div>
-                        <h3 class="text-xl font-bold mb-3 text-neutral-900">Trading Rules</h3>
-                        <p class="text-slate-600 leading-relaxed">
-                            Enforced daily/weekly risk limits, maximum position sizes, and strategy rules that prevent emotional trading
-                        </p>
-                    </div>
-
-                    <!-- Feature Card 2 -->
-                    <div class="card-modern group hover-scale" data-aos="fade-up" data-aos-delay="200">
-                        <div class="w-12 h-12 rounded-lg bg-gradient-to-br from-accent-500 to-accent-600 mb-4 flex items-center justify-center icon-glow-accent">
-                            <i class="fas fa-bar-chart text-white text-xl icon-bounce"></i>
-                        </div>
-                        <h3 class="text-xl font-bold mb-3 text-neutral-900">Weekly Reviews</h3>
-                        <p class="text-slate-600 leading-relaxed">
-                            Comprehensive discipline scoring, performance analysis, and personalized feedback to improve consistency
-                        </p>
-                    </div>
-
-                    <!-- Feature Card 3 -->
-                    <div class="card-modern group hover-scale" data-aos="fade-up" data-aos-delay="300">
-                        <div class="w-12 h-12 rounded-lg bg-gradient-to-br from-success-500 to-success-600 mb-4 flex items-center justify-center icon-glow-success">
-                            <i class="fas fa-shield-alt text-white text-xl icon-bounce"></i>
-                        </div>
-                        <h3 class="text-xl font-bold mb-3 text-neutral-900">Accountability</h3>
-                        <p class="text-slate-600 leading-relaxed">
-                            Human review system that ensures traders stay accountable to their rules and discipline score
-                        </p>
-                    </div>
-
-                    <!-- Feature Card 4 -->
-                    <div class="card-modern group hover-scale" data-aos="fade-up" data-aos-delay="100">
-                        <div class="w-12 h-12 rounded-lg bg-gradient-to-br from-primary-500 to-primary-600 mb-4 flex items-center justify-center icon-glow-primary">
-                            <i class="fas fa-clock text-white text-xl icon-bounce"></i>
-                        </div>
-                        <h3 class="text-xl font-bold mb-3 text-neutral-900">Real-Time Monitoring</h3>
-                        <p class="text-slate-600 leading-relaxed">
-                            Live tracking of your trading activity with instant alerts for rule violations and near-violations
-                        </p>
-                    </div>
-
-                    <!-- Feature Card 5 -->
-                    <div class="card-modern group hover-scale" data-aos="fade-up" data-aos-delay="200">
-                        <div class="w-12 h-12 rounded-lg bg-gradient-to-br from-accent-500 to-accent-600 mb-4 flex items-center justify-center icon-glow-accent">
-                            <i class="fas fa-book text-white text-xl icon-bounce"></i>
-                        </div>
-                        <h3 class="text-xl font-bold mb-3 text-neutral-900">Trading Journal</h3>
-                        <p class="text-slate-600 leading-relaxed">
-                            Document your trades, decisions, and emotions. Identify patterns and improve your trading psychology
-                        </p>
-                    </div>
-
-                    <!-- Feature Card 6 -->
-                    <div class="card-modern group hover-scale" data-aos="fade-up" data-aos-delay="300">
-                        <div class="w-12 h-12 rounded-lg bg-gradient-to-br from-success-500 to-success-600 mb-4 flex items-center justify-center icon-glow-success">
-                            <i class="fas fa-users text-white text-xl icon-bounce"></i>
-                        </div>
-                        <h3 class="text-xl font-bold mb-3 text-neutral-900">Community</h3>
-                        <p class="text-slate-600 leading-relaxed">
-                            Connect with 500+ disciplined traders, share insights, and grow together in a supportive community
-                        </p>
-                    </div>
-                </div>
-            </div>
-        </section>
-            <div class="max-w-7xl mx-auto">
-
-                <!-- Section Header -->
-                <div class="text-center mb-16">
-                    <h2 class="text-4xl font-bold text-neutral-900">
-                        Our <span class="text-primary-600">Services</span>
-                    </h2>
-                    <p class="mt-4 text-neutral-600 max-w-xl mx-auto leading-relaxed">
-                        Premium tools and accountability systems designed to help traders
-                        scale with discipline and consistency.
-                    </p>
-                </div>
-
-                <!-- Cards -->
-                <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-
-                    <!-- Card 1 -->
-                    <div class="group relative rounded-3xl bg-white p-8
-                         border border-neutral-100
-                         shadow-soft-lg
-                         transition-all duration-300
-                         hover:-translate-y-2 hover:border-primary-200 hover:shadow-soft-xl" data-aos="flip-left">
-
-                        <div
-                            class="absolute inset-0 rounded-3xl bg-gradient-to-br from-primary-50 to-transparent opacity-0 group-hover:opacity-100 transition duration-500">
-                        </div>
-
-                        <div class="relative mb-6 flex h-14 w-14 items-center justify-center rounded-2xl
-                              bg-gradient-to-br from-primary-100 to-primary-50 text-primary-600 text-2xl border border-primary-100">
-                            <i class="fa-solid fa-shield-halved"></i>
-                        </div>
-
-                        <h3 class="relative text-xl font-semibold text-neutral-900 mb-3">
-                            Trading Plan Enforcement
-                        </h3>
-
-                        <p class="relative text-neutral-600 leading-relaxed mb-4">
-                            First, we help traders create a solid risk plan — or refine an existing one —
-                            to ensure structure, discipline, and long-term consistency.
-                        </p>
-
-                        <ul class="relative space-y-2 text-neutral-700 text-sm mb-6">
-                            <li class="flex items-center gap-2">
-                                <span class="h-2 w-2 rounded-full bg-primary-500 flex-shrink-0"></span>
-                                Risk rules
-                            </li>
-                            <li class="flex items-center gap-2">
-                                <span class="h-2 w-2 rounded-full bg-primary-500 flex-shrink-0"></span>
-                                Maximum trades per day
-                            </li>
-                            <li class="flex items-center gap-2">
-                                <span class="h-2 w-2 rounded-full bg-primary-500 flex-shrink-0"></span>
-                                Daily loss limit
-                            </li>
-                            <li class="flex items-center gap-2">
-                                <span class="h-2 w-2 rounded-full bg-primary-500 flex-shrink-0"></span>
-                                Strategy rules
-                            </li>
-                        </ul>
-
-                        <!-- Footer -->
-                        <div class="relative flex items-center justify-between gap-4">
-                            <span class="text-sm font-semibold text-primary-600 tracking-widest uppercase">
-                                UPPLAN Framework
-                            </span>
-
-                            <a href="./Services.html">
-                                <button class="rounded-full bg-gradient-to-r from-primary-600 to-primary-700 px-6 py-2
-                            font-medium text-white text-sm
-                            shadow-soft-md
-                            transition-all duration-250 hover:-translate-y-0.5 hover:shadow-soft-lg active:translate-y-0">
-                                    Learn More
-                                </button>
-                            </a>
-                        </div>
-                    </div>
-
-                    <!-- Card 2 -->
-                    <div class="group relative rounded-3xl bg-gradient-to-br from-white via-white to-primary-50 p-8
-                         border border-primary-200
-                         shadow-soft-lg
-                         transition-all duration-300
-                         hover:-translate-y-2 hover:shadow-soft-xl"
-                        data-aos="flip-up">
-
-                        <div
-                            class="absolute inset-0 rounded-3xl bg-gradient-to-br from-primary-100/40 to-transparent opacity-0 group-hover:opacity-100 transition duration-500">
-                        </div>
-
-                        <div class="relative mb-6 flex h-14 w-14 items-center justify-center rounded-2xl
-                              bg-gradient-to-br from-primary-100 to-primary-50 text-primary-600 text-2xl border border-primary-100">
-                            <i class="fa-solid fa-scale-balanced"></i>
-                        </div>
-
-                        <!-- Title -->
-                        <h3 class="relative text-xl font-semibold text-neutral-900 mb-3">
-                            Trade Accountability & Review
-                        </h3>
-
-                        <!-- Description -->
-                        <p class="relative text-neutral-600 leading-relaxed mb-4">
-                            We journal the traders trade daily and record discipline score and make sure the trader is
-                            following the trade and risk plan.
-                        </p>
-
-                        <!-- List -->
-                        <ul class="relative space-y-2 text-neutral-700 text-sm mb-6">
-                            <li class="flex items-start gap-2">
-                                <span class="h-2 w-2 rounded-full bg-primary-500 flex-shrink-0 mt-1"></span>
-                                <span>Trader submits trades via (screenshots/statements)</span>
-                            </li>
-                            <li class="flex items-start gap-2">
-                                <span class="h-2 w-2 rounded-full bg-primary-500 flex-shrink-0 mt-1"></span>
-                                <span>Weekly summary</span>
-                            </li>
-                            <li class="flex items-start gap-2">
-                                <span class="h-2 w-2 rounded-full bg-primary-500 flex-shrink-0 mt-1"></span>
-                                <span>We Compare trades to your/our trading plan</span>
-                            </li>
-                            <li class="flex items-start gap-2">
-                                <span class="h-2 w-2 rounded-full bg-primary-500 flex-shrink-0 mt-1"></span>
-                                <span>Track emotional mistakes</span>
-                            </li>
-
-                            <li class="flex items-start gap-2">
-                                <span class="h-2 w-2 rounded-full bg-primary-500 flex-shrink-0 mt-1"></span>
-                                <span>Score discipline (0–100) (discipline score must stay above 75 at all times)</span>
-                            </li>
-
-                            <li class="flex items-start gap-2">
-                                <span class="h-2 w-2 rounded-full bg-primary-500 flex-shrink-0 mt-1"></span>
-                                <span>Deliverable to trader: Weekly report, Mistake pattern insights, Next week correction focus</span>
-                            </li>
-                        </ul>
-
-                        <!-- Footer -->
-                        <div class="relative flex items-center justify-between gap-4">
-                            <span class="text-sm font-semibold text-primary-600 tracking-widest uppercase">
-                                UPPLAN Framework
-                            </span>
-
-                            <a href="./Services.html">
-                                <button class="rounded-full bg-gradient-to-r from-primary-600 to-primary-700 px-6 py-2
-                            font-medium text-white text-sm
-                            shadow-soft-md
-                            transition-all duration-250 hover:-translate-y-0.5 hover:shadow-soft-lg active:translate-y-0">
-                                    Learn More
-                                </button>
-                            </a>
-                        </div>
-                    </div>
-
-                    <!-- Card 3 -->
-                    <div class="group relative rounded-3xl bg-white p-8
-                         border border-neutral-100
-                         shadow-soft-lg
-                         transition-all duration-300
-                         hover:-translate-y-2 hover:border-primary-200 hover:shadow-soft-xl" data-aos="flip-left">
-
-                        <div
-                            class="absolute inset-0 rounded-3xl bg-gradient-to-br from-primary-50 to-transparent opacity-0 group-hover:opacity-100 transition duration-500">
-                        </div>
-
-                        <div class="relative mb-6 flex h-14 w-14 items-center justify-center rounded-2xl
-                              bg-gradient-to-br from-primary-100 to-primary-50 text-primary-600 text-2xl border border-primary-100">
-                            <i class="fa-brands fa-watchman-monitoring"></i>
-                        </div>
-
-                        <h3 class="relative text-xl font-semibold text-neutral-900 mb-3">Challenge Monitoring
-                            (Prop-Specific)</h3>
-
-                        <p class="relative text-neutral-600 leading-relaxed mb-4">
-                            If the account is a prop account, we make sure the rule is in compliance with the prop firm
-                            rules to ensure all prop trading rules are respected.
-                        </p>
-
-                        <p class="relative text-neutral-900 font-semibold text-sm mb-3">
-                            What we do: We monitor
-                        </p>
-
-                        <ul class="relative space-y-2 text-neutral-700 text-sm mb-6">
-                            <li class="flex items-center gap-2">
-                                <span class="h-2 w-2 rounded-full bg-primary-500 flex-shrink-0"></span>
-                                Drawdown rules
-                            </li>
-                            <li class="flex items-center gap-2">
-                                <span class="h-2 w-2 rounded-full bg-primary-500 flex-shrink-0"></span>
-                                Daily loss rules
-                            </li>
-                            <li class="flex items-center gap-2">
-                                <span class="h-2 w-2 rounded-full bg-primary-500 flex-shrink-0"></span>
-                                Consistency rules
-                            </li>
-                            <li class="flex items-center gap-2">
-                                <span class="h-2 w-2 rounded-full bg-primary-500 flex-shrink-0"></span>
-                                Strategy rules
-                            </li>
-                        </ul>
-
-                        <p class="relative text-neutral-900 font-semibold text-sm mb-3">
-                            Warn trader when they are:
-                        </p>
-
-                        <ul class="relative space-y-2 text-neutral-700 text-sm mb-6">
-                            <li class="flex items-center gap-2">
-                                <span class="h-2 w-2 rounded-full bg-primary-500 flex-shrink-0"></span>
-                                Overtrading
-                            </li>
-                            <li class="flex items-center gap-2">
-                                <span class="h-2 w-2 rounded-full bg-primary-500 flex-shrink-0"></span>
-                                Near violation
-                            </li>
-                        </ul>
-
-                        <!-- Footer -->
-                        <div class="relative flex items-center justify-between gap-4">
-                            <span class="text-sm font-semibold text-primary-600 tracking-widest uppercase">
-                                UPPLAN Framework
-                            </span>
-
-                            <a href="./Services.html">
-                                <button class="rounded-full bg-gradient-to-r from-primary-600 to-primary-700 px-6 py-2
-                            font-medium text-white text-sm
-                            shadow-soft-md
-                            transition-all duration-250 hover:-translate-y-0.5 hover:shadow-soft-lg active:translate-y-0">
-                                    Learn More
-                                </button>
-                            </a>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </section>
-
-        <!-- Premium Tracking Features Section -->
-        <section class="bg-gradient-to-b from-slate-50 to-white py-20 px-6">
-            <div class="max-w-7xl mx-auto">
-                
-                <!-- Section Header -->
-                <div class="text-center mb-20" data-aos="fade-up">
-                    <span class="inline-flex items-center gap-2 rounded-full
-                       bg-primary-100 px-4 py-2 text-sm font-semibold text-primary-600 tracking-widest uppercase mb-4">
-                        <i class="fas fa-sparkles"></i>
-                        Premium Features
-                    </span>
-                    <h2 class="mt-6 text-4xl md:text-5xl font-bold text-neutral-900 max-w-3xl mx-auto">
-                        Professional <span class="text-primary-600">Trade Monitoring</span><br>Built for Serious Traders
-                    </h2>
-                    <p class="mt-6 text-xl text-neutral-600 max-w-2xl mx-auto leading-relaxed">
-                        Get real-time insights, personalized feedback, and disciplined accountability to transform your trading execution
-                    </p>
-                </div>
-
-                <!-- Features Grid -->
-                <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-6">
-
-                    <!-- Feature 1: Trade-by-Trade Review -->
-                    <div class="group relative rounded-2xl border border-neutral-200 bg-white p-8 
-                         transition-all duration-300 hover:border-primary-300 hover:shadow-soft-xl hover:-translate-y-2 
-                         feature-card" 
-                         data-aos="fade-up" data-aos-delay="0">
-                        
-                        <div class="absolute inset-0 rounded-2xl bg-gradient-to-br from-primary-50 to-transparent opacity-0 group-hover:opacity-100 transition duration-500"></div>
-                        
-                        <div class="relative mb-6">
-                            <div class="w-14 h-14 rounded-xl bg-gradient-to-br from-primary-100 to-primary-50 
-                                      flex items-center justify-center icon-glow-primary mb-4 feature-icon-container">
-                                <i class="fas fa-microscope text-primary-600 text-2xl icon-bounce"></i>
-                            </div>
-                            <h3 class="text-lg font-bold text-neutral-900 feature-title">
-                                Trade-by-Trade<br>Review
-                            </h3>
-                        </div>
-                        
-                        <p class="relative text-neutral-600 text-sm leading-relaxed mb-6 feature-desc">
-                            Detailed analysis of every trade execution, entry logic, and exit strategy with actionable feedback
-                        </p>
-                        
-                        <div class="relative flex items-center gap-3 pt-4 border-t border-neutral-100 feature-badge-row">
-                            <div class="w-2 h-2 rounded-full bg-primary-500 badge-dot"></div>
-                            <span class="text-xs font-semibold text-primary-600 uppercase tracking-wider">Weekly Depth</span>
-                        </div>
-                    </div>
-
-                    <!-- Feature 2: Prop Challenge Monitoring -->
-                    <div class="group relative rounded-2xl border border-neutral-200 bg-white p-8 
-                         transition-all duration-300 hover:border-accent-300 hover:shadow-soft-xl hover:-translate-y-2 
-                         feature-card" 
-                         data-aos="fade-up" data-aos-delay="100">
-                        
-                        <div class="absolute inset-0 rounded-2xl bg-gradient-to-br from-accent-50 to-transparent opacity-0 group-hover:opacity-100 transition duration-500"></div>
-                        
-                        <div class="relative mb-6">
-                            <div class="w-14 h-14 rounded-xl bg-gradient-to-br from-accent-100 to-accent-50 
-                                      flex items-center justify-center icon-glow-accent mb-4 feature-icon-container">
-                                <i class="fas fa-gauge-high text-accent-600 text-2xl icon-bounce"></i>
-                            </div>
-                            <h3 class="text-lg font-bold text-neutral-900 feature-title">
-                                Prop Challenge<br>Monitoring
-                            </h3>
-                        </div>
-                        
-                        <p class="relative text-neutral-600 text-sm leading-relaxed mb-6 feature-desc">
-                            Real-time tracking of drawdown rules, daily loss limits, and prop firm compliance across all accounts
-                        </p>
-                        
-                        <div class="relative flex items-center gap-3 pt-4 border-t border-neutral-100 feature-badge-row">
-                            <div class="w-2 h-2 rounded-full bg-accent-500 badge-dot"></div>
-                            <span class="text-xs font-semibold text-accent-600 uppercase tracking-wider">24/7 Alerts</span>
-                        </div>
-                    </div>
-
-                    <!-- Feature 3: Priority Feedback -->
-                    <div class="group relative rounded-2xl border border-neutral-200 bg-white p-8 
-                         transition-all duration-300 hover:border-primary-300 hover:shadow-soft-xl hover:-translate-y-2 
-                         feature-card" 
-                         data-aos="fade-up" data-aos-delay="200">
-                        
-                        <div class="absolute inset-0 rounded-2xl bg-gradient-to-br from-primary-50 to-transparent opacity-0 group-hover:opacity-100 transition duration-500"></div>
-                        
-                        <div class="relative mb-6">
-                            <div class="w-14 h-14 rounded-xl bg-gradient-to-br from-primary-100 to-primary-50 
-                                      flex items-center justify-center icon-glow-primary mb-4 feature-icon-container">
-                                <i class="fas fa-comments text-primary-600 text-2xl icon-bounce"></i>
-                            </div>
-                            <h3 class="text-lg font-bold text-neutral-900 feature-title">
-                                Priority<br>Feedback
-                            </h3>
-                        </div>
-                        
-                        <p class="relative text-neutral-600 text-sm leading-relaxed mb-6 feature-desc">
-                            Personalized coaching notes highlighting your biggest mistakes and specific corrections for next week
-                        </p>
-                        
-                        <div class="relative flex items-center gap-3 pt-4 border-t border-neutral-100 feature-badge-row">
-                            <div class="w-2 h-2 rounded-full bg-primary-500 badge-dot"></div>
-                            <span class="text-xs font-semibold text-primary-600 uppercase tracking-wider">Weekly Report</span>
-                        </div>
-                    </div>
-
-                    <!-- Feature 4: Daily Trade Discipline -->
-                    <div class="group relative rounded-2xl border border-neutral-200 bg-white p-8 
-                         transition-all duration-300 hover:border-success-300 hover:shadow-soft-xl hover:-translate-y-2 
-                         feature-card" 
-                         data-aos="fade-up" data-aos-delay="300">
-                        
-                        <div class="absolute inset-0 rounded-2xl bg-gradient-to-br from-success-50 to-transparent opacity-0 group-hover:opacity-100 transition duration-500"></div>
-                        
-                        <div class="relative mb-6">
-                            <div class="w-14 h-14 rounded-xl bg-gradient-to-br from-success-100 to-success-50 
-                                      flex items-center justify-center icon-glow-success mb-4 feature-icon-container">
-                                <i class="fas fa-calendar-check text-success-600 text-2xl icon-bounce"></i>
-                            </div>
-                            <h3 class="text-lg font-bold text-neutral-900 feature-title">
-                                Daily Trade<br>Discipline Score
-                            </h3>
-                        </div>
-                        
-                        <p class="relative text-neutral-600 text-sm leading-relaxed mb-6 feature-desc">
-                            Daily discipline scoring (0-100) that tracks rule compliance and emotional trading patterns instantly
-                        </p>
-                        
-                        <div class="relative flex items-center gap-3 pt-4 border-t border-neutral-100 feature-badge-row">
-                            <div class="w-2 h-2 rounded-full bg-success-500 badge-dot"></div>
-                            <span class="text-xs font-semibold text-success-600 uppercase tracking-wider">Real-Time</span>
-                        </div>
-                    </div>
-
-                    <!-- Feature 5: Personalized Guidance -->
-                    <div class="group relative rounded-2xl border border-neutral-200 bg-white p-8 
-                         transition-all duration-300 hover:border-accent-300 hover:shadow-soft-xl hover:-translate-y-2 
-                         feature-card" 
-                         data-aos="fade-up" data-aos-delay="400">
-                        
-                        <div class="absolute inset-0 rounded-2xl bg-gradient-to-br from-accent-50 to-transparent opacity-0 group-hover:opacity-100 transition duration-500"></div>
-                        
-                        <div class="relative mb-6">
-                            <div class="w-14 h-14 rounded-xl bg-gradient-to-br from-accent-100 to-accent-50 
-                                      flex items-center justify-center icon-glow-accent mb-4 feature-icon-container">
-                                <i class="fas fa-lightbulb text-accent-600 text-2xl icon-bounce"></i>
-                            </div>
-                            <h3 class="text-lg font-bold text-neutral-900 feature-title">
-                                Personalized<br>Correction Path
-                            </h3>
-                        </div>
-                        
-                        <p class="relative text-neutral-600 text-sm leading-relaxed mb-6 feature-desc">
-                            Custom improvement roadmap based on your unique patterns, weak points, and trading psychology gaps
-                        </p>
-                        
-                        <div class="relative flex items-center gap-3 pt-4 border-t border-neutral-100 feature-badge-row">
-                            <div class="w-2 h-2 rounded-full bg-accent-500 badge-dot"></div>
-                            <span class="text-xs font-semibold text-accent-600 uppercase tracking-wider">Progressive</span>
-                        </div>
-                    </div>
-
-                </div>
-
-                <!-- CTA Section -->
-                <div class="mt-20 text-center" data-aos="fade-up" data-aos-delay="500">
-                    <p class="text-neutral-600 mb-6 text-lg">
-                        Transform your trading discipline with professional-grade monitoring and accountability
-                    </p>
-                    <div class="flex flex-col sm:flex-row justify-center gap-4">
-                        <button class="btn-primary px-8 py-4 text-lg rounded-xl" onclick="window.location.href='./signUP.html'">
-                            Start Your Review
-                        </button>
-                        <a href="./Services.html" class="px-8 py-4 text-lg rounded-xl border-2 border-primary-600 text-primary-600 
-                           font-semibold hover:bg-primary-50 transition-all duration-300">
-                            View All Services
-                        </a>
-                    </div>
-                </div>
-            </div>
-        </section>
-
-        <!-- Breach System -->
-        <section class="relative bg-fixed bg-center bg-cover py-28 px-6"
-            style="background-image: url('./asset/image/branch-bg3.jpg');"> 
-            <div class="absolute inset-0 bg-black/75"></div>
-
-            <div class="relative max-w-7xl mx-auto">
-
-                <!-- Header -->
-                <div class="max-w-3xl mb-16" data-aos="fade-down" data-aos-easing="linear" data-aos-duration="1500">
-                    <span class="inline-flex items-center gap-2 rounded-full
-                       bg-primary-600/15 px-4 py-1 text-sm font-semibold text-primary-300 tracking-widest uppercase">
-                        Breach System
-                    </span>
-
-                    <h2 class="mt-6 text-4xl font-bold text-white leading-tight">
-                        Discipline is non-negotiable
-                    </h2>
-
-                    <p class="mt-4 text-neutral-300 leading-relaxed">
-                        The Breach System exists to enforce accountability and build disciplined
-                        traders. Without strict enforcement, the purpose of UpPlan is defeated.
-                    </p>
-                </div>
-
-                <!-- Rules -->
-                <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
-
-                    <!-- Rule 1 -->
-                    <div class="relative rounded-3xl border border-neutral-700/50
-                      bg-neutral-900/70 backdrop-blur-sm p-8 transition-all duration-300 hover:border-primary-500/40 hover:bg-neutral-900/90" data-aos="zoom-in-up">
-                        <span class="absolute -top-3 left-6 rounded-full
-                         bg-gradient-to-r from-primary-600 to-primary-700 px-4 py-1.5 text-xs font-semibold text-white tracking-widest">
-                            Rule 01
-                        </span>
-
-                        <h3 class="mt-4 text-xl font-semibold text-white">
-                            False Trade Reporting
-                        </h3>
-
-                        <p class="mt-3 text-neutral-400 leading-relaxed">
-                            Any form of lying, manipulation, or misreporting of trades
-                            results in immediate cancellation of the UpPlan subscription.
-                        </p>
-                    </div>
-
-                    <!-- Rule 2 -->
-                    <div class="relative rounded-3xl border border-primary-500/40
-                      bg-neutral-900/70 backdrop-blur-sm p-8 transition-all duration-300 hover:border-primary-500/60 hover:bg-neutral-900/90 shadow-soft-lg" data-aos="flip-left" data-aos-easing="ease-out-cubic"
-                        data-aos-duration="2000">
-                        <span class="absolute -top-3 left-6 rounded-full
-                         bg-gradient-to-r from-primary-600 to-primary-700 px-4 py-1.5 text-xs font-semibold text-white tracking-widest">
-                            Rule 02
-                        </span>
-
-                        <h3 class="mt-4 text-xl font-semibold text-white">
-                            Repeated Rule Violations
-                        </h3>
-
-                        <p class="mt-3 text-neutral-400 leading-relaxed">
-                            Continuous disregard for established rules
-                            leads to immediate termination — no exceptions.
-                        </p>
-                    </div>
-
-                    <!-- Rule 3 -->
-                    <div class="relative rounded-3xl border border-white/10
-                      bg-neutral-900/80 backdrop-blur p-8" data-aos="zoom-in-down">
-                        <span class="absolute -top-3 left-6 rounded-full
-                         bg-primary px-4 py-1 text-xs font-semibold text-black">
-                            Rule 03
-                        </span>
-
-                        <h3 class="mt-4 text-xl font-semibold text-white">
-                            Discipline Score Threshold
-                        </h3>
-
-                        <p class="mt-3 text-neutral-300 leading-relaxed">
-                            If a trader’s discipline score drops below
-                            <span class="text-primary font-semibold">75%</span>,
-                            the subscription is immediately revoked.
-                        </p>
-                    </div>
-
-                </div>
-
-                <div class="mt-16 max-w-3xl border-l-4 border-primary pl-6">
-                    <p class="text-neutral-200 text-lg leading-relaxed">
-                        This system protects serious traders.
-                        Discipline is the foundation of profitability.
-                    </p>
-                </div>
-
-            </div>
-        </section>
-
-
-        <!-- Pricing -->
-        <section id="pricing" class="relative py-32 px-6">
-            <div class="absolute inset-0 bg-gradient-to-b from-transparent via-primary-50/20 to-transparent opacity-40"></div>
-            
-            <div class="relative max-w-7xl mx-auto">
-
-                <!-- Header -->
-                <div class="mb-24 text-center" data-aos="fade-up">
-                    <span class="badge-premium mb-4">Simple Pricing</span>
-                    <h2 class="text-5xl font-bold mb-6">Choose Your Plan</h2>
-                    <p class="text-xl text-slate-600 max-w-2xl mx-auto">
-                        Scale your discipline with pricing that grows with your success
-                    </p>
-                </div>
-
-                <!-- Pricing Grid -->
-                <div class="grid grid-cols-1 lg:grid-cols-2 gap-8">
-
-                    <!-- Plan 1: Builder -->
-                    <div class="card-modern" data-aos="fade-right">
-                        <div class="mb-8">
-                            <h3 class="text-3xl font-bold mb-3">UpPlan Builder</h3>
-                            <p class="text-slate-600">Perfect for traders building their foundation</p>
-                        </div>
-
-                        <div class="mb-8">
-                            <div class="text-5xl font-bold gradient-text">$20</div>
-                            <p class="text-slate-500 mt-2">/month • Billed yearly: $200</p>
-                        </div>
-
-                        <ul class="space-y-4 mb-8">
-                            <li class="flex items-start gap-3">
-                                <svg class="w-5 h-5 text-success-500 flex-shrink-0 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
-                                </svg>
-                                <span class="text-slate-700">Trading plan creation & setup</span>
-                            </li>
-                            <li class="flex items-start gap-3">
-                                <svg class="w-5 h-5 text-success-500 flex-shrink-0 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
-                                </svg>
-                                <span class="text-slate-700">Weekly discipline scoring</span>
-                            </li>
-                            <li class="flex items-start gap-3">
-                                <svg class="w-5 h-5 text-success-500 flex-shrink-0 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
-                                </svg>
-                                <span class="text-slate-700">Trade journaling system</span>
-                            </li>
-                            <li class="flex items-start gap-3">
-                                <svg class="w-5 h-5 text-success-500 flex-shrink-0 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
-                                </svg>
-                                <span class="text-slate-700">Performance dashboard</span>
-                            </li>
-                        </ul>
-
-                        <button class="w-full btn-primary">
-                            Get Started
-                        </button>
-                    </div>
-
-                    <!-- Plan 2: Accelerator (Featured) -->
-                    <div class="card-modern relative border-2 border-primary-500 scale-105 lg:scale-100" data-aos="fade-left">
-                        <div class="absolute -top-4 left-1/2 -translate-x-1/2">
-                            <span class="badge-premium">Most Popular</span>
-                        </div>
-
-                        <div class="mb-8 pt-4">
-                            <h3 class="text-3xl font-bold mb-3">UpPlan Accelerator</h3>
-                            <p class="text-slate-600">For serious traders scaling funded accounts</p>
-                        </div>
-
-                        <div class="mb-8">
-                            <div class="text-5xl font-bold gradient-text">$50</div>
-                            <p class="text-slate-500 mt-2">/month • Billed yearly: $500</p>
-                        </div>
-
-                        <ul class="space-y-4 mb-8">
-                            <li class="flex items-start gap-3">
-                                <svg class="w-5 h-5 text-success-500 flex-shrink-0 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
-                                </svg>
-                                <span class="text-slate-700 font-semibold">Everything in Builder, plus:</span>
-                            </li>
-                            <li class="flex items-start gap-3">
-                                <svg class="w-5 h-5 text-success-500 flex-shrink-0 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
-                                </svg>
-                                <span class="text-slate-700">1-on-1 weekly accountability calls</span>
-                            </li>
-                            <li class="flex items-start gap-3">
-                                <svg class="w-5 h-5 text-success-500 flex-shrink-0 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
-                                </svg>
-                                <span class="text-slate-700">Personalized trading plan review</span>
-                            </li>
-                            <li class="flex items-start gap-3">
-                                <svg class="w-5 h-5 text-success-500 flex-shrink-0 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
-                                </svg>
-                                <span class="text-slate-700">Priority support & exclusive community</span>
-                            </li>
-                        </ul>
-
-                        <button class="w-full btn-primary">
-                            Start Accelerating
-                        </button>
-                    </div>
-                </div>
-            </div>
-        </section>
-
-        <!-- banner -->
-        <section class="px-6 py-16">
-            <div class="max-w-6xl mx-auto relative overflow-hidden rounded-3xl
-                        bg-neutral-950 text-white shadow-soft-2xl border border-neutral-800">
-
-                <div class="absolute -top-24 -right-24 w-72 h-72 bg-primary-600/20 blur-3xl"></div>
-
-                <div class="relative p-8 sm:p-12 md:p-16 text-center">
-                    <span class="inline-block mb-4 px-4 py-2 rounded-full
-                             bg-primary-600/20 text-primary-300 text-sm font-semibold tracking-widest uppercase">
-                        Subscription Policy
-                    </span>
-
-                    <h3 class="text-2xl sm:text-3xl font-bold mb-6 text-white">
-                        Important Subscription Notice
-                    </h3>
-
-                    <p class="text-neutral-300 max-w-3xl mx-auto leading-relaxed text-base sm:text-lg">
-                        Per evaluation, subscriptions are paid for
-                        <span class="text-white font-semibold"> a minimum of 3 months</span>.
-                        If a trader loses an account while maintaining
-                        <span class="text-primary-300 font-semibold"> proper discipline score and risk management</span>,
-                        they are eligible to register a new account under the
-                        <span class="text-white font-semibold"> same subscription</span>.
-                    </p>
-
-                    <div class="mt-8">
-                        <button class="inline-flex items-center justify-center rounded-full
-                                 bg-gradient-to-r from-primary-600 to-primary-700 px-8 py-3 font-semibold text-white
-                                 shadow-soft-lg
-                                 transition-all duration-250 hover:-translate-y-0.5 hover:shadow-soft-xl active:translate-y-0">
-                            Learn More
-                        </button>
-                    </div>
-                </div>
-            </div>
-        </section>
-
-        <!-- RESULTS / OUTCOMES -->
-        <section class="bg-white py-16 sm:py-24 lg:py-28 px-4 sm:px-6">
-            <div class="max-w-7xl mx-auto">
-
-                <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 lg:gap-8">
-
-                    <!-- Card -->
-                    <div class="relative overflow-hidden rounded-3xl bg-white p-6 sm:p-8
-                 border border-neutral-200
-                 shadow-soft-md
-                 transition-all duration-300
-                 hover:-translate-y-1 hover:border-primary-300
-                 hover:shadow-soft-lg" data-aos="fade-up">
-                        <!-- Badge -->
-                        <span class="absolute top-4 left-4
-                   rounded-full bg-gradient-to-r from-primary-500 to-primary-600 px-3 py-1
-                   text-xs font-semibold text-white tracking-widest uppercase">
-                            Discipline
-                        </span>
-
-                        <p class="mt-10 text-5xl font-bold text-primary-600">↑</p>
-
-                        <h3 class="mt-4 text-lg sm:text-xl font-semibold text-neutral-900">
-                            Discipline Score Improvement
-                        </h3>
-
-                        <p class="mt-3 text-sm text-neutral-600 leading-relaxed">
-                            Traders improve consistency by operating within
-                            clearly defined risk and execution rules.
-                        </p>
-                    </div>
-
-                    <!-- Card 2 -->
-                    <div class="relative overflow-hidden rounded-3xl bg-white p-6 sm:p-8
-                    border border-neutral-200 shadow-soft-md
-                    transition-all duration-300 hover:-translate-y-1 hover:border-primary-300
-                    hover:shadow-soft-lg" data-aos="fade-up" data-aos-delay="100">
-
-                        <span class="absolute top-4 left-4 rounded-full bg-gradient-to-r from-primary-500 to-primary-600 px-3 py-1
-                       text-xs font-semibold text-white tracking-widest uppercase">
-                            Control
-                        </span>
-
-                        <p class="mt-10 text-5xl font-bold text-primary-600">↓</p>
-
-                        <h3 class="mt-4 text-lg sm:text-xl font-semibold text-neutral-900">
-                            Rule Violations
-                        </h3>
-
-                        <p class="mt-3 text-sm text-neutral-600 leading-relaxed">
-                            Overtrading and repeated rule breaks are reduced
-                            through active monitoring and enforcement.
-                        </p>
-                    </div>
-
-                    <!-- Card 3 -->
-                    <div class="relative overflow-hidden rounded-3xl bg-white p-6 sm:p-8
-                    border border-neutral-200 shadow-soft-md
-                    transition-all duration-300 hover:-translate-y-1 hover:border-primary-300
-                    hover:shadow-soft-lg" data-aos="fade-up" data-aos-delay="200">
-
-                        <span class="absolute top-4 left-4 rounded-full bg-gradient-to-r from-primary-500 to-primary-600 px-3 py-1
-                       text-xs font-semibold text-white tracking-widest uppercase">
-                            Consistency
-                        </span>
-
-                        <p class="mt-10 text-5xl font-bold text-primary-600">↑</p>
-
-                        <h3 class="mt-4 text-lg sm:text-xl font-semibold text-neutral-900">
-                            Funded Account Retention
-                        </h3>
-
-                        <p class="mt-3 text-sm text-neutral-600 leading-relaxed">
-                            Traders maintain funded accounts longer by staying
-                            compliant with prop firm risk parameters.
-                        </p>
-                    </div>
-
-                    <!-- Card 4 -->
-                    <div class="relative overflow-hidden rounded-3xl bg-white p-6 sm:p-8
-                    border border-neutral-200 shadow-soft-md
-                    transition-all duration-300 hover:-translate-y-1 hover:border-primary-300
-                    hover:shadow-soft-lg" data-aos="fade-up" data-aos-delay="300">
-
-                        <span class="absolute top-4 left-4 rounded-full bg-gradient-to-r from-primary-500 to-primary-600 px-3 py-1
-                       text-xs font-semibold text-white tracking-widest uppercase">
-                            Psychology
-                        </span>
-
-                        <p class="mt-10 text-5xl font-bold text-primary-600">↓</p>
-
-                        <h3 class="mt-4 text-lg sm:text-xl font-semibold text-neutral-900">
-                            Emotional Trading
-                        </h3>
-
-                        <p class="mt-3 text-sm text-neutral-600 leading-relaxed">
-                            Impulsive decisions decrease as execution becomes
-                            system-driven instead of emotional.
-                        </p>
-                    </div>
-
-                </div>
-            </div>
-        </section>
-
-        <!-- FAQ SECTION -->
-        <section class="bg-white py-16 px-6">
-            <div class="max-w-6xl mx-auto">
-
-                <div class="max-w-3xl mb-20" data-aos="fade-up">
-                    <p class="text-primary-600 uppercase tracking-widest text-sm font-bold">
-                        FAQ
-                    </p>
-                    <h2 class="mt-4 text-4xl md:text-5xl font-bold text-neutral-900 text-reveal">
-                        Clear Rules. No Ambiguity.
-                    </h2>
-                    <p class="mt-6 text-neutral-600 text-lg leading-relaxed fade-in-up">
-                        UpPlan operates on enforcement and accountability.
-                        These answers are direct — by design.
-                    </p>
-                </div>
-
-                <div class="space-y-4">
-
-                    <div class="faq-item rounded-2xl border border-neutral-200 bg-white transition-all duration-300 hover:border-primary-300 hover:shadow-soft-md scale-in-fade" data-aos="fade-up" data-aos-delay="100">
-                        <button class="faq-btn flex w-full items-center justify-between px-8 py-6 text-left">
-                            <span class="text-lg font-semibold text-neutral-900">
-                                What happens if I break a rule?
-                            </span>
-                            <i class="fa-solid fa-plus text-primary-600 transition-transform"></i>
-                        </button>
-
-                        <div class="faq-content max-h-0 overflow-hidden transition-all duration-500">
-                            <p class="px-8 pb-6 text-neutral-600 leading-relaxed">
-                                Rule violations are logged instantly.
-                                Repeated or serious breaches result in immediate
-                                subscription termination. No warnings.
-                            </p>
-                        </div>
-                    </div>
-
-                    <div class="faq-item rounded-2xl border border-neutral-200 bg-white transition-all duration-300 hover:border-primary-300 hover:shadow-soft-md scale-in-fade" data-aos="fade-up" data-aos-delay="150">
-                        <button class="faq-btn flex w-full items-center justify-between px-8 py-6 text-left">
-                            <span class="text-lg font-semibold text-neutral-900">
-                                Can I hide trades?
-                            </span>
-                            <i class="fa-solid fa-plus text-primary-600 transition-transform"></i>
-                        </button>
-
-                        <div class="faq-content max-h-0 overflow-hidden transition-all duration-500">
-                            <p class="px-8 pb-6 text-neutral-600 leading-relaxed">
-                                No. All trades must be submitted and verified.
-                                Any attempt to hide, alter, or misreport trades
-                                results in immediate cancellation.
-                            </p>
-                        </div>
-                    </div>
-
-                    <!-- Item -->
-                    <div class="faq-item rounded-3xl border border-neutral-200 bg-white">
-                        <button class="faq-btn flex w-full items-center justify-between px-8 py-6 text-left">
-                            <span class="text-lg font-semibold text-neutral-900">
-                                Is this system automated?
-                            </span>
-                            <i class="fa-solid fa-plus text-primary transition-transform"></i>
-                        </button>
-
-                        <div class="faq-content max-h-0 overflow-hidden transition-all duration-500">
-                            <p class="px-8 pb-6 text-neutral-600 leading-relaxed">
-                                It’s a hybrid system.
-                                Automation tracks performance and rule compliance,
-                                while humans enforce discipline and accountability.
-                            </p>
-                        </div>
-                    </div>
-
-                    <!-- Item -->
-                    <div class="faq-item rounded-3xl border border-neutral-200 bg-white scale-in-fade" data-aos="fade-up" data-aos-delay="250">
-                        <button class="faq-btn flex w-full items-center justify-between px-8 py-6 text-left">
-                            <span class="text-lg font-semibold text-neutral-900">
-                                What if my discipline score drops?
-                            </span>
-                            <i class="fa-solid fa-plus text-primary transition-transform"></i>
-                        </button>
-
-                        <div class="faq-content max-h-0 overflow-hidden transition-all duration-500">
-                            <p class="px-8 pb-6 text-neutral-600 leading-relaxed">
-                                If your discipline score falls below
-                                <span class="font-semibold text-primary">75%</span>,
-                                your subscription is terminated automatically.
-                            </p>
-                        </div>
-                    </div>
-
-                </div>
-            </div>
-        </section>
-
-    </main>
-
-    <footer class="bg-gradient-to-b from-slate-900 to-slate-950 text-slate-300 py-20 px-6 border-t border-slate-800">
-        <div class="max-w-7xl mx-auto">
-            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12 mb-12">
-                <!-- Brand -->
-                <div class="flex flex-col items-start">
-                    <h4 class="text-white font-semibold mb-6 tracking-wide text-sm uppercase">UpPlan</h4>
-                    <p class="text-sm text-slate-400 leading-relaxed font-sans">
-                        Enforcing discipline, accountability, and consistency in every trading decision.
-                    </p>
-                </div>
-
-                <!-- Company -->
-                <div class="flex flex-col items-start">
-                    <h4 class="text-white font-semibold mb-6 tracking-wide text-sm uppercase">Company</h4>
-                    <ul class="space-y-3 text-sm">
-                        <li><a href="./About.html" class="text-slate-400 hover:text-primary-400 transition-colors duration-300">About Us</a></li>
-                        <li><a href="./Services.html" class="text-slate-400 hover:text-primary-400 transition-colors duration-300">Services</a></li>
-                        <li><a href="#pricing" class="text-slate-400 hover:text-primary-400 transition-colors duration-300">Pricing</a></li>
-                        <li><a href="./Contact.html" class="text-slate-400 hover:text-primary-400 transition-colors duration-300">Contact</a></li>
-                    </ul>
-                </div>
-
-                <!-- Resources -->
-                <div class="flex flex-col items-start">
-                    <h4 class="text-white font-semibold mb-6 tracking-wide text-sm uppercase">Resources</h4>
-                    <ul class="space-y-3 text-sm">
-                        <li><a href="#" class="text-slate-400 hover:text-primary-400 transition-colors duration-300">Documentation</a></li>
-                        <li><a href="#" class="text-slate-400 hover:text-primary-400 transition-colors duration-300">FAQ</a></li>
-                        <li><a href="#" class="text-slate-400 hover:text-primary-400 transition-colors duration-300">Blog</a></li>
-                        <li><a href="#" class="text-slate-400 hover:text-primary-400 transition-colors duration-300">Support</a></li>
-                    </ul>
-                </div>
-
-                <!-- Contact -->
-                <div class="flex flex-col items-start">
-                    <h4 class="text-white font-semibold mb-6 tracking-wide text-sm uppercase">Get In Touch</h4>
-                    <div class="space-y-4 mb-8 flex flex-col">
-                        <div>
-                            <span class="text-primary-400 font-semibold text-sm block mb-1">Email</span>
-                            <a href="mailto:upplanoffical@gmail.com" class="text-slate-400 hover:text-primary-400 transition-colors duration-300 text-sm">upplanoffical@gmail.com</a>
-                        </div>
-                        <div>
-                            <span class="text-primary-400 font-semibold text-sm block mb-1">Phone</span>
-                            <a href="tel:+234911089201" class="text-slate-400 hover:text-primary-400 transition-colors duration-300 text-sm">(+234) 9110 891 201</a>
-                        </div>
-                        <div>
-                            <span class="text-primary-400 font-semibold text-sm block mb-1">Location</span>
-                            <span class="text-slate-400 text-sm">Abakaliki, Ebonyi State</span>
-                        </div>
-                    </div>
-
-                    <!-- Social Icons -->
-                    <div class="flex gap-3">
-                        <a href="#" class="h-10 w-10 flex items-center justify-center rounded-full bg-slate-800 text-slate-400 hover:bg-primary-600 hover:text-white transition-all duration-300 social-icon-bounce">
-                            <i class="fab fa-twitter text-sm"></i>
-                        </a>
-                        <a href="#" class="h-10 w-10 flex items-center justify-center rounded-full bg-slate-800 text-slate-400 hover:bg-primary-600 hover:text-white transition-all duration-300 social-icon-bounce">
-                            <i class="fab fa-instagram text-sm"></i>
-                        </a>
-                        <a href="#" class="h-10 w-10 flex items-center justify-center rounded-full bg-slate-800 text-slate-400 hover:bg-primary-600 hover:text-white transition-all duration-300 social-icon-bounce">
-                            <i class="fab fa-linkedin-in text-sm"></i>
-                        </a>
-                    </div>
-                </div>
-            </div>
-
-            <!-- Divider -->
-            <div class="border-t border-slate-800 pt-8 text-center text-sm text-slate-500">
-                <p>© <span id="year"></span> UpPlan. All rights reserved. Built with discipline.</p>
             </div>
         </div>
-    </footer>
+      </div>
+    </section>
+  </main>
 
-    <!-- Rotating Info Toast -->
-    <div id="info-toast" class="fixed bottom-6 left-1/2 -translate-x-1/2 z-[9999]
-       max-w-md w-[90%] sm:w-auto
-       bg-neutral-950 text-white
-       border border-primary-500
-       rounded-2xl px-6 py-4
-       shadow-soft-2xl
-       opacity-0 translate-y-6
-       transition-all duration-500 ease-out
-       pointer-events-none">
-
-        <div class="flex items-start gap-3">
-            <span class="text-primary-400 text-lg mt-1">
-                <i class="fa-solid fa-circle-info"></i>
-            </span>
-            <p id="toast-text" class="text-sm leading-relaxed text-neutral-300">
-                <!-- Message injected by JS -->
-            </p>
-        </div>
+  <footer class="site-footer">
+    <div class="container footer-grid">
+      <div>
+        <h4>Get Early Access to Calm Nerve</h4>
+        <p>Don’t miss your chance to finally get relief.</p>
+      </div>
+        <div>
+        <a href="#final-cta" class="btn btn-primary large">JOIN THE PRIORITY LIST NOW</a>
+      </div>
     </div>
+    <p class="small muted center">© Calm Nerve — All rights reserved. Terms & Privacy apply.</p>
+  </footer>
 
+  <script src="script.js" defer></script>
 
-    <script>
-        document.getElementById("year").textContent = new Date().getFullYear();
-
-        /* ========================================================
-           ADVANCED ANIMATION SYSTEM
-           ======================================================== */
-
-        // 1. CARD STAGGER ANIMATION
-        const setupCardStagger = () => {
-            const cards = document.querySelectorAll('.card-modern');
-            cards.forEach((card, index) => {
-                card.style.animation = `staggerFade 0.6s cubic-bezier(0.34, 1.56, 0.64, 1) forwards`;
-                card.style.animationDelay = `${index * 0.15}s`;
-                card.style.opacity = '0';
-            });
-        };
-
-        // 2. SCROLL REVEAL ANIMATION
-        const setupScrollReveal = () => {
-            const observer = new IntersectionObserver((entries) => {
-                entries.forEach(entry => {
-                    if (entry.isIntersecting) {
-                        entry.target.classList.add('scroll-fade');
-                        const computedStyle = window.getComputedStyle(entry.target);
-                        entry.target.style.opacity = '1';
-                    }
-                });
-            }, { threshold: 0.1, rootMargin: '0px 0px -50px 0px' });
-
-            document.querySelectorAll('[data-aos]').forEach(el => {
-                if (!el.classList.contains('scroll-fade')) {
-                    observer.observe(el);
-                }
-            });
-        };
-
-        // 3. COUNTER ANIMATION
-        const animateCounter = (element, target) => {
-            let current = 0;
-            const increment = target / 30;
-            
-            const timer = setInterval(() => {
-                current += increment;
-                if (current >= target) {
-                    element.textContent = target;
-                    clearInterval(timer);
-                } else {
-                    element.textContent = Math.floor(current);
-                }
-            }, 50);
-        };
-
-        // 4. MOUSE TRACKING FOR CARDS
-        const setupMouseTracking = () => {
-            document.querySelectorAll('.card-modern').forEach(card => {
-                card.addEventListener('mousemove', (e) => {
-                    const rect = card.getBoundingClientRect();
-                    const x = e.clientX - rect.left;
-                    const y = e.clientY - rect.top;
-                    
-                    card.style.setProperty('--mouse-x', x + 'px');
-                    card.style.setProperty('--mouse-y', y + 'px');
-                });
-            });
-        };
-
-        // 5. PARALLAX EFFECT ON SCROLL
-        const setupParallax = () => {
-            const parallaxElements = document.querySelectorAll('[data-parallax]');
-            
-            window.addEventListener('scroll', () => {
-                parallaxElements.forEach(el => {
-                    const scrollPosition = window.scrollY;
-                    const offset = scrollPosition * 0.5;
-                    el.style.transform = `translateY(${offset}px)`;
-                });
-            });
-        };
-
-        // 6. BUTTON RIPPLE EFFECT
-        const setupRippleEffect = () => {
-            document.querySelectorAll('.btn-primary').forEach(btn => {
-                btn.addEventListener('click', function(e) {
-                    const ripple = document.createElement('span');
-                    const rect = this.getBoundingClientRect();
-                    const size = Math.max(rect.width, rect.height);
-                    const x = e.clientX - rect.left - size / 2;
-                    const y = e.clientY - rect.top - size / 2;
-                    
-                    ripple.style.width = ripple.style.height = size + 'px';
-                    ripple.style.left = x + 'px';
-                    ripple.style.top = y + 'px';
-                    ripple.classList.add('ripple');
-                    
-                    this.appendChild(ripple);
-                    
-                    setTimeout(() => ripple.remove(), 600);
-                });
-            });
-        };
-
-        // 7. SMOOTH SCROLL BEHAVIOR
-        const setupSmoothScroll = () => {
-            document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-                anchor.addEventListener('click', function (e) {
-                    e.preventDefault();
-                    const target = document.querySelector(this.getAttribute('href'));
-                    if (target) {
-                        target.scrollIntoView({
-                            behavior: 'smooth',
-                            block: 'start'
-                        });
-                    }
-                });
-            });
-        };
-
-        // 8. FLOATING ELEMENT ANIMATION
-        const setupFloatingElements = () => {
-            const floatingEls = document.querySelectorAll('[data-float]');
-            floatingEls.forEach(el => {
-                el.classList.add('float-animation');
-            });
-        };
-
-        // 9. ICON BOUNCE ON HOVER
-        const setupIconBounce = () => {
-            document.querySelectorAll('[data-icon-bounce]').forEach(icon => {
-                icon.addEventListener('mouseenter', function() {
-                    this.style.animation = 'iconBounce 0.6s cubic-bezier(0.34, 1.56, 0.64, 1)';
-                });
-            });
-        };
-
-        // 10. TEXT REVEAL ANIMATION
-        const setupTextReveal = () => {
-            document.querySelectorAll('[data-text-reveal]').forEach((el, index) => {
-                el.classList.add('text-reveal');
-                el.style.animationDelay = `${index * 0.1}s`;
-            });
-        };
-
-        // 11. GRADIENT TEXT ANIMATION
-        const animateGradientText = () => {
-            const gradientTexts = document.querySelectorAll('.gradient-text');
-            gradientTexts.forEach(el => {
-                const style = el.style;
-                let hue = 0;
-                setInterval(() => {
-                    hue = (hue + 1) % 360;
-                }, 50);
-            });
-        };
-
-        // INITIALIZE ALL ANIMATIONS
-        document.addEventListener('DOMContentLoaded', () => {
-            setupCardStagger();
-            setupMouseTracking();
-            setupRippleEffect();
-            setupSmoothScroll();
-            setupFloatingElements();
-            setupIconBounce();
-            setupTextReveal();
-            animateGradientText();
-            
-            // Delay parallax for better performance
-            setTimeout(setupParallax, 100);
-            setTimeout(setupScrollReveal, 200);
+  <script>
+    // Smooth-scroll and focus the email input when CTA anchors to #final-cta are clicked
+    (function(){
+      function focusEmail(){
+        var input = document.querySelector('form[name="early-access"] input[name="email"]');
+        if(input){ input.focus({preventScroll:true}); }
+      }
+      document.querySelectorAll('a[href="#final-cta"]').forEach(function(a){
+        a.addEventListener('click', function(e){
+          // default anchor behavior will jump — we smooth scroll and focus the input
+          e.preventDefault();
+          var el = document.querySelector('#final-cta');
+          if(el){ el.scrollIntoView({behavior:'smooth', block:'start'}); }
+          // focus after a short delay to allow scroll/pa          git remote remove origin 2>NUL || remint
+          setTimeout(focusEmail, 400);
         });
-
-        // Re-init on page load
-        window.addEventListener('load', () => {
-            setupCardStagger();
-        });
-    </script>
-
-    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
-    <script src="./asset/js/app.js"></script>
-    <script>
-        AOS.init();
-    </script>
+      });
+    })();
+  </script>
 </body>
-
 </html>

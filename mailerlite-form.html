@@ -1,0 +1,70 @@
+<!-- MailerLite integration examples: Option A (embed) or Option B (serverless) -->
+
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>MailerLite integration examples</title>
+  <style>body{font-family:system-ui,Arial;margin:18px;color:#111}pre{background:#f6f8fa;padding:12px;border-radius:6px;overflow:auto}</style>
+</head>
+<body>
+  <h2>Option A — MailerLite Embedded Form (easiest)</h2>
+  <ol>
+    <li>Login to MailerLite → Forms → Create embedded form.</li>
+    <li>Build the fields (name, email, beta checkbox) in the MailerLite form builder or keep the default email-only form.</li>
+  <li>Copy the embed code and paste it directly into your `index.html` in place of the current &lt;form id="signup"&gt; block.</li>
+  </ol>
+
+  <p>Example placeholder: replace the existing form block in `index.html` with your embed code (paste between the comments below):</p>
+  <pre><!-- Paste your MailerLite embed code here -->
+</pre>
+
+  <h2>Option B — Custom HTML form + serverless endpoint (secure, flexible)</h2>
+  <p>Use this if you want to keep your MailerLite API key secret and tag beta signups. Deploy the serverless function (see <code>mailerlite-serverless.md</code>) and point the form at <code>/subscribe</code> (or whatever path your provider uses).</p>
+
+  <p>Replace the existing &lt;form id="signup"&gt; in your `index.html` with this form HTML and include the script shown below.</p>
+
+  <pre>&lt;form id="signup" class="signup-form" action="#" method="post"&gt;
+  &lt;input id="name" name="name" type="text" placeholder="Full name" required&gt;
+  &lt;input id="email" name="email" type="email" placeholder="Email address" required&gt;
+  &lt;label&gt;&lt;input type="checkbox" id="beta" name="beta" value="yes"&gt; Yes — I want to be a beta tester (optional)&lt;/label&gt;
+  &lt;button type="submit" class="btn btn-primary"&gt;JOIN THE PRIORITY LIST&lt;/button&gt;
+&lt;/form&gt;
+
+&lt;script&gt;
+document.getElementById('signup').addEventListener('submit', async function(e){
+  e.preventDefault();
+  const name = document.getElementById('name').value;
+  const email = document.getElementById('email').value;
+  const beta = document.getElementById('beta').checked ? 'yes' : 'no';
+
+  try{
+    const res = await fetch('/.netlify/functions/subscribe', { // change path if using another provider
+      method: 'POST',
+      headers: {'Content-Type':'application/json'},
+      body: JSON.stringify({ name, email, beta })
+    });
+
+    if (res.ok) {
+      // either redirect to thankyou page or show inline message
+      window.location.href = 'thankyou.html';
+    } else {
+      const text = await res.text();
+      alert('Signup failed: ' + text);
+    }
+  } catch (err) {
+    console.error(err);
+    alert('Network error. Please try again later.');
+  }
+});
+&lt;/script&gt;</pre>
+
+  <h3>Notes</h3>
+  <ul>
+    <li>Option A (embed) is fastest but may include MailerLite branding depending on your account and form settings.</li>
+    <li>Option B gives you full control and lets you tag users (e.g., add them to a "beta" group) and store additional fields.</li>
+    <li>If you want, I can update your `index.html` directly with Option B (safe) once you confirm the serverless path and provider.</li>
+  </ul>
+</body>
+</html>

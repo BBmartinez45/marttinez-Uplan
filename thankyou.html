@@ -1,0 +1,78 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Thanks — Calm Nerve Early Access</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <main class="container" id="main-content" tabindex="-1" style="padding:48px 24px;text-align:center;">
+    <h1 id="thank-you-heading">Thanks — you’re on the list!</h1>
+    <p class="lead">We’ve received your request for early access to Calm Nerve. Watch your inbox for a confirmation and launch updates.</p>
+
+    <h3>Next steps</h3>
+    <ul style="list-style:none;padding:0;max-width:560px;margin:12px auto;text-align:left">
+      <li>• Check your email for a confirmation message.</li>
+      <li>• Add our email to your contacts so launch updates don’t go to spam.</li>
+      <li>• If you checked the beta box, we may contact you with a separate invite.</li>
+    </ul>
+
+    <p>
+      <a href="index.html" class="btn btn-primary" id="back-button">Return to Main Page</a>
+    </p>
+
+    <div id="redirect-wrap" style="margin-top:18px;">
+      <p id="redirect-text" role="status" aria-live="polite">Returning to the main page in <strong><span id="countdown" aria-hidden="true">5</span> seconds</strong>.</p>
+      <p>
+        <button id="cancel-redirect" class="btn btn-ghost" aria-expanded="false">Cancel redirect</button>
+      </p>
+    </div>
+  </main>
+
+  <script>
+    (function(){
+      var seconds = 5;
+      var countdownEl = document.getElementById('countdown');
+      var redirectText = document.getElementById('redirect-text');
+      var cancelBtn = document.getElementById('cancel-redirect');
+      var backBtn = document.getElementById('back-button');
+      var main = document.getElementById('main-content');
+
+      // Move keyboard focus to main for screen readers and keyboard users
+      if (main && main.focus) { main.focus(); }
+
+      var interval = setInterval(function(){
+        seconds--;
+        if(countdownEl) countdownEl.textContent = seconds;
+        if(seconds <= 0){
+          clearInterval(interval);
+          window.location.href = 'index.html';
+        }
+      }, 1000);
+
+      cancelBtn.addEventListener('click', function(){
+        clearInterval(interval);
+        redirectText.textContent = 'Redirect canceled. You can return to the main page using the button above.';
+        cancelBtn.style.display = 'none';
+      });
+
+      // If user clicks the back link, clear timer to avoid double navigation
+      backBtn.addEventListener('click', function(){
+        clearInterval(interval);
+      });
+
+      // Allow Escape to cancel the redirect
+      document.addEventListener('keydown', function(e){
+        if(e.key === 'Escape'){
+          if(interval){
+            clearInterval(interval);
+            redirectText.textContent = 'Redirect canceled. You can return to the main page using the button above.';
+            cancelBtn.style.display = 'none';
+          }
+        }
+      });
+    })();
+  </script>
+</body>
+</html>

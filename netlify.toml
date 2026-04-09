@@ -1,0 +1,11 @@
+# Netlify config — publish the repo root for this static site
+[build]
+  publish = "."
+  command = ""
+
+# Single-page fallback for client-side routing (if needed)
+[[redirects]]
+  from = "/*"
+  to = "/index.html"
+  status = 200
+  force = true

@@ -1,0 +1,81 @@
+Subject: Welcome — You're on the Calm Nerve Early Access List
+
+Hi {FirstName},
+If you’d like to participate, simply reply to this message or keep an eye on your inbox — we’ll reach out with details if you’re selected.
+
+---
+HTML email template (paste this into MailerLite's drag-and-drop editor or HTML editor). Replace __LOGO_URL__ with the absolute URL where your `cropped-logo.png` will be hosted (for example: https://yourdomain.com/assets/cropped-logo.png). Using an absolute URL ensures Gmail shows the image.
+
+<!doctype html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width,initial-scale=1">
+		<title>Welcome — Calm Nerve</title>
+	</head>
+	<body style="margin:0;padding:24px;font-family:Inter,system-ui,-apple-system,Segoe UI,Roboto,Helvetica,Arial,sans-serif;background:#f9fafb;color:#1f2933;">
+		<table role="presentation" width="100%" cellpadding="0" cellspacing="0" style="max-width:680px;margin:0 auto;background:#ffffff;border-radius:12px;border:1px solid #e5e7eb;">
+			<tr>
+				<td style="padding:20px;text-align:center;">
+					<img src="__LOGO_URL__" alt="Calm Nerve" style="max-width:180px;height:auto;display:block;margin:0 auto 12px;" />
+					<h1 style="font-size:20px;margin:0 0 8px;font-weight:800;color:#111827;">Welcome — you're on the Calm Nerve list</h1>
+					<p style="margin:8px 0 16px;color:#6b7280;">Thanks — we’ve saved your spot. You’ll receive launch news and an early-backer discount.</p>
+					<a href="#" style="display:inline-block;padding:12px 18px;background:#2563eb;color:#fff;border-radius:10px;text-decoration:none;font-weight:700;">Visit our site</a>
+				</td>
+			</tr>
+			<tr>
+				<td style="padding:18px;color:#374151;">
+					<h2 style="font-size:16px;margin:0 0 8px;">What to expect next</h2>
+					<ul style="margin:0 0 12px 18px;color:#6b7280;">
+						<li>Launch date and ordering link before the product goes public.</li>
+						<li>One-time 10% early-backer discount code when we launch.</li>
+						<li>Occasional practical nerve-health tips and product updates.</li>
+					</ul>
+					<p style="margin:0;color:#6b7280;">If you have questions, reply to this email and we’ll help.</p>
+				</td>
+			</tr>
+			<tr>
+				<td style="padding:16px;text-align:center;color:#9ca3af;font-size:13px;">© {Year} Calm Nerve — All rights reserved.</td>
+			</tr>
+		</table>
+	</body>
+</html>
+
+Instructions for adding the image in MailerLite:
+- Host `cropped-logo.png` at an absolute URL (GitHub Pages, your web host, or a CDN). Example path after publishing: `https://<your-domain>/assets/cropped-logo.png`.
+- In the MailerLite campaign or automation editor, choose the HTML block and paste the HTML above (or use the drag-and-drop Image block and paste the hosted URL).
+- Test by sending to a Gmail address and confirm the logo shows (if Gmail still hides images, click "Display images" for that sender or ensure the sender is a verified domain).
+
+Subject: Welcome — You're on the Calm Nerve Early Access List
+
+Hi {FirstName},
+
+Thanks — we’ve saved your spot on the Calm Nerve early access list. You’ll get 10% off your first bottle, priority shipping, and exclusive launch updates.
+
+If you checked the beta option, we may contact you soon with next steps and a brief screening form. Beta spots are limited.
+
+What to expect next:
+- A confirmation email within a few minutes (check spam/junk if you don’t see it).
+- Launch date and ordering link before the product goes public.
+- Occasional updates about the beta program, product testing, and educational nerve-health resources.
+
+If you have questions, reply to this email and we’ll help.
+
+Thanks for joining us,
+The Calm Nerve Team
+
+---
+
+Subject: Calm Nerve — Beta Tester Invitation (if selected)
+
+Hi {FirstName},
+
+We’re inviting a small group of early supporters to test Calm Nerve before launch. As a beta tester you’ll receive:
+- An exclusive discount
+- Direct support from our team
+- A short feedback form to share your experience
+
+If you’d like to participate, simply reply to this message or keep an eye on your inbox — we’ll reach out with details if you’re selected.
+
+Thanks again for helping us build a better solution,
+The Calm Nerve Team

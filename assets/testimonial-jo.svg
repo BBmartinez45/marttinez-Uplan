@@ -1,0 +1,20 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 400">
+  <defs>
+    <linearGradient id="g2" x1="0" x2="1">
+      <stop offset="0%" stop-color="#ffffff"/>
+      <stop offset="100%" stop-color="#fffaf6"/>
+    </linearGradient>
+  </defs>
+  <rect width="800" height="400" rx="18" fill="url(#g2)" stroke="#fff0e6"/>
+  <g transform="translate(28,26)">
+    <circle cx="64" cy="64" r="48" fill="#ffe9d6"/>
+    <text x="64" y="74" font-family="Inter, Arial" font-size="34" fill="#c94a1f" text-anchor="middle" font-weight="700">J</text>
+    <text x="140" y="48" font-family="Inter, Arial" font-size="18" fill="#0f172a" font-weight="700">J.O.</text>
+    <text x="140" y="74" font-family="Inter, Arial" font-size="14" fill="#6b7280">The burning reduced dramatically.</text>
+    <text x="8" y="140" font-family="Inter, Arial" font-size="15" fill="#111">“The burning reduced dramatically within a couple weeks. Calm Nerve helped me sleep better and move more easily.”</text>
+    <g transform="translate(0,240)">
+      <rect x="0" y="0" width="300" height="34" rx="8" fill="#fff" stroke="#ffe7e7"/>
+      <text x="150" y="22" font-family="Inter, Arial" font-size="12" fill="#6b7280" text-anchor="middle">Testimonial</text>
+    </g>
+  </g>
+</svg>
